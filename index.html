@@ -281,18 +281,15 @@
     }
     .hero-text { flex: 1; min-width: 0; }
     .hero-video {
-      flex: 0 0 480px;
+      flex: 0 0 600px;
       position: relative;
       border-radius: 2px;
       overflow: hidden;
       box-shadow: 0 32px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
     }
-    .hero-video::before {
-      content: ''; display: block; padding-top: 56.25%;
-    }
-    .hero-video iframe {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; border: none;
+    .hero-video video {
+      width: 100%; height: 100%;
+      display: block; object-fit: cover;
     }
     .hero-eyebrow {
       font-size: 11px; letter-spacing: 0.22em;
@@ -830,11 +827,9 @@
       </div>
     </div>
     <div class="hero-video">
-      <iframe
-        src="https://www.youtube.com/embed/L-mZyLBa8Us?autoplay=1&mute=1&loop=1&playlist=L-mZyLBa8Us&rel=0&playsinline=1"
-        allow="autoplay; encrypted-media; fullscreen"
-        allowfullscreen
-      ></iframe>
+      <video autoplay muted loop playsinline>
+        <source src="hero.mp4" type="video/mp4" />
+      </video>
     </div>
   </div>
   <div class="hero-scroll">Scroll</div>

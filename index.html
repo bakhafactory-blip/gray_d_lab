@@ -8,1067 +8,645 @@
   <meta name="google-site-verification" content="vMGJSkN_BIqBYEcGynY_9_1enVWgyjp58CAR3tU-Kok" />
   <meta name="naver-site-verification" content="12961767ef6eb5e464266a19b89b742e60448882" />
   <meta name="naver-site-verification" content="cb5a33cbc3e4127b742dad22d0994886dac5c2b6" />
-  <meta name="keywords" content="그레이디랩, graydlab, GRaY D. Lab, AI 패션, AI 영상 제작, AI 광고 영상, AI 비주얼, AI 강의, AI 교육, AI 활용 강의, AI 패션쇼, AI 패션 디자인, AI 컬렉션, AI 화보, AI 모델, AI 룩북, 패션 AI, 여성복 AI, Kris W" />
-  <link rel="canonical" href="https://graydlab.ai.kr/" />
-  <meta property="og:title" content="그레이디랩 | GRaY D. Lab — AI 패션 비주얼 · 광고 영상 · 기업 강의" />
-  <meta property="og:description" content="The Next Era of Fashion Visuals & Branding. 그레이디랩의 독보적인 AI 테크놀로지로 완성하는 하이엔드 광고 캠페인과 패션 비주얼 솔루션." />
-  <meta property="og:url" content="https://graydlab.ai.kr/" />
+  <meta name="keywords" content="그레이디랩, graydlab, GRaY D. Lab, AI 패션, AI 영상 제작, AI 광고 영상, AI 비주얼, AI 강의, AI 교육, AI 활용 강의, AI 패션쇼, AI 패션 디자인, AI 컬렉션, AI 화보, AI 모델, AI 룩북, 패션 MD" />
+  
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://graydlab.ai.kr/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="그레이디랩 | GRaY D. Lab" />
-  <meta name="twitter:description" content="하이엔드 AI 패션 비주얼 & 광고 영상 제작 솔루션" />
-  <meta name="twitter:image" content="https://graydlab.ai.kr/og-image.jpg" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "그레이디랩 (GRaY D. Lab)",
-    "alternateName": "그레이디랩",
-    "url": "https://graydlab.ai.kr",
-    "description": "하이엔드 AI 패션·광고 영상 제작 전문 기업 '그레이디랩'. AI 패션쇼, 가상 룩북, 브랜드 크리에이티브 디렉션 제공.",
-    "founder": {
-      "@type": "Person",
-      "name": "Kris W",
-      "alternateName": "감우식",
-      "jobTitle": "AI 패션 디렉터 & 브랜드 디렉터"
-    },
-    "areaServed": "KR",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "그레이디랩 서비스",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI 패션쇼 및 가상 룩북 비주얼 제작"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI 패션 및 크리에이티브 실무 기업 강의"
-          }
-        }
-      ]
-    },
-    "sameAs": [
-      "https://www.youtube.com/@gray_d_lab"
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="그레이디랩 | GRaY D. Lab — AI 패션 비주얼 · 광고 영상" />
+  <meta property="og:description" content="하이엔드 AI 광고 영상 제작 및 실무 교육 솔루션. 디렉터 Kris W가 제안하는 가상 패션 테크놀로지." />
+  <meta property="og:image" content="https://graydlab.com/assets/og-image.jpg" />
+  <meta property="og:url" content="https://graydlab.com" />
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
   <style>
+    /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    html { 
+      scroll-behavior: smooth; 
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: #0b0b0b; color: #ffffff;
+      -webkit-font-smoothing: antialiased; letter-spacing: -0.02em;
+    }
+    body { overflow-x: hidden; }
+    
     :root {
-      --bg:         #F5F6F8;
-      --bg-alt:     #EBECEF;
-      --card:       #FFFFFF;
-      --text:       #111112;
-      --text-muted: #7A7C88;
-      --border:     #D8DAE2;
-      --point:      #00A2FF;
-      --accent:     #8BC900;
-      --max-w:      1200px;
+      --bg: #0b0b0b;
+      --surface: #121212;
+      --surface-accent: #1a1a1a;
+      --text-main: #ffffff;
+      --text-muted: #8e8e93;
+      --text-dim: #555555;
+      --point: #d4afff;       /* 세련된 연보라 포인트 트렌드 컬러 */
+      --point-rgb: 212, 175, 255;
+      --border: rgba(255, 255, 255, 0.08);
+      --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.75;
-      letter-spacing: -0.02em;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100; height: 68px;
-      display: flex; align-items: center;
-      padding: 0 48px;
-      transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
-    }
-    nav.nav--light {
-      background: rgba(245,246,248,0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    nav.nav--dark {
-      background: transparent;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .nav-inner {
-      max-width: var(--max-w); width: 100%; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 52px; width: auto; display: block; }
-    nav.nav--light .nav-logo img { mix-blend-mode: multiply; }
-    nav.nav--dark  .nav-logo img { mix-blend-mode: screen; opacity: 0.9; }
-
-    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-    .nav-links a {
-      position: relative;
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.04em; text-decoration: none;
-      transition: color 0.25s;
-    }
-    .nav-links a:not(.nav-cta)::after {
-      content: ''; position: absolute;
-      bottom: -2px; left: 0; right: 0; height: 1px;
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
-    }
-    nav.nav--light .nav-links a { color: var(--text-muted); }
-    nav.nav--light .nav-links a:not(.nav-cta)::after { background: var(--point); }
-    nav.nav--light .nav-links a:hover { color: var(--text); }
-    nav.nav--light .nav-links a:hover::after { transform: scaleX(1); }
-    nav.nav--dark  .nav-links a { color: rgba(255,255,255,0.6); }
-    nav.nav--dark  .nav-links a:not(.nav-cta)::after { background: rgba(255,255,255,0.7); }
-    nav.nav--dark  .nav-links a:hover { color: #fff; }
-    nav.nav--dark  .nav-links a:hover::after { transform: scaleX(1); }
-
-    .nav-cta {
-      padding: 8px 22px !important;
-      font-size: 12px !important; font-weight: 600 !important;
-      letter-spacing: 0.07em !important;
-      transition: letter-spacing 0.3s ease, background 0.25s, color 0.25s, border-color 0.25s !important;
-    }
-    nav.nav--light .nav-cta {
-      background: var(--text) !important; color: #fff !important;
-      border: 1px solid var(--text) !important;
-    }
-    nav.nav--light .nav-cta:hover {
-      background: var(--point) !important;
-      border-color: var(--point) !important;
-      letter-spacing: 0.13em !important;
-    }
-    nav.nav--dark .nav-cta {
-      background: transparent !important; color: #fff !important;
-      border: 1px solid rgba(255,255,255,0.4) !important;
-    }
-    nav.nav--dark .nav-cta:hover {
-      background: rgba(0,162,255,0.15) !important;
-      border-color: rgba(0,162,255,0.6) !important;
-      letter-spacing: 0.13em !important;
-    }
-
-    /* ── HAMBURGER ── */
-    .hamburger {
-      display: none; flex-direction: column;
-      justify-content: center; gap: 5px;
-      width: 32px; height: 32px;
-      cursor: pointer; background: none; border: none; padding: 0;
-    }
-    .hamburger span {
-      display: block; height: 1.5px;
-      transition: transform 0.25s, opacity 0.25s;
-      transform-origin: center;
-    }
-    nav.nav--light .hamburger span { background: var(--text); }
-    nav.nav--dark  .hamburger span { background: #fff; }
-    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .mobile-menu {
-      display: none; position: fixed;
-      top: 68px; left: 0; right: 0;
-      background: rgba(245,246,248,0.99);
+    
+    /* ── COMMON LAYOUT ── */
+    .container { width: 100%; max-width: 1600px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 20px; } }
+    
+    section { padding: 160px 0; position: relative; }
+    @media (max-width: 768px) { section { padding: 100px 0; } }
+    
+    .section-num { font-size: 13px; font-weight: 500; color: var(--point); margin-bottom: 12px; display: block; letter-spacing: 0.1em; }
+    .section-title { font-size: 44px; font-weight: 700; line-height: 1.2; margin-bottom: 60px; word-break: keep-all; }
+    @media (max-width: 768px) { .section-title { font-size: 30px; margin-bottom: 40px; } }
+    
+    /* ── HEADER & NAV ── */
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      z-index: 99; padding: 20px 28px 32px;
-      flex-direction: column;
+      background-color: rgba(11, 11, 11, 0.75);
+      border-bottom: 1px solid var(--border); transition: var(--transition);
     }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      display: block; font-size: 15px; font-weight: 500;
-      color: var(--text-muted); text-decoration: none;
-      padding: 14px 0; border-bottom: 1px solid var(--border);
-      letter-spacing: 0.02em; transition: color 0.2s, letter-spacing 0.3s;
+    .nav-container {
+      height: 90px; display: flex; align-items: center; justify-content: space-between;
     }
-    .mobile-menu a:hover { color: var(--text); letter-spacing: 0.05em; }
-    .mobile-menu .nav-cta {
-      margin-top: 20px; text-align: center; border-bottom: none;
-      background: var(--text) !important; color: #fff !important;
-      padding: 15px 20px !important;
+    @media (max-width: 768px) { .nav-container { height: 70px; } }
+    
+    .logo a {
+      font-size: 20px; font-weight: 800; color: var(--text-main); text-decoration: none; letter-spacing: 0.05em;
     }
-
-    /* ── SECTIONS ── */
-    section { padding: 120px 48px; }
-    .inner { max-width: var(--max-w); margin: 0 auto; }
-
-    .section-label {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--text-muted); margin-bottom: 20px;
+    .logo span { color: var(--point); }
+    
+    .nav-links { display: flex; gap: 48px; list-style: none; }
+    @media (max-width: 1024px) { .nav-links { display: none; } }
+    
+    .nav-links a {
+      font-size: 15px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: var(--transition); position: relative; padding: 8px 0;
     }
-    .section-label::before {
-      content: ''; display: inline-block;
-      width: 28px; height: 1.5px;
-      background: var(--point); flex-shrink: 0;
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background-color: var(--point); transition: var(--transition);
     }
-    .section-title {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 40px; font-weight: 700;
-      line-height: 1.2; letter-spacing: -0.035em; margin-bottom: 16px;
+    .nav-links a:hover { color: var(--text-main); }
+    .nav-links a:hover::after { width: 100%; }
+    
+    /* Hamburger Menu Button */
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer; width: 30px; height: 30px; position: relative; z-index: 110;
     }
-    .section-sub {
-      font-size: 14px; color: var(--text-muted);
-      max-width: 520px; line-height: 1.95; letter-spacing: -0.02em;
+    @media (max-width: 1024px) { .hamburger { display: block; } }
+    .hamburger span {
+      display: block; width: 24px; height: 1.5px; background-color: var(--text-main); position: absolute; left: 3px; transition: var(--transition);
     }
-
-    /* ── HERO (Editorial full-bleed) ── */
-    #hero {
-      position: relative; min-height: 100vh;
-      display: flex; align-items: flex-end;
-      padding: 0; overflow: hidden;
+    .hamburger span:nth-child(1) { top: 10px; }
+    .hamburger span:nth-child(2) { top: 15px; }
+    .hamburger span:nth-child(3) { top: 20px; }
+    
+    .hamburger.open span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+    
+    /* Mobile Menu Drawer */
+    .mobile-menu {
+      position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background-color: var(--bg); z-index: 105; display: flex; flex-direction: column; justify-content: center; padding: 40px; transition: var(--transition); box-sizing: border-box;
     }
-    #hero video {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover;
+    .mobile-menu.open { right: 0; }
+    .mobile-nav-links { list-style: none; display: flex; flex-direction: column; gap: 32px; }
+    .mobile-nav-links a { font-size: 28px; font-weight: 700; color: var(--text-main); text-decoration: none; }
+    
+    /* ── HERO SECTION ── */
+    .hero {
+      height: 100vh; min-height: 700px; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 90px;
     }
-    #hero::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(4,5,12,0.92) 0%, rgba(4,5,12,0.35) 42%, rgba(4,5,12,0.12) 70%);
+    .hero-video-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.35; filter: grayscale(20%);
     }
-    .hero-inner {
-      position: relative; z-index: 2; width: 100%;
-      max-width: var(--max-w); margin: 0 auto;
-      padding: 0 48px 96px;
-      display: flex; align-items: flex-end; justify-content: space-between;
-      gap: 48px; flex-wrap: wrap;
+    .hero::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(11,11,11,0.4) 0%, rgba(11,11,11,0.95) 100%); z-index: 2;
     }
-    .hero-eyebrow {
-      font-size: 11px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: rgba(255,255,255,0.5);
-      margin-bottom: 28px; display: flex;
-      align-items: center; gap: 12px;
+    .hero .container { position: relative; z-index: 3; }
+    
+    .hero-sub { font-size: 16px; font-weight: 600; color: var(--point); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 24px; display: block; }
+    .hero-title { font-size: 72px; font-weight: 800; line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.03em; word-break: keep-all; }
+    .hero-title span { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { .hero-title { font-size: 42px; } }
+    
+    .hero-desc { font-size: 19px; font-weight: 400; line-height: 1.6; color: var(--text-muted); max-width: 640px; margin-bottom: 48px; word-break: keep-all; }
+    @media (max-width: 768px) { .hero-desc { font-size: 16px; } }
+    
+    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; padding: 18px 36px; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 0px; transition: var(--transition);
     }
-    .hero-eyebrow::before {
-      content: ''; display: inline-block;
-      width: 28px; height: 1.5px;
-      background: var(--accent); flex-shrink: 0;
+    .btn-primary { background-color: var(--text-main); color: var(--bg); }
+    .btn-primary:hover { background-color: var(--point); color: var(--bg); }
+    .btn-secondary { background-color: transparent; color: var(--text-main); border: 1px solid rgba(255,255,255,0.2); }
+    .btn-secondary:hover { border-color: var(--text-main); background-color: rgba(255,255,255,0.04); }
+    
+    /* ── VISION (ABOUT) ── */
+    .vision-grid { display: grid; grid-template-columns: 1.20fr 1fr; gap: 80px; align-items: start; }
+    @media (max-width: 1024px) { .vision-grid { grid-template-columns: 1fr; gap: 48px; } }
+    
+    .vision-text p { font-size: 20px; line-height: 1.7; color: var(--text-muted); margin-bottom: 32px; word-break: keep-all; }
+    .vision-text p strong { color: var(--text-main); font-weight: 600; }
+    @media (max-width: 768px) { .vision-text p { font-size: 17px; } }
+    
+    .vision-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 56px; border-top: 1px solid var(--border); padding-top: 48px; }
+    .stat-item .num { font-size: 48px; font-weight: 800; color: var(--text-main); display: block; margin-bottom: 8px; }
+    .stat-item .label { font-size: 14px; color: var(--text-dim); font-weight: 500; }
+    
+    .vision-profile { background-color: var(--surface); border: 1px solid var(--border); padding: 48px; position: relative; }
+    @media (max-width: 768px) { .vision-profile { padding: 32px; } }
+    .profile-tag { font-size: 12px; font-weight: 600; color: var(--point); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 24px; }
+    .profile-name { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .profile-duty { font-size: 14px; color: var(--text-muted); margin-bottom: 32px; display: block; }
+    .profile-bio { font-size: 15px; line-height: 1.6; color: var(--text-muted); list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .profile-bio li { position: relative; padding-left: 16px; }
+    .profile-bio li::before { content: '·'; position: absolute; left: 0; color: var(--point); font-weight: bold; }
+    
+    /* ── SERVICES (SOLUTIONS) ── */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+    
+    .service-card {
+      background-color: var(--surface); border: 1px solid var(--border); padding: 48px; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;
     }
-    .hero-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: clamp(46px, 7.2vw, 104px);
-      font-weight: 300; line-height: 0.98;
-      letter-spacing: -0.03em; color: #fff;
-      max-width: 760px;
-    }
-    .hero-meta { flex-shrink: 0; text-align: right; }
-    .hero-meta-label {
-      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(255,255,255,0.45); margin-bottom: 18px;
-    }
-    .hero-meta-links { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-    .hero-link-primary, .hero-link-secondary {
-      color: #fff; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      letter-spacing: 0.02em; transition: gap 0.3s ease, color 0.25s;
-      border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 3px;
-    }
-    .hero-link-primary { font-size: 15px; font-weight: 700; }
-    .hero-link-secondary { font-size: 13px; color: rgba(255,255,255,0.6); border-bottom-color: rgba(255,255,255,0.25); }
-    .hero-link-primary::after, .hero-link-secondary::after { content: '→'; transition: transform 0.3s ease; }
-    .hero-link-primary:hover, .hero-link-secondary:hover { color: var(--point); border-bottom-color: var(--point); gap: 13px; }
-    .hero-scroll {
-      position: absolute; bottom: 40px; left: 48px; z-index: 2;
-      display: flex; flex-direction: column;
-      align-items: center; gap: 10px;
-      color: rgba(255,255,255,0.3);
-      font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
-    }
-    .hero-scroll::before {
-      content: ''; width: 1px; height: 44px;
-      background: linear-gradient(to bottom, var(--point), transparent);
-      animation: scrollLine 2s ease-in-out infinite;
-    }
-    @keyframes scrollLine {
-      0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
-      50%  { opacity: 1; transform: scaleY(1); transform-origin: top; }
-      100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
-    }
-
-    /* ── INTRO STRIP (히어로 아래 슬림 카피 밴드) ── */
-    .intro-strip { background: #08090F; padding: 40px 48px; }
-    .intro-strip .inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 32px; flex-wrap: wrap;
-    }
-    .intro-kpi {
-      font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.6);
-      letter-spacing: -0.01em; padding-left: 16px;
-      border-left: 2px solid var(--accent);
-    }
-    .intro-kpi strong { color: #fff; font-weight: 700; }
-    .intro-desc {
-      font-size: 13px; color: rgba(255,255,255,0.4);
-      letter-spacing: -0.015em; max-width: 480px; text-align: right;
-    }
-
-    /* ── DIVIDED LIST (Services / Process 공용) ── */
-    .list-row {
-      display: flex; align-items: baseline; gap: 40px;
-      padding: 44px 0; border-top: 1px solid var(--border);
-    }
-    .list-section .list-row:last-child { border-bottom: 1px solid var(--border); }
-    .row-num {
-      font-family: 'Cormorant Garamond', serif; font-weight: 300;
-      font-size: 30px; color: var(--point); opacity: 0.4;
-      flex: 0 0 44px; line-height: 1;
-    }
-    .row-title {
-      font-size: 19px; font-weight: 700;
-      letter-spacing: -0.025em; line-height: 1.4;
-      flex: 0 0 300px;
-    }
-    .row-body {
-      font-size: 13px; color: var(--text-muted);
-      line-height: 1.9; letter-spacing: -0.015em; flex: 1;
-    }
-    .row-body strong { color: var(--point); font-weight: 700; }
-    .row-tags { flex: 0 0 190px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
-    .tag {
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 0.10em; text-transform: uppercase;
-      padding: 4px 10px; border: 1px solid var(--border); color: var(--text-muted);
-      transition: border-color 0.2s, color 0.2s; white-space: nowrap;
-    }
-    .tag:hover { border-color: var(--point); color: var(--point); }
-    .row-link {
-      flex: 0 0 128px; text-align: right;
-      font-size: 12px; font-weight: 600; letter-spacing: 0.05em;
-      color: var(--text); text-decoration: none;
-      display: inline-flex; align-items: center; justify-content: flex-end; gap: 7px;
-      transition: color 0.25s, gap 0.35s ease;
-    }
-    .row-link::after { content: '→'; transition: transform 0.35s ease; }
-    .row-link:hover { color: var(--point); gap: 12px; }
-
-    /* Process 전용: row-num을 조금 더 크게, 라벨 추가 */
-    .step-en {
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--point); margin-bottom: 6px; display: block;
-    }
-
-    /* ── SERVICES / PROCESS backgrounds ── */
-    #services { background: var(--bg-alt); }
-    #process  { background: var(--bg); }
-    .services-header, .process-header { margin-bottom: 56px; }
-
-    /* ── PORTFOLIO (Editorial full-bleed work blocks) ── */
-    #portfolio { background: var(--bg-alt); padding: 0; }
-    .portfolio-header { padding: 120px 48px 56px; }
-
+    .service-card:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-4px); }
+    .service-icon { font-size: 32px; margin-bottom: 32px; color: var(--point); display: block; }
+    .service-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+    .service-card p { font-size: 15px; line-height: 1.6; color: var(--text-muted); word-break: keep-all; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.04); }
+    .service-tags span { font-size: 12px; color: var(--text-dim); background-color: rgba(255,255,255,0.03); padding: 4px 10px; }
+    
+    /* ── PORTFOLIO (WORK) ── */
+    .work-container { width: 100%; margin-top: 40px; }
+    
+    /* 수정 반영 및 최적화된 Work Blocks 설정 */
     .work-block {
       position: relative; height: 88vh; min-height: 460px;
       overflow: hidden; display: flex; align-items: flex-end;
       text-decoration: none; cursor: pointer;
-    }
-    .work-block {
       background-size: cover; background-repeat: no-repeat;
     }
-    .work-block:nth-child(1) { background-image: url('work-1-shinsegae.jpg'); background-position: center 30%; }
-    .work-block:nth-child(2) { background-image: url('work-2-lookbook.jpg'); background-position: center 22%; }
-    .work-block:nth-child(3) { background-image: url('work-3-ooh.jpg'); background-position: center center; }
-    .work-block:nth-child(4) { background-image: url('work-4-runway.jpg'); background-position: center 15%; }
+    
+    /* 각 이미지 원본 구도에 맞게 인물/제품 중심 포지션으로 완전 교정 */
+    .work-block:nth-child(1) { 
+      background-image: url('work-1-shinsegae.jpg'); 
+      background-position: center center; 
+    }
+    .work-block:nth-child(2) { 
+      background-image: url('work-2-lookbook.jpg'); 
+      background-position: center 10%; /* 인물 모델 상반신 및 페이스 노출 극대화 */
+    }
+    .work-block:nth-child(3) { 
+      background-image: url('work-3-ooh.jpg'); 
+      background-position: center 20%; /* 인물의 핵심 시선과 텍스트 구도 조율 */
+    }
+    .work-block:nth-child(4) { 
+      background-image: url('work-4-runway.jpg'); 
+      background-position: center 5%;  /* 키가 큰 모델 크롭 보완을 위해 위쪽 배치 고정 */
+    }
+    
     .work-block::before {
-      content: ''; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
-      transition: background 0.4s ease;
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(11,11,11,0.1) 0%, rgba(11,11,11,0.85) 100%);
+      z-index: 1; transition: var(--transition);
     }
-    @media (hover: hover) and (pointer: fine) {
-      .work-block:hover::before { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 55%); }
-      .work-block:hover .work-plus { color: rgba(0,162,255,0.6); transform: scale(1.15); }
-      .work-block:hover .work-caption h3 { color: #fff; }
+    .work-block:hover::before { background: linear-gradient(to bottom, rgba(11,11,11,0.2) 0%, rgba(11,11,11,0.92) 100%); }
+    
+    .work-content {
+      position: relative; z-index: 2; width: 100%; max-width: 1600px; margin: 0 auto; padding: 60px 40px;
+      display: flex; justify-content: space-between; align-items: flex-end; transition: var(--transition);
     }
-    .work-caption { position: relative; z-index: 2; padding: 44px 48px; max-width: var(--max-w); margin: 0 auto; width: 100%; }
-    .work-type {
-      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--point); margin-bottom: 10px;
+    @media (max-width: 768px) { .work-content { padding: 40px 20px; flex-direction: column; align-items: flex-start; gap: 16px; } }
+    
+    .work-info .meta { font-size: 13px; font-weight: 500; color: var(--point); text-transform: uppercase; display: block; margin-bottom: 8px; }
+    .work-info .title { font-size: 32px; font-weight: 700; color: var(--text-main); }
+    @media (max-width: 768px) { .work-info .title { font-size: 24px; } }
+    
+    .work-arrow {
+      width: 56px; height: 56px; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: var(--transition);
     }
-    .work-caption h3 {
-      font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
-      font-size: clamp(26px, 3.4vw, 40px); color: rgba(255,255,255,0.82);
-      letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s;
+    .work-arrow svg { width: 20px; height: 20px; fill: none; stroke: var(--text-main); stroke-width: 1.5; transition: var(--transition); }
+    .work-block:hover .work-arrow { background-color: var(--text-main); border-color: var(--text-main); }
+    .work-block:hover .work-arrow svg { stroke: var(--bg); transform: translateX(4px); }
+    
+    /* ── CURRICULUM (EDUCATION) ── */
+    .edu-intro { max-width: 700px; font-size: 18px; line-height: 1.6; color: var(--text-muted); margin-bottom: 64px; word-break: keep-all; }
+    .edu-intro strong { color: var(--text-main); }
+    
+    .edu-timeline { display: flex; flex-direction: column; gap: 24px; }
+    .edu-row {
+      display: grid; grid-template-columns: 0.6fr 1.4fr 1fr; gap: 40px; padding: 40px; background-color: var(--surface); border: 1px solid var(--border); transition: var(--transition);
     }
-    .work-plus {
-      position: absolute; top: 50%; left: 50%; z-index: 2;
-      transform: translate(-50%,-50%);
-      font-size: 24px; color: rgba(255,255,255,0.18);
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    .portfolio-lower { padding: 88px 48px 0; }
-    .portfolio-grid2 {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start;
-    }
-    .portfolio-left .section-title { margin-bottom: 20px; }
-    .portfolio-desc {
-      font-size: 14px; color: var(--text-muted);
-      line-height: 1.95; letter-spacing: -0.02em; margin-bottom: 36px;
-    }
-    .btn-youtube {
-      position: relative; overflow: hidden;
-      display: inline-flex; align-items: center; gap: 10px;
-      border: 1px solid var(--border); padding: 15px 32px;
-      font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
-      color: var(--text); text-decoration: none;
-      transition: color 0.4s, border-color 0.4s;
-    }
-    .btn-youtube::before {
-      content: ''; position: absolute; inset: 0;
-      background: var(--text);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-    }
-    .btn-youtube:hover::before { transform: scaleX(1); }
-    .btn-youtube:hover { color: #fff; border-color: var(--text); }
-    .btn-youtube > * { position: relative; z-index: 1; }
-    .btn-youtube svg { width: 15px; height: 15px; flex-shrink: 0; }
-
-    .portfolio-categories { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
-    .pcat-item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 13px; color: var(--text-muted); letter-spacing: -0.015em;
-    }
-    .pcat-dot {
-      width: 5px; height: 5px;
-      background: var(--point); border-radius: 50%; flex-shrink: 0;
-      box-shadow: 0 0 6px rgba(0,162,255,0.5);
-    }
-    .clients-label {
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--text-muted); margin-bottom: 18px;
-    }
-    .clients-list {
-      font-size: 14px; color: var(--text-muted);
-      line-height: 2.3; letter-spacing: -0.015em; margin-bottom: 44px;
-    }
-    .clients-list span { display: inline; }
-    .clients-list span::after { content: ' · '; }
-    .clients-list span:last-child::after { content: ''; }
-    .exhibitions { border-top: 1px solid var(--border); padding-top: 28px; }
-    .ex-item { padding: 18px 0; }
-    .ex-item + .ex-item { border-top: 1px solid var(--border); }
-    .ex-title { font-size: 13px; font-weight: 600; letter-spacing: -0.015em; margin-bottom: 4px; }
-    .ex-place { font-size: 12px; color: var(--text-muted); }
-    .portfolio-lower-pad { height: 100px; }
-
+    @media (max-width: 900px) { .edu-row { grid-template-columns: 1fr; gap: 16px; padding: 32px; } }
+    .edu-row:hover { border-color: rgba(255,255,255,0.15); }
+    
+    .edu-step { font-size: 14px; font-weight: 700; color: var(--point); letter-spacing: 0.05em; text-transform: uppercase; }
+    .edu-main h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .edu-main p { font-size: 15px; color: var(--text-muted); line-height: 1.6; word-break: keep-all; }
+    .edu-details { list-style: none; display: flex; flex-direction: column; gap: 8px; justify-content: center; border-left: 1px solid rgba(255,255,255,0.06); padding-left: 40px; }
+    @media (max-width: 900px) { .edu-details { border-left: none; padding-left: 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); } }
+    .edu-details li { font-size: 14px; color: var(--text-muted); }
+    .edu-details li strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+    
     /* ── CONTACT ── */
-    #contact { background: var(--bg); }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 96px; align-items: start;
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
+    @media (max-width: 1024px) { .contact-grid { grid-template-columns: 1fr; gap: 56px; } }
+    
+    .contact-info p { font-size: 17px; line-height: 1.6; color: var(--text-muted); margin-bottom: 48px; word-break: keep-all; }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .info-list li .label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 4px; font-weight: 500; }
+    .info-list li .val { font-size: 18px; color: var(--text-main); font-weight: 600; text-decoration: none; }
+    
+    .contact-form { display: flex; flex-direction: column; gap: 24px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group label { font-size: 13px; font-weight: 500; color: var(--text-muted); }
+    .form-group input, .form-group textarea {
+      background-color: var(--surface); border: 1px solid var(--border); padding: 16px; color: var(--text-main); font-family: inherit; font-size: 15px; transition: var(--transition); outline: none;
     }
-    .contact-info { padding-top: 8px; }
-    .contact-info .section-title { margin-bottom: 20px; }
-    .contact-info .section-sub { margin-bottom: 52px; }
-    .info-item { margin-bottom: 20px; font-size: 14px; }
-    .info-label {
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--text-muted); margin-bottom: 4px;
+    .form-group input:focus, .form-group textarea:focus { border-color: rgba(255,255,255,0.4); background-color: var(--surface-accent); }
+    
+    .submit-btn {
+      background-color: var(--text-main); color: var(--bg); border: none; padding: 18px; font-size: 15px; font-weight: 700; cursor: pointer; transition: var(--transition); margin-top: 12px;
     }
-    .info-val { color: var(--text); letter-spacing: -0.015em; }
-    .info-val a {
-      color: var(--point); text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .info-val a:hover { opacity: 0.75; }
-    .contact-meta {
-      margin-top: 36px; padding-top: 28px;
-      border-top: 1px solid var(--border);
-      display: flex; flex-direction: column; gap: 12px;
-    }
-    .contact-meta-item {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 13px; color: var(--text-muted);
-      line-height: 1.65; letter-spacing: -0.015em;
-    }
-    .contact-meta-item svg { flex-shrink: 0; margin-top: 3px; color: var(--point); }
-    .contact-meta-item strong { color: var(--text); }
-
-    /* ── FORM — bottom border only, sketch style ── */
-    .contact-form { display: flex; flex-direction: column; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
-    .form-group { display: flex; flex-direction: column; gap: 8px; padding-bottom: 24px; }
-    label {
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);
-    }
-    input, select, textarea {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 14px; letter-spacing: -0.015em;
-      color: var(--text); background: transparent;
-      border: none; border-bottom: 1px solid var(--border);
-      padding: 10px 0; outline: none;
-      transition: border-color 0.3s;
-      appearance: none; -webkit-appearance: none;
-      width: 100%; border-radius: 0;
-    }
-    input::placeholder, textarea::placeholder { color: rgba(122,124,136,0.4); font-size: 13px; }
-    input:focus, select:focus, textarea:focus { border-bottom-color: var(--point); }
-    textarea { resize: none; min-height: 100px; }
-    select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%237A7C88' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 4px center;
-      padding-right: 24px; cursor: pointer;
-    }
-
-    /* B2B 라디오 선택 */
-    .form-check-group { padding-bottom: 24px; }
-    .form-check-group > label { display: block; margin-bottom: 14px; }
-    .check-options { display: flex; flex-wrap: wrap; gap: 8px; }
-    .check-option { display: flex; align-items: center; }
-    .check-option input[type="radio"] { display: none; }
-    .check-option label {
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.02em; text-transform: none;
-      color: var(--text-muted); cursor: pointer;
-      padding: 6px 14px; border: 1px solid var(--border);
-      transition: border-color 0.25s, color 0.25s, background 0.25s;
-    }
-    .check-option input[type="radio"]:checked + label {
-      border-color: var(--point); color: var(--point);
-      background: rgba(0,162,255,0.05);
-    }
-    .check-option label:hover { border-color: var(--point); color: var(--text); }
-
-    /* Privacy checkbox */
-    .privacy-row {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 13px; color: var(--text-muted); padding-bottom: 20px;
-    }
-    input[type="checkbox"] {
-      appearance: checkbox !important; -webkit-appearance: checkbox !important;
-      width: 16px !important; height: 16px !important; min-width: 16px !important;
-      padding: 0 !important; border: none !important;
-      margin-top: 2px; cursor: pointer;
-      accent-color: var(--point); flex-shrink: 0;
-    }
-    .privacy-link { color: var(--point); text-decoration: underline; cursor: pointer; font-weight: 600; }
-
-    /* btn-submit — letter-spacing bloom on hover */
-    .btn-submit {
-      background: var(--text); color: #fff; border: none;
-      padding: 18px; font-family: 'Noto Sans KR', sans-serif;
-      font-size: 13px; font-weight: 700; letter-spacing: 0.07em;
-      cursor: pointer; width: 100%; margin-top: 8px;
-      transition: letter-spacing 0.35s ease, background 0.3s;
-    }
-    .btn-submit:hover { letter-spacing: 0.14em; background: var(--point); }
-    .btn-submit:disabled { background: var(--border); cursor: not-allowed; letter-spacing: 0.07em; }
-
+    .submit-btn:hover { background-color: var(--point); }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    
+    .form-msg { font-size: 14px; color: #ff6b6b; display: none; margin-top: 12px; }
+    
     /* ── FOOTER ── */
-    footer {
-      background: #0A0B10; color: rgba(255,255,255,0.3);
-      padding: 60px 48px 44px; text-align: center;
-      font-size: 12px; letter-spacing: 0.01em;
-    }
-    .footer-logo {
-      display: block; margin: 0 auto 28px;
-      height: 72px; width: auto;
-      mix-blend-mode: screen; opacity: 0.88;
-    }
-    footer strong { color: rgba(255,255,255,0.72); }
-    .footer-divider {
-      width: 28px; height: 1.5px;
-      background: linear-gradient(to right, var(--point), var(--accent));
-      margin: 22px auto; opacity: 0.55;
-    }
-
+    footer { border-top: 1px solid var(--border); padding: 60px 0; background-color: #080808; }
+    .footer-container { display: flex; justify-content: space-between; align-items: center; }
+    @media (max-width: 768px) { .footer-container { flex-direction: column; gap: 24px; align-items: flex-start; } }
+    .footer-left .copy { font-size: 13px; color: var(--text-dim); margin-top: 8px; }
+    .footer-right a { font-size: 13px; color: var(--text-dim); text-decoration: none; margin-left: 24px; transition: var(--transition); cursor: pointer; }
+    @media (max-width: 768px) { .footer-right a { margin-left: 0; margin-right: 24px; } }
+    .footer-right a:hover { color: var(--text-muted); }
+    
     /* ── PRIVACY MODAL ── */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,0.65); z-index: 200;
-      align-items: center; justify-content: center;
+    .modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 200; display: flex; align-items: center; justify-content: center; background-color: rgba(0,0,0,0.85); opacity: 0; visibility: hidden; transition: var(--transition); padding: 20px;
     }
-    .modal-overlay.open { display: flex; }
-    .modal-box {
-      background: var(--card); max-width: 520px; width: 90%;
-      padding: 52px; position: relative;
-      max-height: 80vh; overflow-y: auto;
-      box-shadow: 0 32px 96px rgba(0,0,0,0.18);
+    .modal.open { opacity: 1; visibility: visible; }
+    .modal-content {
+      background-color: var(--surface); border: 1px solid var(--border); width: 100%; max-width: 600px; max-height: 80vh; overflow-y: auto; padding: 40px; position: relative;
     }
-    .modal-title { font-size: 18px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 28px; }
-    .modal-body { font-size: 13px; color: var(--text-muted); line-height: 1.95; letter-spacing: -0.015em; }
+    .modal-title { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+    .modal-body { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .modal-body p { margin-bottom: 16px; }
     .modal-close {
-      position: absolute; top: 20px; right: 24px;
-      font-size: 22px; cursor: pointer;
-      color: var(--text-muted); background: none; border: none; line-height: 1;
-      transition: color 0.2s;
+      position: absolute; top: 32px; right: 32px; background: none; border: none; cursor: pointer;
     }
-    .modal-close:hover { color: var(--text); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      section { padding: 80px 24px; }
-      nav { padding: 0 24px; }
-      .hero-inner { padding: 0 24px 64px; }
-      .hero-scroll { left: 24px; }
-      .intro-strip { padding: 28px 24px; }
-      .intro-strip .inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .intro-desc { text-align: left; }
-      .portfolio-header { padding: 80px 24px 40px; }
-      .work-caption { padding: 32px 24px; }
-      .portfolio-lower { padding: 64px 24px 0; }
-      .portfolio-grid2, .contact-grid { grid-template-columns: 1fr; gap: 56px; }
-      .list-row { flex-wrap: wrap; gap: 8px 24px; }
-      .row-title { flex: 1 1 auto; }
-      .row-body { flex: 1 1 100%; order: 3; }
-      .row-tags { flex: 0 0 auto; order: 2; justify-content: flex-start; }
-      .row-link { flex: 0 0 auto; order: 4; text-align: left; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .section-title { font-size: 28px; }
-    }
-    @media (max-width: 600px) {
-      .hero-heading { font-size: 40px; letter-spacing: -0.025em; }
-      .hero-inner { flex-direction: column; align-items: flex-start; gap: 28px; }
-      .hero-meta { text-align: left; }
-      .hero-meta-links { align-items: flex-start; }
-      .work-block { height: 78vh; }
-      .form-row { grid-template-columns: 1fr; }
-      .check-options { gap: 6px; }
-    }
+    .modal-close svg { width: 20px; height: 20px; stroke: var(--text-muted); stroke-width: 1.5; }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="mainNav" class="nav--dark">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <img src="logo_ref_001.jpg" alt="GRaY D. Lab" />
-    </a>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact" class="nav-cta">문의하기</a></li>
+  <header id="header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="#">GRaY D. Lab<span>.</span></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#services">Solutions</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav-links">
+      <li><a href="#vision" class="mobile-link">Vision</a></li>
+      <li><a href="#services" class="mobile-link">Solutions</a></li>
+      <li><a href="#work" class="mobile-link">Work</a></li>
+      <li><a href="#education" class="mobile-link">Education</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#services" class="mobile-link">Services</a>
-  <a href="#process" class="mobile-link">Process</a>
-  <a href="#portfolio" class="mobile-link">Portfolio</a>
-  <a href="#contact" class="mobile-link nav-cta">문의하기</a>
-</div>
-
-<!-- HERO : Editorial 풀블리드 -->
-<section id="hero">
-  <video autoplay muted loop playsinline>
-    <source src="hero.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-inner">
-    <div>
-      <p class="hero-eyebrow">AI Fashion Studio · 그레이디랩</p>
-      <h1 class="hero-heading">The Next Era<br>of Fashion Visuals</h1>
-    </div>
-    <div class="hero-meta">
-      <p class="hero-meta-label">AI Fashion Visual Studio · Kris W</p>
-      <div class="hero-meta-links">
-        <a href="#contact" class="hero-link-primary">프로젝트 문의</a>
-        <a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener" class="hero-link-secondary">포트폴리오 보기</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">Scroll</div>
-</section>
-
-<!-- INTRO STRIP -->
-<div class="intro-strip">
-  <div class="inner">
-    <p class="intro-kpi">전통적 제작 방식 대비 비용·시간 <strong>70% 절감</strong> — 하이엔드 비주얼의 새로운 기준</p>
-    <p class="intro-desc">AI 기반 하이엔드 패션 비주얼 · 상업적 브랜드 솔루션. 패션 디자이너 출신 디렉터 Kris W가 이끄는 한국 패션·리테일·광고 산업 특화 스튜디오.</p>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="inner">
-    <div class="services-header">
-      <p class="section-label">Our Services</p>
-      <h2 class="section-title">세 가지 핵심 서비스</h2>
-      <p class="section-sub">AI 기술과 패션 실무 경험을 결합한 상업적 솔루션을 제공합니다.</p>
-    </div>
-    <div class="list-section">
-
-      <div class="list-row">
-        <span class="row-num">01</span>
-        <h3 class="row-title">AI 패션 비주얼<br>&amp; 영상 제작</h3>
-        <p class="row-body">
-          실제 세트·모델 없이 4K 시네마틱 퀄리티의 룩북, 컬렉션 패션쇼, OOH 광고 영상, 브랜드 필름을 제작합니다. 신세계 백화점·MBC 탐사보도 납품 이력 보유. 촬영 세트·모델비 대비 평균 <strong>80% 비용 절감</strong>, 납품 기간 1/3 단축.
-        </p>
-        <div class="row-tags">
-          <span class="tag">AI Video</span><span class="tag">Lookbook</span><span class="tag">Fashion Film</span><span class="tag">OOH</span>
-        </div>
-        <a href="#contact" class="row-link">작업 문의</a>
-      </div>
-
-      <div class="list-row">
-        <span class="row-num">02</span>
-        <h3 class="row-title">AI 기반 패션 디자인 대행<br>&amp; 브랜드 컨설팅</h3>
-        <p class="row-body">
-          패션 디자이너 출신 디렉터의 실무 감각과 AI 워크플로우를 결합해 BI 진단, 무드보드·가상 착장 비주얼, 실제 생산 연계 어드바이저리, 4K 브랜드 제안서(PDF) 딜리버리까지 4단계로 진행합니다. 브랜드 런칭 리드타임 <strong>60% 단축</strong>.
-        </p>
-        <div class="row-tags">
-          <span class="tag">Brand Consulting</span><span class="tag">Design</span><span class="tag">Retail</span>
-        </div>
-        <a href="#contact" class="row-link">컨설팅 문의</a>
-      </div>
-
-      <div class="list-row">
-        <span class="row-num">03</span>
-        <h3 class="row-title">기업 전문 교육 강의<br>&amp; 세미나</h3>
-        <p class="row-body">
-          "AI 시대, 패션 브랜드 기획" — 백화점·여성복·액티브웨어 실제 클라이언트 프로젝트 기반 실무 커리큘럼으로 패션 기업 임원·MD·디자이너·마케팅 담당자를 대상으로 합니다. 현장 적용 즉시 <strong>업무 효율 40% 향상</strong>.
-        </p>
-        <div class="row-tags">
-          <span class="tag">AI 패션 강의</span><span class="tag">Fashion Branding</span><span class="tag">B2B</span>
-        </div>
-        <a href="#contact" class="row-link">강의 문의</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-  <div class="inner">
-    <div class="process-header">
-      <p class="section-label">Design &amp; Consulting Process</p>
-      <h2 class="section-title">4단계 실무 프로세스</h2>
-      <p class="section-sub">AI 기반 패션 디자인 대행의 단계별 진행 방식입니다.</p>
-    </div>
-    <div class="list-section">
-
-      <div class="list-row">
-        <span class="row-num">01</span>
-        <h3 class="row-title"><span class="step-en">Briefing &amp; Research</span>브랜드 진단 &amp; 리서치</h3>
-        <p class="row-body">클라이언트 BI 진단, 타깃 마켓 분석, 트렌드 데이터 기반 컬렉션 방향성 설정</p>
-      </div>
-      <div class="list-row">
-        <span class="row-num">02</span>
-        <h3 class="row-title"><span class="step-en">AI Conceptualization</span>AI 시각화 &amp; 무드 셋업</h3>
-        <p class="row-body">Midjourney · Style3D 결합, 컬렉션 무드보드 개발, 가상 착장 비주얼 / 룩북 초안 기획</p>
-      </div>
-      <div class="list-row">
-        <span class="row-num">03</span>
-        <h3 class="row-title"><span class="step-en">Design Commercialization</span>상업적 디자인 어드바이저리</h3>
-        <p class="row-body">패턴·소재·봉제 연계, 리테일 관점의 디자인 셋 고도화, 기술적 피드백 제공</p>
-      </div>
-      <div class="list-row">
-        <span class="row-num">04</span>
-        <h3 class="row-title"><span class="step-en">Final Delivery</span>최종 딜리버리 &amp; 론칭</h3>
-        <p class="row-body">4K 컬렉션 비주얼 세트, 디지털 룩북 소스, 브랜드 컨설팅 제안서(PDF), 미디어 캠페인 가이드라인</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO : Editorial 풀블리드 워크 블록 -->
-<section id="portfolio">
-  <div class="portfolio-header inner">
-    <p class="section-label">Selected Works</p>
-    <h2 class="section-title">대표 프로젝트</h2>
-    <p class="section-sub">실제 납품된 AI 패션 비주얼 작업 중 일부를 소개합니다. (썸네일은 실사진 확보 후 교체 예정)</p>
   </div>
 
-  <a class="work-block" href="https://youtu.be/Bzxwke2d4E0?si=bqO-W1v1XlzRwmaH" target="_blank" rel="noopener">
-    <div class="work-plus">▶</div>
-    <div class="work-caption">
-      <p class="work-type">AI Fashion Film</p>
-      <h3>신세계 백화점 · 시즌 비주얼 캠페인</h3>
-    </div>
-  </a>
-  <a class="work-block" href="https://youtu.be/2AHuOuhWm_M?si=JQbFrbLDbuzzeyR7" target="_blank" rel="noopener">
-    <div class="work-plus">▶</div>
-    <div class="work-caption">
-      <p class="work-type">Lookbook</p>
-      <h3>컬렉션 룩북 · AI 모델 비주얼</h3>
-    </div>
-  </a>
-  <a class="work-block" href="https://youtu.be/MylKuELOsVE?si=UVY8Rp9XF3u8kpnS" target="_blank" rel="noopener">
-    <div class="work-plus">▶</div>
-    <div class="work-caption">
-      <p class="work-type">Brand Film</p>
-      <h3>OOH 광고 영상 · 브랜드 캠페인</h3>
-    </div>
-  </a>
-  <a class="work-block" href="https://youtube.com/shorts/TzwmlEUU6ck?si=y5WxsMgU_qifyKA_" target="_blank" rel="noopener">
-    <div class="work-plus">▶</div>
-    <div class="work-caption">
-      <p class="work-type">AI Fashion Show</p>
-      <h3>AI 패션쇼 · 런웨이 필름</h3>
-    </div>
-  </a>
-
-  <div class="portfolio-lower inner">
-    <div class="portfolio-grid2">
-      <div class="portfolio-left">
-        <p class="section-label">Portfolio</p>
-        <h2 class="section-title">실제 작업물은<br>유튜브 채널에서</h2>
-        <p class="portfolio-desc">
-          AI 패션쇼, 룩북 영상, OOH 광고, 브랜드 필름 등<br>
-          전체 포트폴리오를 유튜브 채널에서 확인하실 수 있습니다.
-        </p>
-        <a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener" class="btn-youtube">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-          YouTube 포트폴리오 채널 바로가기
-        </a>
-        <div class="portfolio-categories">
-          <div class="pcat-item"><span class="pcat-dot"></span>AI 패션쇼 · 컬렉션 런웨이 필름</div>
-          <div class="pcat-item"><span class="pcat-dot"></span>OOH 광고 · 브랜드 캠페인 영상</div>
-          <div class="pcat-item"><span class="pcat-dot"></span>룩북 · 시즌 화보 · 리테일 비주얼</div>
-        </div>
+  <section class="hero" id="home">
+    <video class="hero-video-bg" autoplay loop muted playsinline poster="work-1-shinsegae.jpg">
+      <source src="hero-campaign.mp4" type="video/mp4" />
+    </video>
+    <div class="container">
+      <span class="hero-sub">Generative AI Fashion Enterprise</span>
+      <h1 class="hero-title">A New Dimension Of<br><span>Fashion Visuals</span></h1>
+      <p class="hero-desc">
+        그레이디랩(GRaY D. Lab)은 생성형 AI 기술을 패션 리테일 및 광고 산업 맥락에 맞춰 재해석합니다. 상업적 가치와 완벽한 완성도를 지닌 하이엔드 가상 캠페인을 경험해 보세요.
+      </p>
+      <div class="btn-group">
+        <a href="#work" class="btn btn-primary">포트폴리오 보기</a>
+        <a href="#contact" class="btn btn-secondary">프로젝트 문의</a>
       </div>
-      <div class="portfolio-right">
-        <p class="clients-label">주요 클라이언트 &amp; 협업 이력</p>
-        <p class="clients-list">
-          <span>신세계 백화점</span><span>MBC</span>
-          <span>KITCT 한국섬유융합기술원</span><span>AurAI</span>
-          <span>m2e 미디어웍스</span><span>메종드이네스</span>
-          <span>잉크꾸띠르</span><span>아이디조이</span><span>외 다수</span>
-        </p>
-        <div class="exhibitions">
-          <p class="clients-label" style="margin-bottom:0;">전시 참여</p>
-          <div class="ex-item">
-            <p class="ex-title">2025 SEOULCon hAllyu Ignite 展</p>
-            <p class="ex-place">참여 작가 · DDP Design Lab Design Hall</p>
+    </div>
+  </section>
+
+  <section id="vision">
+    <div class="container">
+      <span class="section-num">01 / VISION</span>
+      <h2 class="section-title">기술과 감성이 결합하는<br>가상 패션 아틀리에</h2>
+      <div class="vision-grid">
+        <div class="vision-text">
+          <p>
+            단순히 신기한 기술을 보여주는 시대는 끝났습니다. 이제는 <strong>브랜드의 아이덴티티와 상업성</strong>을 명확하게 담아내는 크리에이티브 솔루션이 필요합니다.
+          </p>
+          <p>
+            그레이디랩은 복잡한 프롬프트 엔지니어링과 고도화된 AI 파이프라인(Kling AI, Midjourney, Suno, Higgsfield 등)을 실무 리테일 비즈니스 구조에 직접 통합하여 타깃 소비자에게 유효한 하이엔드 비주얼 임팩트를 제공합니다.
+          </p>
+          <div class="vision-stats">
+            <div class="stat-item">
+              <span class="num">100%</span>
+              <span class="label">AI 파이프라인 기반 제작</span>
+            </div>
+            <div class="stat-item">
+              <span class="num">4K</span>
+              <span class="label">최고 해상도 업스케일링 딜리버리</span>
+            </div>
           </div>
-          <div class="ex-item">
-            <p class="ex-title">AI Art Exhibition「青春, 첫사랑, 첫 만남」</p>
-            <p class="ex-place">참여 작가 · AI 갤러리 in 더리우</p>
-          </div>
+        </div>
+        <div class="vision-profile">
+          <span class="profile-tag">Director Profile</span>
+          <h3 class="profile-name">Kris W (감우식)</h3>
+          <span class="profile-duty">GRaY D. Lab 대표 / 패션 디자이너 & 브랜드 디렉터</span>
+          <ul class="profile-bio">
+            <li>현) GRaY D. Lab 대표 및 총괄 비주얼 디렉터</li>
+            <li>전) 중국 메이저 브랜드 패션 디자이너 기획 총괄</li>
+            <li>가상 AI 패션 레이블 ‘Kris W’ 컬렉션 전개</li>
+            <li>주요 백화점, 여성복, 짐웨어 브랜드 AI 비주얼 컨설팅 및 쇼 진행</li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="portfolio-lower-pad"></div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="inner">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">프로젝트 문의</h2>
-        <p class="section-sub">프로젝트 의뢰 · 강의 신청 · 컨설팅 상담.<br>빠른 시일 내에 답변드립니다.</p>
-        <div style="margin-top:48px;display:flex;flex-direction:column;gap:20px;">
-          <div class="info-item">
-            <p class="info-label">Email</p>
-            <p class="info-val">bakhafactory@gmail.com</p>
+  <section id="services" style="background-color: #0e0e0e;">
+    <div class="container">
+      <span class="section-num">02 / SOLUTIONS</span>
+      <h2 class="section-title">비즈니스를 확장하는<br>그레이디랩의 AI 파이프라인</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <span class="service-icon">🎬</span>
+            <h3>AI 캠페인 & 영상</h3>
+            <p>시즌 브랜드 캠페인, 백화점 미디어 파사드 및 옥외 광고(OOH)용 초고화질 패션 필름을 기획 및 생성합니다.</p>
           </div>
-          <div class="info-item">
-            <p class="info-label">Tel</p>
-            <p class="info-val">010-7773-4857</p>
-          </div>
-          <div class="info-item">
-            <p class="info-label">YouTube</p>
-            <p class="info-val">
-              <a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener">@gray_d_lab</a>
-            </p>
-          </div>
+          <div class="service-tags"><span>Brand Film</span><span>OOH</span><span>Cinema 무드</span></div>
         </div>
-        <div class="contact-meta">
-          <div class="contact-meta-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>평일 10:00 — 18:00 운영 · 문의 접수 후 <strong>24시간 이내</strong> 회신</span>
+        <div class="service-card">
+          <div>
+            <span class="service-icon">📸</span>
+            <h3>가상 룩북 & AI 모델</h3>
+            <p>실제 의상 기반 가상 레이어링 룩북 생성 및 타깃 시장 정서에 부합하는 가상 모델 비주얼을 정교하게 디자인합니다.</p>
           </div>
-          <div class="contact-meta-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>서울 · 전국 출장 강의 및 화상 미팅 가능</span>
+          <div class="service-tags"><span>AI Lookbook</span><span>Model Design</span><span>85mm Lens 구도</span></div>
+        </div>
+        <div class="service-card">
+          <div>
+            <span class="service-icon">🎤</span>
+            <h3>실무 강의 & 컨설팅</h3>
+            <p>패션 기업 MD, 마케터 및 디자이너를 위해 기획안 작성부터 프롬프트 활용, 파트너 커뮤니케이션까지 즉시 활용 가능한 실전 교육을 진행합니다.</p>
+          </div>
+          <div class="service-tags"><span>기업 강의</span><span>컨설팅 워크숍</span><span>실무 템플릿</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="padding: 160px 0 0 0;">
+    <div class="container">
+      <span class="section-num">03 / PORTFOLIO</span>
+      <h2 class="section-title">Selected Visual Campaigns</h2>
+    </div>
+    <div class="work-container">
+      
+      <div class="work-block">
+        <div class="work-content">
+          <div class="work-info">
+            <span class="meta">AI Fashion Film / 2026 Season Campaign</span>
+            <h3 class="title">신세계 백화점 · 시즌 비주얼 캠페인</h3>
+          </div>
+          <div class="work-arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
         </div>
       </div>
-
-      <form class="contact-form" id="contactForm"
-            action="https://formspree.io/f/mvzjrwro" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">이름 *</label>
-            <input type="text" id="name" name="name" required placeholder="홍길동" />
+      
+      <div class="work-block">
+        <div class="work-content">
+          <div class="work-info">
+            <span class="meta">AI Model Visual / Editorial Lookbook</span>
+            <h3 class="title">컬렉션 룩북 · 가상 브랜드 AI 모델 비주얼</h3>
           </div>
-          <div class="form-group">
-            <label for="company">회사명 / 브랜드명</label>
-            <input type="text" id="company" name="company" placeholder="브랜드명" />
+          <div class="work-arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">이메일 *</label>
-            <input type="email" id="email" name="email" required placeholder="email@example.com" />
+      </div>
+      
+      <div class="work-block">
+        <div class="work-content">
+          <div class="work-info">
+            <span class="meta">Digital Out of Home / Cinematic Advertising</span>
+            <h3 class="title">OOH 광고 영상 · 글로벌 브랜드 시네마틱 캠페인</h3>
           </div>
-          <div class="form-group">
-            <label for="tel">연락처</label>
-            <input type="tel" id="tel" name="tel" placeholder="010-0000-0000" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="type">문의 유형 *</label>
-          <select id="type" name="type" required>
-            <option value="" disabled selected>선택해주세요</option>
-            <option value="video">AI 패션 영상 제작</option>
-            <option value="consulting">패션 디자인 대행 &amp; 브랜드 컨설팅</option>
-            <option value="lecture">강의 &amp; 세미나 신청</option>
-            <option value="other">기타</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="budget">희망 예산 범위</label>
-          <input type="text" id="budget" name="budget" placeholder="예: 500만원, 1,000~3,000만원 등 자유롭게 작성해 주세요." />
-        </div>
-
-        <div class="form-check-group">
-          <label>희망 착수 일정</label>
-          <div class="check-options">
-            <div class="check-option"><input type="radio" id="s1" name="schedule" value="즉시" /><label for="s1">즉시 가능</label></div>
-            <div class="check-option"><input type="radio" id="s2" name="schedule" value="1개월 내" /><label for="s2">1개월 내</label></div>
-            <div class="check-option"><input type="radio" id="s3" name="schedule" value="3개월 내" /><label for="s3">3개월 내</label></div>
-            <div class="check-option"><input type="radio" id="s4" name="schedule" value="미정" /><label for="s4">미정</label></div>
+          <div class="work-arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="message">문의 내용 *</label>
-          <textarea id="message" name="message" required placeholder="프로젝트 내용, 참고 레퍼런스 등을 간략히 작성해 주세요."></textarea>
+      </div>
+      
+      <div class="work-block">
+        <div class="work-content">
+          <div class="work-info">
+            <span class="meta">Runway Film / Virtual Fashion Show</span>
+            <h3 class="title">AI 패션쇼 · 런웨이 필름 & 컬렉션 다큐멘터리</h3>
+          </div>
+          <div class="work-arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
         </div>
-        <input type="hidden" name="_replyto" value="bakhafactory@gmail.com" />
-        <input type="hidden" name="_subject" value="[GRaY D. Lab] 새 문의가 접수되었습니다" />
-        <input type="hidden" name="_to" value="bakhafactory@gmail.com" />
-        <input type="hidden" name="_next" value="" />
+      </div>
+      
+    </div>
+  </section>
 
-        <div class="privacy-row">
-          <input type="checkbox" id="privacy" name="privacy" required />
-          <label for="privacy" style="font-size:13px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted);cursor:pointer;">
-            <span class="privacy-link" onclick="event.stopPropagation();openPrivacy()">개인정보 수집 및 이용</span>에 동의합니다. (필수)
-          </label>
+  <section id="education">
+    <div class="container">
+      <span class="section-num">04 / EDUCATION</span>
+      <h2 class="section-title">패션 리테일 실무자를 위한<br>생성형 AI 워크숍 커리큘럼</h2>
+      <p class="edu-intro">
+        단순한 프롬프트 나열이 아닌, <strong>기획-제작-검수-딜리버리</strong>에 이르는 패션 산업의 타임라인에 최적화된 실무 연계 엑셀러레이팅 코스입니다.
+      </p>
+      
+      <div class="edu-timeline">
+        <div class="edu-row">
+          <span class="edu-step">Step 01</span>
+          <div class="edu-main">
+            <h3>콘셉트 빌딩 및 AI 프롬프트 아키텍처</h3>
+            <p>디자이너와 MD의 관점에서 브랜드 아이덴티티를 언어화하고, 미드저니 및 클링AI 등 엔진별 특성에 맞춰 고도화된 프롬프트를 설계하는 방법을 학습합니다.</p>
+          </div>
+          <ul class="edu-details">
+            <li>• 카메라 앵글, 조명 조율 핵심 변수</li>
+            <li>• 복사-붙여넣기 가능한 <strong>실전 프롬프트 시트</strong> 제공</li>
+          </ul>
         </div>
-        <button type="submit" class="btn-submit" id="submitBtn">문의 보내기</button>
-        <p id="formMsg" style="display:none;text-align:center;font-size:13px;color:var(--text-muted);margin-top:8px;"></p>
-      </form>
+        
+        <div class="edu-row">
+          <span class="edu-step">Step 02</span>
+          <div class="edu-main">
+            <h3>비주얼 일관성 유지 및 고해상도 프로세스</h3>
+            <p>가상 크리에이티브 시 유실되기 쉬운 디테일(원단 질감, 모델 페이스)을 일관성 있게 통제하는 기법과 하이엔드 디스플레이용 4K 업스케일링 파이프라인을 체득합니다.</p>
+          </div>
+          <ul class="edu-details">
+            <li>• 캐릭터 / 페이스 다중 컷 유지 솔루션</li>
+            <li>• 오디오 소스 믹싱 기획 워크숍</li>
+          </ul>
+        </div>
+        
+        <div class="edu-row">
+          <span class="edu-step">Step 03</span>
+          <div class="edu-main">
+            <h3>실무 응용 비즈니스 템플릿 실습</h3>
+            <p>강의장에서 끝나는 이론이 아닙니다. 직접 AI 기반 스토리보드, 제안서, 무드 보드를 빌딩하여 즉시 실무 파트너 및 클라이언트와의 신뢰를 구축하는 최종 프로젝트를 진행합니다.</p>
+          </div>
+          <ul class="edu-details">
+            <li>• 상업성 높은 가상 브랜드 피칭 노하우</li>
+            <li>• <strong>1:1 디렉터 피드백</strong> 진행</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background-color: #0e0e0e; border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-num">05 / CONTACT</span>
+      <h2 class="section-title">새로운 비주얼 가치를<br>함께 만듭니다</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>
+            AI 기반 브랜드 비주얼 캠페인 제작, 가상 화보 디렉팅 및 패션 실무 기업 임직원 출강 문의는 아래 양식을 활용해 주세요. 영업일 기준 48시간 이내에 디렉터가 직접 검토 후 연락드립니다.
+          </p>
+          <ul class="info-list">
+            <li>
+              <span class="label">Main Office</span>
+              <span class="val">경기도 고양시 일산동구 풍동</span>
+            </li>
+            <li>
+              <span class="label">E-Mail Channel</span>
+              <a href="mailto:kris@graydlab.com" class="val">kris@graydlab.com</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <form id="contactForm" action="https://formspree.io/f/mnqeonbe" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">성함 / 담당자명 *</label>
+              <input type="text" id="name" name="name" required placeholder="예: 홍길동 팀장" />
+            </div>
+            <div class="form-group">
+              <label for="email">이메일 주소 *</label>
+              <input type="email" id="email" name="email" required placeholder="example@company.com" />
+            </div>
+            <div class="form-group">
+              <label for="message">의뢰 내용 (매체, 타깃, 프로젝트 종류 등) *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="프로젝트 목적, 일정, 필요한 비주얼 볼륨 등을 적어주시면 상세한 맞춤형 답변이 가능합니다."></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="submit-btn">문의 보내기</button>
+            <div id="formMsg" class="form-msg">서버 통신 오류가 발생했습니다. 이메일로 직접 연락해 주시기 바랍니다.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-left">
+        <h3>GRaY D. Lab</h3>
+        <p class="copy">&copy; 2026 GRaY D. Lab. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a onclick="openPrivacy()">개인정보처리방침</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="privacyModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closePrivacy()" aria-label="모달 닫기">
+        <svg fill="none" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="modal-title">개인정보처리방침</h3>
+      <div class="modal-body">
+        <p><strong>1. 수집하는 개인정보 항목</strong><br>그레이디랩은 문의 접수를 위해 성함, 이메일 주소, 문의 내용을 수집합니다.</p>
+        <p><strong>2. 개인정보 수집 및 이용목적</strong><br>수집된 개인정보는 프로젝트 제안 검토, 답변 발송, 향후 비즈니스 파트너십 소통을 위해서만 제한적으로 사용됩니다.</p>
+        <p><strong>3. 개인정보 보존 및 파기</strong><br>이용 목적이 달성된 개인정보는 별도의 법령에 따른 보존 필요성이 없는 한 즉시 파기 처리됩니다.</p>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <video class="footer-logo" src="logo_vid_001.mp4" autoplay muted loop playsinline></video>
-  <p><strong>GRaY D. Lab</strong> · AI Fashion Visual Studio · 그레이디랩</p>
-  <div class="footer-divider"></div>
-  <p id="copyrightText"></p>
-</footer>
-
-<!-- PRIVACY MODAL -->
-<div class="modal-overlay" id="privacyModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closePrivacy()">×</button>
-    <h2 class="modal-title">개인정보 수집 및 이용 동의</h2>
-    <div class="modal-body">
-      <p><strong>1. 수집 항목</strong><br>이름, 이메일, 연락처, 회사명, 문의 내용</p><br>
-      <p><strong>2. 수집 및 이용 목적</strong><br>프로젝트 문의 응대, 강의 및 컨설팅 상담, 견적 안내</p><br>
-      <p><strong>3. 보유 및 이용 기간</strong><br>문의 처리 완료 후 6개월 이내 파기. 단, 관계 법령에 따라 보존이 필요한 경우 해당 기간 동안 보관.</p><br>
-      <p><strong>4. 동의 거부 권리</strong><br>개인정보 수집에 동의하지 않을 권리가 있으나, 동의 거부 시 문의 접수가 불가합니다.</p><br>
-      <p>문의: bakhafactory@gmail.com</p>
-    </div>
-  </div>
-</div>
-
-<script>
-  // ── 카피라이트 연도 자동화
-  (function() {
-    const startYear = 2025;
-    const currentYear = new Date().getFullYear();
-    const yearStr = currentYear > startYear
-      ? startYear + '–' + currentYear
-      : String(startYear);
-    document.getElementById('copyrightText').textContent =
-      '© ' + yearStr + ' GRaY D. Lab. All rights reserved.';
-  })();
-
-  // ── NAV dark/light 전환
-  const mainNav = document.getElementById('mainNav');
-  const heroEl  = document.getElementById('hero');
-  function updateNav() {
-    if (heroEl.getBoundingClientRect().bottom > 68) {
-      mainNav.className = 'nav--dark';
-    } else {
-      mainNav.className = 'nav--light';
-    }
-  }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  // ── Hamburger
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const mobileMenu   = document.getElementById('mobileMenu');
-  hamburgerBtn.addEventListener('click', function() {
-    const isOpen = mobileMenu.classList.toggle('open');
-    hamburgerBtn.classList.toggle('open', isOpen);
-    hamburgerBtn.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
-  });
-  document.querySelectorAll('.mobile-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      mobileMenu.classList.remove('open');
-      hamburgerBtn.classList.remove('open');
+  <script>
+    // ── Header Blur & Scroll Control
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        header.style.backgroundColor = 'rgba(11, 11, 11, 0.92)';
+      } else {
+        header.style.backgroundColor = 'rgba(11, 11, 11, 0.75)';
+      }
     });
-  });
 
-  // ── Privacy modal
-  function openPrivacy()  { document.getElementById('privacyModal').classList.add('open'); }
-  function closePrivacy() { document.getElementById('privacyModal').classList.remove('open'); }
-  document.getElementById('privacyModal').addEventListener('click', function(e) {
-    if (e.target === this) closePrivacy();
-  });
-
-  // ── Formspree AJAX
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    const msg = document.getElementById('formMsg');
-    btn.disabled = true; btn.textContent = '전송 중...';
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST', body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+    // ── Mobile Hamburger Drawer Toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    hamburgerBtn.addEventListener('click', function() {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('open');
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      hamburgerBtn.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+    });
+    
+    document.querySelectorAll('.mobile-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', false);
       });
-      if (res.ok) {
-        btn.textContent = '✓ 문의가 접수되었습니다';
-        btn.style.background = 'var(--point)';
-        form.reset();
-      } else { throw new Error(); }
-    } catch {
-      btn.disabled = false; btn.textContent = '문의 보내기';
-      msg.style.display = 'block'; msg.style.color = '#e05555';
-      msg.textContent = '전송에 실패했습니다. bakhafactory@gmail.com으로 직접 문의해주세요.';
-    }
-  });
-</script>
+    });
+
+    // ── Privacy modal Control
+    function openPrivacy()  { document.getElementById('privacyModal').classList.add('open'); }
+    function closePrivacy() { document.getElementById('privacyModal').classList.remove('open'); }
+    document.getElementById('privacyModal').addEventListener('click', function(e) {
+      if (e.target === this) closePrivacy();
+    });
+
+    // ── Formspree AJAX Submission
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const msg = document.getElementById('formMsg');
+      btn.disabled = true; btn.textContent = '전송 중...';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST', body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          btn.textContent = '✓ 문의가 접수되었습니다';
+          btn.style.backgroundColor = 'var(--point)';
+          form.reset();
+        } else { throw new Error(); }
+      } catch {
+        btn.disabled = false; btn.textContent = '문의 보내기';
+        msg.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>

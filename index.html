@@ -208,8 +208,8 @@
 
     .section-label {
       display: flex; align-items: center; gap: 12px;
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--text-muted); margin-bottom: 20px;
     }
     .section-label::before {
@@ -249,7 +249,7 @@
       gap: 48px; flex-wrap: wrap;
     }
     .hero-eyebrow {
-      font-size: 11px; letter-spacing: 0.22em;
+      font-size: 14px; letter-spacing: 0.18em;
       text-transform: uppercase; color: rgba(255,255,255,0.5);
       margin-bottom: 28px; display: flex;
       align-items: center; gap: 12px;
@@ -269,9 +269,10 @@
     }
     .hero-meta { flex-shrink: 0; text-align: right; }
     .hero-meta-label {
-      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      font-size: 13px; letter-spacing: 0.06em; text-transform: none;
       color: rgba(255,255,255,0.45); margin-bottom: 18px;
     }
+    .hero-meta-label span { text-transform: uppercase; letter-spacing: 0.14em; }
     .hero-meta-links { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
     .hero-link-primary, .hero-link-secondary {
       color: #fff; text-decoration: none;
@@ -359,8 +360,8 @@
 
     /* Process 전용: row-num을 조금 더 크게, 라벨 추가 */
     .step-en {
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--point); margin-bottom: 6px; display: block;
     }
 
@@ -381,10 +382,10 @@
     .work-block {
       background-size: cover; background-repeat: no-repeat;
     }
-    .work-block:nth-child(1) { background-image: url('work-1-shinsegae.jpg'); background-position: center 30%; }
-    .work-block:nth-child(2) { background-image: url('work-2-lookbook.jpg'); background-position: center 22%; }
-    .work-block:nth-child(3) { background-image: url('work-3-ooh.jpg'); background-position: center center; }
-    .work-block:nth-child(4) { background-image: url('work-4-runway.jpg'); background-position: center 15%; }
+    .work-block:nth-of-type(1) { background-image: url('work-1-shinsegae.jpg'); background-position: center 30%; }
+    .work-block:nth-of-type(2) { background-image: url('work-2-lookbook.jpg'); background-position: center 22%; }
+    .work-block:nth-of-type(3) { background-image: url('work-3-ooh.jpg'); background-position: center center; }
+    .work-block:nth-of-type(4) { background-image: url('work-4-runway.jpg'); background-position: center 15%; }
     .work-block::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
@@ -397,7 +398,7 @@
     }
     .work-caption { position: relative; z-index: 2; padding: 44px 48px; max-width: var(--max-w); margin: 0 auto; width: 100%; }
     .work-type {
-      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--point); margin-bottom: 10px;
     }
     .work-caption h3 {
@@ -452,8 +453,8 @@
       box-shadow: 0 0 6px rgba(0,162,255,0.5);
     }
     .clients-label {
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--text-muted); margin-bottom: 18px;
     }
     .clients-list {
@@ -593,6 +594,35 @@
       margin: 22px auto; opacity: 0.55;
     }
 
+    /* ── VIDEO MODAL (포트폴리오 풀스크린 재생) ── */
+    .video-modal {
+      display: none; position: fixed; inset: 0;
+      background: #000; z-index: 300;
+      align-items: center; justify-content: center;
+    }
+    .video-modal.open { display: flex; }
+    .video-modal-close {
+      position: absolute; top: 20px; right: 20px; z-index: 2;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: none; color: #fff;
+      font-size: 22px; cursor: pointer; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .video-modal-close:hover { background: rgba(255,255,255,0.24); }
+    .video-modal-frame { position: relative; width: 100%; height: 100%; }
+    .video-modal-frame.ratio-16-9 {
+      max-width: min(100vw, 177.78vh); max-height: min(100vh, 56.25vw);
+      aspect-ratio: 16 / 9;
+    }
+    .video-modal-frame.ratio-9-16 {
+      max-width: min(100vw, 56.25vh); max-height: min(100vh, 177.78vw);
+      aspect-ratio: 9 / 16;
+    }
+    .video-modal-frame iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+    }
+
     /* ── PRIVACY MODAL ── */
     .modal-overlay {
       display: none; position: fixed; inset: 0;
@@ -655,7 +685,7 @@
 <nav id="mainNav" class="nav--dark">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
-      <img src="logo_ref_001.jpg" alt="GRaY D. Lab" />
+      <img src="logo_nav_001.png" alt="GRaY D. Lab" />
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -682,11 +712,11 @@
   </video>
   <div class="hero-inner">
     <div>
-      <p class="hero-eyebrow">AI Fashion Studio · 그레이디랩</p>
+      <p class="hero-eyebrow">AI FASHION VISUAL STUDIO · 그레이디랩</p>
       <h1 class="hero-heading">The Next Era<br>of Fashion Visuals</h1>
     </div>
     <div class="hero-meta">
-      <p class="hero-meta-label">AI Fashion Visual Studio · Kris W</p>
+      <p class="hero-meta-label"><span>Studio Director</span> · Kris W</p>
       <div class="hero-meta-links">
         <a href="#contact" class="hero-link-primary">프로젝트 문의</a>
         <a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener" class="hero-link-secondary">포트폴리오 보기</a>
@@ -797,28 +827,28 @@
     <p class="section-sub">실제 납품된 AI 패션 비주얼 작업 중 일부를 소개합니다. (썸네일은 실사진 확보 후 교체 예정)</p>
   </div>
 
-  <a class="work-block" href="https://youtu.be/Bzxwke2d4E0?si=bqO-W1v1XlzRwmaH" target="_blank" rel="noopener">
+  <a class="work-block" href="https://youtu.be/Bzxwke2d4E0?si=bqO-W1v1XlzRwmaH" data-video="Bzxwke2d4E0">
     <div class="work-plus">▶</div>
     <div class="work-caption">
       <p class="work-type">AI Fashion Film</p>
       <h3>신세계 백화점 · 시즌 비주얼 캠페인</h3>
     </div>
   </a>
-  <a class="work-block" href="https://youtu.be/2AHuOuhWm_M?si=JQbFrbLDbuzzeyR7" target="_blank" rel="noopener">
+  <a class="work-block" href="https://youtu.be/2AHuOuhWm_M?si=JQbFrbLDbuzzeyR7" data-video="2AHuOuhWm_M">
     <div class="work-plus">▶</div>
     <div class="work-caption">
       <p class="work-type">Lookbook</p>
       <h3>컬렉션 룩북 · AI 모델 비주얼</h3>
     </div>
   </a>
-  <a class="work-block" href="https://youtu.be/MylKuELOsVE?si=UVY8Rp9XF3u8kpnS" target="_blank" rel="noopener">
+  <a class="work-block" href="https://youtu.be/MylKuELOsVE?si=UVY8Rp9XF3u8kpnS" data-video="MylKuELOsVE">
     <div class="work-plus">▶</div>
     <div class="work-caption">
       <p class="work-type">Brand Film</p>
       <h3>OOH 광고 영상 · 브랜드 캠페인</h3>
     </div>
   </a>
-  <a class="work-block" href="https://youtube.com/shorts/TzwmlEUU6ck?si=y5WxsMgU_qifyKA_" target="_blank" rel="noopener">
+  <a class="work-block" href="https://youtube.com/shorts/TzwmlEUU6ck?si=y5WxsMgU_qifyKA_" data-video="TzwmlEUU6ck" data-vertical="1">
     <div class="work-plus">▶</div>
     <div class="work-caption">
       <p class="work-type">AI Fashion Show</p>
@@ -984,6 +1014,16 @@
   <p id="copyrightText"></p>
 </footer>
 
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+  <button class="video-modal-close" id="videoModalClose" aria-label="닫기">×</button>
+  <div class="video-modal-frame ratio-16-9" id="videoModalFrame">
+    <iframe id="videoModalIframe" src="" title="GRaY D. Lab 포트폴리오 영상"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowfullscreen></iframe>
+  </div>
+</div>
+
 <!-- PRIVACY MODAL -->
 <div class="modal-overlay" id="privacyModal">
   <div class="modal-box">
@@ -1000,6 +1040,41 @@
 </div>
 
 <script>
+  // ── 포트폴리오 영상 풀스크린 모달
+  const videoModal      = document.getElementById('videoModal');
+  const videoModalFrame = document.getElementById('videoModalFrame');
+  const videoIframe     = document.getElementById('videoModalIframe');
+  const videoModalClose = document.getElementById('videoModalClose');
+
+  function openVideoModal(id, vertical) {
+    videoModalFrame.className = 'video-modal-frame ' + (vertical ? 'ratio-9-16' : 'ratio-16-9');
+    videoIframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+    videoModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const req = videoModal.requestFullscreen || videoModal.webkitRequestFullscreen;
+    if (req) { try { req.call(videoModal).catch(function(){}); } catch (err) {} }
+  }
+  function closeVideoModal() {
+    videoModal.classList.remove('open');
+    videoIframe.src = '';
+    document.body.style.overflow = '';
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(function(){});
+    } else if (document.webkitFullscreenElement) {
+      document.webkitExitFullscreen();
+    }
+  }
+  document.querySelectorAll('.work-block').forEach(function(block) {
+    block.addEventListener('click', function(e) {
+      e.preventDefault();
+      openVideoModal(block.getAttribute('data-video'), block.hasAttribute('data-vertical'));
+    });
+  });
+  videoModalClose.addEventListener('click', closeVideoModal);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && videoModal.classList.contains('open')) closeVideoModal();
+  });
+
   // ── 카피라이트 연도 자동화
   (function() {
     const startYear = 2025;

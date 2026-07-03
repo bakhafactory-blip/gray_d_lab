@@ -255,7 +255,9 @@
       text-transform: uppercase; color: rgba(255,255,255,0.72);
       margin-bottom: 28px; display: flex;
       align-items: center; gap: 12px;
+      word-break: keep-all;
     }
+    .hero-eyebrow .no-wrap { white-space: nowrap; }
     .hero-eyebrow::before {
       content: ''; display: inline-block;
       width: 28px; height: 1.5px;
@@ -727,7 +729,7 @@
   </video>
   <div class="hero-inner">
     <div>
-      <p class="hero-eyebrow">AI FASHION VISUAL STUDIO · 그레이디랩</p>
+      <p class="hero-eyebrow"><span>AI FASHION VISUAL STUDIO · <span class="no-wrap">그레이디랩</span></span></p>
       <h1 class="hero-heading">The Next Era<br>of Fashion Visuals</h1>
     </div>
     <div class="hero-meta">

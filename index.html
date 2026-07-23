@@ -151,6 +151,46 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "AI 패션 영상 제작 비용은 얼마인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "프로젝트 규모와 결과물 길이에 따라 상이하며, 실제 세트·모델 촬영 대비 평균 80% 비용 절감 효과가 있습니다. 정확한 견적은 문의를 통해 안내드립니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "제작 기간은 얼마나 걸리나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "실촬영 대비 납품 기간이 약 1/3 수준으로 단축됩니다. 정확한 일정은 프로젝트 범위에 따라 상담을 통해 안내드립니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "실제 모델·촬영 세트 없이 어떻게 제작하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI 모델 생성과 3D 피팅 시뮬레이션을 결합해 실제 세트와 모델 없이 4K 시네마틱 퀄리티의 패션 비주얼을 완성합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "영상 제작 외 다른 서비스도 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI 패션 영상 제작 외에도 AI 기반 패션 디자인 대행 및 브랜드 컨설팅, 기업 대상 AI 활용 강의·세미나를 제공합니다."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -475,7 +515,19 @@
     /* ── SERVICES / PROCESS backgrounds ── */
     #services { background: var(--bg-alt); }
     #process  { background: var(--bg); }
-    .services-header, .process-header { margin-bottom: 56px; }
+    .services-header, .process-header, .faq-header { margin-bottom: 56px; }
+
+    /* ── FAQ (list-row 재사용) ── */
+    #faq { background: var(--bg); }
+    .faq-list .row-num {
+      flex: 0 0 60px;
+      font-style: italic; letter-spacing: -0.01em;
+    }
+    .faq-list .row-title { flex: 0 0 340px; }
+    .faq-list .row-body strong { color: var(--point); }
+    @media (max-width: 960px) {
+      .faq-list .row-title { flex: 1 1 auto; }
+    }
 
     /* ── PORTFOLIO (Editorial full-bleed work blocks) ── */
     #portfolio { background: var(--bg-alt); padding: 0; }
@@ -806,6 +858,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">문의하기</a></li>
     </ul>
     <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
@@ -817,6 +870,7 @@
   <a href="#services" class="mobile-link">Services</a>
   <a href="#process" class="mobile-link">Process</a>
   <a href="#portfolio" class="mobile-link">Portfolio</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
   <a href="#contact" class="mobile-link nav-cta">문의하기</a>
 </div>
 
@@ -1011,6 +1065,53 @@
       </div>
     </div>
     <div class="portfolio-lower-pad"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="inner">
+    <div class="faq-header">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">자주 묻는 질문</h2>
+      <p class="section-sub">AI 패션 영상 제작 관련 문의 전 자주 확인하시는 내용입니다.</p>
+    </div>
+    <div class="list-section faq-list">
+
+      <div class="list-row">
+        <span class="row-num">Q1</span>
+        <h3 class="row-title">AI 패션 영상 제작<br>비용은 얼마인가요?</h3>
+        <p class="row-body">
+          프로젝트 규모와 결과물 길이에 따라 상이하며, 실제 세트·모델 촬영 대비 평균 <strong>80% 비용 절감</strong> 효과가 있습니다. 정확한 견적은 문의를 통해 안내드립니다.
+        </p>
+      </div>
+
+      <div class="list-row">
+        <span class="row-num">Q2</span>
+        <h3 class="row-title">제작 기간은<br>얼마나 걸리나요?</h3>
+        <p class="row-body">
+          실촬영 대비 납품 기간이 약 <strong>1/3 수준</strong>으로 단축됩니다. 정확한 일정은 프로젝트 범위에 따라 상담을 통해 안내드립니다.
+        </p>
+      </div>
+
+      <div class="list-row">
+        <span class="row-num">Q3</span>
+        <h3 class="row-title">실제 모델·촬영 세트 없이<br>어떻게 제작하나요?</h3>
+        <p class="row-body">
+          AI 모델 생성과 3D 피팅 시뮬레이션을 결합해 실제 세트와 모델 없이 <strong>4K 시네마틱 퀄리티</strong>의 패션 비주얼을 완성합니다.
+        </p>
+      </div>
+
+      <div class="list-row">
+        <span class="row-num">Q4</span>
+        <h3 class="row-title">영상 제작 외 다른<br>서비스도 있나요?</h3>
+        <p class="row-body">
+          AI 패션 영상 제작 외에도 AI 기반 패션 디자인 대행 및 브랜드 컨설팅, 기업 대상 AI 활용 강의·세미나를 제공합니다.
+        </p>
+        <a href="#services" class="row-link">서비스 자세히 보기</a>
+      </div>
+
+    </div>
   </div>
 </section>
 

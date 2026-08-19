@@ -193,656 +193,554 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:         #FBFBFC;
-      --bg-alt:     #F3F4F7;
+      /* Surfaces */
+      --paper:      #F1F1EF;
+      --paper-deep: #E6E6E2;
       --card:       #FFFFFF;
-      --text:       #111112;
-      --text-muted: #565966;
-      --text-soft:  #83858F;
-      --border:     #E2E4EA;
-      --point:      #0090EA;
-      --accent:     #8BC900;
-      --max-w:      1200px;
+      --ink:        #0F0F11;
+      --ink-mid:    #55555E;
+      --ink-soft:   #8A8A92;
+      --rule:       #D6D6D1;
+      /* Single accent, locked page-wide */
+      --accent:     #0090EA;
+      --accent-dim: rgba(0,144,234,0.14);
+      /* Geometry */
+      --max-w:      1400px;
+      --gutter:     40px;
+      --radius:     0px;           /* shape lock: all-sharp */
+      --ease:       cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
     body {
-      font-family: 'Noto Sans KR', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
       font-size: 16px;
       line-height: 1.75;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.017em;
       word-break: keep-all;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    ::selection { background: var(--ink); color: var(--paper); }
+
+    /* ══ TYPE SCALE ══ */
+    .t-display {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-style: italic;
+      font-size: clamp(48px, 7.6vw, 122px);
+      line-height: 1.06;            /* italic descender clearance */
+      letter-spacing: -0.028em;
+      padding-bottom: 0.06em;       /* descender reserve */
+    }
+    .t-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(34px, 4.6vw, 68px);
+      line-height: 1.1;
+      letter-spacing: -0.022em;
+    }
+    .t-h3 {
+      font-size: clamp(19px, 1.7vw, 24px);
+      font-weight: 600; line-height: 1.42;
+      letter-spacing: -0.028em;
+    }
+    .t-body {
+      font-size: 15.5px; line-height: 1.85;
+      color: var(--ink-mid); letter-spacing: -0.015em;
+      max-width: 62ch;
+    }
+    .t-label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .t-meta {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    /* ══ SHELL ══ */
+    section { padding: clamp(80px, 11vw, 168px) var(--gutter); }
+    .inner  { max-width: var(--max-w); margin: 0 auto; width: 100%; }
+
+    /* ══ REVEAL (IntersectionObserver driven) ══ */
+    .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+    .rv.in { opacity: 1; transform: none; }
+    .rv-d1 { transition-delay: .08s; }
+    .rv-d2 { transition-delay: .16s; }
+    .rv-d3 { transition-delay: .24s; }
+    @media (prefers-reduced-motion: reduce) {
+      .rv { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ══ NAV ══ */
     nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100; height: 68px;
-      display: flex; align-items: center;
-      padding: 0 48px;
-      transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+      position: fixed; inset: 0 0 auto 0; z-index: 100; height: 70px;
+      display: flex; align-items: center; padding: 0 var(--gutter);
+      transition: background .45s var(--ease), border-color .45s var(--ease), backdrop-filter .45s;
     }
     nav.nav--light {
-      background: rgba(251,251,252,0.94);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(241,241,239,0.86);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      border-bottom: 1px solid var(--rule);
     }
-    nav.nav--dark {
-      background: transparent;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
+    nav.nav--dark { background: transparent; border-bottom: 1px solid rgba(255,255,255,0.09); }
     .nav-inner {
       max-width: var(--max-w); width: 100%; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
     }
-    .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 52px; width: auto; display: block; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 46px; width: auto; display: block; }
     nav.nav--light .nav-logo img { mix-blend-mode: multiply; }
-    nav.nav--dark  .nav-logo img { mix-blend-mode: screen; opacity: 0.9; }
+    nav.nav--dark  .nav-logo img { mix-blend-mode: screen; opacity: .92; }
 
-    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; white-space: nowrap; }
     .nav-links a {
-      position: relative;
-      font-size: 14px; font-weight: 500;
-      letter-spacing: 0.04em; text-decoration: none;
-      transition: color 0.25s;
+      position: relative; font-size: 13px; font-weight: 500;
+      letter-spacing: 0.06em; text-decoration: none; transition: color .25s;
     }
     .nav-links a:not(.nav-cta)::after {
-      content: ''; position: absolute;
-      bottom: -2px; left: 0; right: 0; height: 1px;
+      content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px;
       transform: scaleX(0); transform-origin: left;
-      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      transition: transform .45s var(--ease);
     }
-    nav.nav--light .nav-links a { color: var(--text-muted); }
-    nav.nav--light .nav-links a:not(.nav-cta)::after { background: var(--point); }
-    nav.nav--light .nav-links a:hover { color: var(--text); }
-    nav.nav--light .nav-links a:hover::after { transform: scaleX(1); }
-    nav.nav--dark  .nav-links a { color: rgba(255,255,255,0.6); }
-    nav.nav--dark  .nav-links a:not(.nav-cta)::after { background: rgba(255,255,255,0.7); }
+    nav.nav--light .nav-links a { color: var(--ink-mid); }
+    nav.nav--light .nav-links a:not(.nav-cta)::after { background: var(--accent); }
+    nav.nav--light .nav-links a:hover { color: var(--ink); }
+    nav.nav--dark  .nav-links a { color: rgba(255,255,255,0.66); }
+    nav.nav--dark  .nav-links a:not(.nav-cta)::after { background: rgba(255,255,255,0.8); }
     nav.nav--dark  .nav-links a:hover { color: #fff; }
-    nav.nav--dark  .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-links a:hover::after { transform: scaleX(1); }
 
     .nav-cta {
-      padding: 9px 24px !important;
-      font-size: 13px !important; font-weight: 700 !important;
-      letter-spacing: 0.07em !important;
-      transition: letter-spacing 0.3s ease, background 0.25s, color 0.25s, border-color 0.25s !important;
+      padding: 10px 22px !important; font-size: 12px !important;
+      font-weight: 700 !important; letter-spacing: 0.09em !important;
+      transition: background .3s, color .3s, border-color .3s !important;
     }
-    nav.nav--light .nav-cta {
-      background: var(--text) !important; color: #fff !important;
-      border: 1px solid var(--text) !important;
-    }
-    nav.nav--light .nav-cta:hover {
-      background: var(--point) !important;
-      border-color: var(--point) !important;
-      letter-spacing: 0.13em !important;
-    }
-    nav.nav--dark .nav-cta {
-      background: transparent !important; color: #fff !important;
-      border: 1px solid rgba(255,255,255,0.4) !important;
-    }
-    nav.nav--dark .nav-cta:hover {
-      background: rgba(0,144,234,0.2) !important;
-      border-color: rgba(79,192,255,0.7) !important;
-      letter-spacing: 0.13em !important;
-    }
+    nav.nav--light .nav-cta { background: var(--ink) !important; color: var(--paper) !important; border: 1px solid var(--ink) !important; }
+    nav.nav--light .nav-cta:hover { background: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important; }
+    nav.nav--dark .nav-cta { background: transparent !important; color: #fff !important; border: 1px solid rgba(255,255,255,0.45) !important; }
+    nav.nav--dark .nav-cta:hover { background: #fff !important; color: var(--ink) !important; border-color: #fff !important; }
 
-    /* ── HAMBURGER ── */
     .hamburger {
-      display: none; flex-direction: column;
-      justify-content: center; gap: 5px;
-      width: 32px; height: 32px;
-      cursor: pointer; background: none; border: none; padding: 0;
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      width: 30px; height: 30px; cursor: pointer; background: none; border: none; padding: 0;
     }
-    .hamburger span {
-      display: block; height: 1.5px;
-      transition: transform 0.25s, opacity 0.25s;
-      transform-origin: center;
-    }
-    nav.nav--light .hamburger span { background: var(--text); }
+    .hamburger span { display: block; height: 1.5px; transition: transform .28s var(--ease), opacity .2s; }
+    nav.nav--light .hamburger span { background: var(--ink); }
     nav.nav--dark  .hamburger span { background: #fff; }
     .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
     .mobile-menu {
-      display: none; position: fixed;
-      top: 68px; left: 0; right: 0;
-      background: rgba(251,251,252,0.99);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      z-index: 99; padding: 20px 28px 32px;
-      flex-direction: column;
+      display: none; position: fixed; top: 70px; left: 0; right: 0; z-index: 99;
+      background: rgba(241,241,239,0.985);
+      backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+      padding: 16px 24px 30px; flex-direction: column;
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
-      display: block; font-size: 16px; font-weight: 500;
-      color: var(--text-muted); text-decoration: none;
-      padding: 14px 0; border-bottom: 1px solid var(--border);
-      letter-spacing: 0.02em; transition: color 0.2s, letter-spacing 0.3s;
+      display: block; font-size: 16px; font-weight: 500; color: var(--ink-mid);
+      text-decoration: none; padding: 15px 0; border-bottom: 1px solid var(--rule);
+      transition: color .2s, padding-left .3s var(--ease);
     }
-    .mobile-menu a:hover { color: var(--text); letter-spacing: 0.05em; }
+    .mobile-menu a:hover { color: var(--ink); padding-left: 8px; }
     .mobile-menu .nav-cta {
       margin-top: 20px; text-align: center; border-bottom: none;
-      background: var(--text) !important; color: #fff !important;
-      padding: 15px 20px !important;
+      background: var(--ink) !important; color: var(--paper) !important; padding: 16px 20px !important;
     }
 
-    /* ── SECTIONS ── */
-    section { padding: 120px 48px; }
-    .inner { max-width: var(--max-w); margin: 0 auto; }
-
-    .section-label {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--point); margin-bottom: 20px;
-    }
-    .section-label::before {
-      content: ''; display: inline-block;
-      width: 28px; height: 1.5px;
-      background: var(--point); flex-shrink: 0;
-    }
-    .section-title {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 40px; font-weight: 700;
-      line-height: 1.2; letter-spacing: -0.035em; margin-bottom: 16px;
-    }
-    .section-sub {
-      font-size: 15px; color: var(--text-muted);
-      max-width: 560px; line-height: 1.9; letter-spacing: -0.02em;
-    }
-
-    /* ── HERO (Editorial full-bleed) ── */
+    /* ══ 1. HERO — full-bleed media, asymmetric ══ */
     #hero {
-      position: relative; min-height: 100vh;
-      display: flex; align-items: flex-end;
-      padding: 0; overflow: hidden;
+      position: relative; min-height: 100dvh;
+      display: flex; align-items: flex-end; padding: 0; overflow: hidden;
     }
-    #hero video {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover;
-    }
+    #hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     #hero::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(4,5,12,0.92) 0%, rgba(4,5,12,0.35) 42%, rgba(4,5,12,0.12) 70%);
+      background: linear-gradient(to top, rgba(6,6,10,0.90) 0%, rgba(6,6,10,0.34) 46%, rgba(6,6,10,0.10) 74%);
     }
     .hero-inner {
       position: relative; z-index: 2; width: 100%;
       max-width: var(--max-w); margin: 0 auto;
-      padding: 0 48px 144px;
-      display: flex; align-items: flex-end; justify-content: space-between;
-      gap: 48px; flex-wrap: wrap;
+      padding: 0 var(--gutter) clamp(56px, 8vh, 96px);
+      display: grid; grid-template-columns: minmax(0,1fr) auto;
+      align-items: end; gap: 48px;
     }
     .hero-eyebrow {
-      font-size: 14px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: rgba(255,255,255,0.72);
-      margin-bottom: 28px; display: flex;
-      align-items: center; gap: 12px;
-      word-break: keep-all;
+      display: flex; align-items: center; gap: 13px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 22px;
     }
+    .hero-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--accent); flex-shrink: 0; }
     .hero-eyebrow .no-wrap { white-space: nowrap; }
     .eyebrow-mobile { display: none; }
-    .hero-eyebrow::before {
-      content: ''; display: inline-block;
-      width: 28px; height: 1.5px;
-      background: var(--accent); flex-shrink: 0;
-    }
-    .hero-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: clamp(46px, 7.2vw, 104px);
-      font-weight: 300; line-height: 0.98;
-      letter-spacing: -0.03em; color: #fff;
-      max-width: 760px;
-    }
-    .hero-meta { flex-shrink: 0; text-align: right; }
-    .hero-meta-label {
-      font-size: 13px; letter-spacing: 0.06em; text-transform: none;
-      color: rgba(255,255,255,0.6); margin-bottom: 18px;
-    }
-    .hero-meta-label span { text-transform: uppercase; letter-spacing: 0.14em; }
-    .hero-meta-links { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .hero-heading { color: #fff; max-width: 15ch; }
+    .hero-meta { flex-shrink: 0; text-align: right; padding-bottom: 6px; }
+    .hero-meta-label { font-size: 12px; letter-spacing: 0.05em; color: rgba(255,255,255,0.58); margin-bottom: 18px; }
+    .hero-meta-label span { text-transform: uppercase; letter-spacing: 0.16em; }
+    .hero-meta-links { display: flex; flex-direction: column; align-items: flex-end; gap: 13px; }
     .hero-link-primary, .hero-link-secondary {
-      color: #fff; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      letter-spacing: 0.02em; transition: gap 0.3s ease, color 0.25s;
-      border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 3px;
+      color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 9px;
+      border-bottom: 1px solid rgba(255,255,255,0.42); padding-bottom: 4px;
+      transition: gap .35s var(--ease), color .25s, border-color .25s;
     }
     .hero-link-primary { font-size: 15px; font-weight: 700; }
-    .hero-link-secondary { font-size: 13px; color: rgba(255,255,255,0.78); border-bottom-color: rgba(255,255,255,0.35); }
-    .hero-link-primary::after, .hero-link-secondary::after { content: '→'; transition: transform 0.3s ease; }
-    .hero-link-primary:hover, .hero-link-secondary:hover { color: var(--point); border-bottom-color: var(--point); gap: 13px; }
-    .hero-scroll {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 2;
-      display: flex; flex-direction: column;
-      align-items: center; gap: 12px;
-      color: rgba(255,255,255,0.85);
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    .hero-link-secondary { font-size: 13px; color: rgba(255,255,255,0.76); border-bottom-color: rgba(255,255,255,0.3); }
+    .hero-link-primary::after, .hero-link-secondary::after { content: '→'; }
+    .hero-link-primary:hover, .hero-link-secondary:hover { color: #fff; border-bottom-color: var(--accent); gap: 15px; }
+    #heroSentinel { position: absolute; bottom: 0; height: 1px; width: 100%; }
+
+    /* ══ 2. STATEMENT — oversized editorial paragraph ══ */
+    #statement { background: var(--paper); padding-top: clamp(72px, 10vw, 140px); padding-bottom: clamp(56px, 7vw, 96px); }
+    .statement-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+    .statement-lead {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(26px, 2.9vw, 42px); line-height: 1.28; letter-spacing: -0.02em; color: var(--ink);
     }
-    .hero-scroll::before {
-      content: ''; width: 2px; height: 56px; border-radius: 1px;
-      background: linear-gradient(to bottom, #4FC0FF, transparent);
-      box-shadow: 0 0 10px rgba(79,192,255,0.55);
-      animation: scrollLine 2s ease-in-out infinite;
+    .statement-body { font-size: 15.5px; line-height: 1.95; color: var(--ink-mid); letter-spacing: -0.015em; }
+    .statement-body + .statement-body { margin-top: 18px; }
+
+    /* ══ 3. MARQUEE — capability band (one per page) ══ */
+    .marquee {
+      border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+      overflow: hidden; padding: 22px 0; background: var(--paper);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     }
-    @keyframes scrollLine {
-      0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
-      50%  { opacity: 1; transform: scaleY(1); transform-origin: top; }
-      100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+    .marquee-track { display: flex; width: max-content; animation: slide 38s linear infinite; }
+    .marquee-track span {
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+      font-size: clamp(24px, 2.6vw, 40px); color: var(--ink); white-space: nowrap; padding: 0 34px;
+      display: inline-flex; align-items: center; gap: 34px;
+    }
+    .marquee-track span::after { content: ''; width: 5px; height: 5px; background: var(--accent); flex-shrink: 0; }
+    @keyframes slide { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
+      .marquee { -webkit-mask-image: none; mask-image: none; }
     }
 
-    /* ── INTRO STRIP (히어로 아래 슬림 카피 밴드) ── */
-    .intro-strip {
-      background: var(--card); padding: 44px 48px;
-      border-bottom: 1px solid var(--border);
-    }
-    .intro-strip .inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 32px; flex-wrap: wrap;
-    }
-    .intro-kpi {
-      font-size: 15px; font-weight: 500; color: var(--text-muted);
-      letter-spacing: -0.01em; padding-left: 18px;
-      border-left: 3px solid var(--accent);
-    }
-    .intro-kpi strong { color: var(--text); font-weight: 700; }
-    .intro-desc {
-      font-size: 14px; color: var(--text-soft);
-      letter-spacing: -0.015em; max-width: 720px; text-align: left;
-      line-height: 1.8; word-break: keep-all;
-    }
+    /* ══ 4. SERVICES — stacked numeral editorial ══ */
+    #services { background: var(--paper); }
+    .sec-head { margin-bottom: clamp(48px, 6vw, 88px); max-width: 46ch; }
+    .sec-head .t-label { display: block; margin-bottom: 18px; }
+    .sec-head .t-h2 { margin-bottom: 18px; }
 
-    /* ── DIVIDED LIST (Services / Process 공용) ── */
-    .list-row {
-      display: flex; align-items: baseline; gap: 40px;
-      padding: 48px 0; border-top: 1px solid var(--border);
-      transition: background 0.3s;
+    .svc { position: relative; padding: clamp(40px, 5vw, 68px) 0; border-top: 1px solid var(--rule); }
+    .svc:last-child { border-bottom: 1px solid var(--rule); }
+    .svc-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr) minmax(0, 2fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
+    /* asymmetric offsets, variance 8 */
+    .svc:nth-child(2) .svc-grid { padding-left: 0; }
+    .svc:nth-child(3) .svc-grid { padding-left: clamp(0px, 4vw, 72px); }
+    .svc:nth-child(4) .svc-grid { padding-left: clamp(0px, 8vw, 144px); }
+    .svc-num {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
+      font-size: clamp(52px, 6.4vw, 96px); line-height: .84; color: var(--accent);
+      opacity: .26; display: block; margin-bottom: 14px; letter-spacing: -0.03em;
     }
-    .list-section .list-row:last-child { border-bottom: 1px solid var(--border); }
-    .row-num {
-      font-family: 'Cormorant Garamond', serif; font-weight: 400;
-      font-size: 32px; color: var(--point); opacity: 0.65;
-      flex: 0 0 44px; line-height: 1;
-    }
-    .row-title {
-      font-size: 21px; font-weight: 700;
-      letter-spacing: -0.025em; line-height: 1.4;
-      flex: 0 0 300px;
-    }
-    .row-body {
-      font-size: 15px; color: var(--text-muted);
-      line-height: 1.85; letter-spacing: -0.015em; flex: 1;
-    }
-    .row-body strong { color: var(--point); font-weight: 700; }
-    .row-tags { flex: 0 0 190px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+    .svc-title { max-width: 18ch; }
+    .svc-body { font-size: 15.5px; line-height: 1.9; color: var(--ink-mid); letter-spacing: -0.015em; }
+    .svc-body strong { color: var(--ink); font-weight: 700; }
+    .svc-side { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag {
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 5px 12px; border: 1px solid var(--border);
-      background: var(--card); color: var(--text-muted);
-      transition: border-color 0.2s, color 0.2s; white-space: nowrap;
+      font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 11px; border: 1px solid var(--rule); color: var(--ink-mid);
+      background: transparent; transition: border-color .25s, color .25s; white-space: nowrap;
     }
-    .tag:hover { border-color: var(--point); color: var(--point); }
-    .row-link {
-      flex: 0 0 128px; text-align: right;
-      font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
-      color: var(--point); text-decoration: none;
-      display: inline-flex; align-items: center; justify-content: flex-end; gap: 7px;
-      transition: color 0.25s, gap 0.35s ease;
+    .tag:hover { border-color: var(--accent); color: var(--accent); }
+    .svc-link {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.04em; color: var(--accent);
+      text-decoration: none; display: inline-flex; align-items: center; gap: 7px;
+      transition: gap .35s var(--ease), color .25s; white-space: nowrap;
     }
-    .row-link::after { content: '→'; transition: transform 0.35s ease; }
-    .row-link:hover { color: var(--text); gap: 12px; }
+    .svc-link::after { content: '→'; }
+    .svc-link:hover { color: var(--ink); gap: 12px; }
 
-    /* Process 전용: row-num을 조금 더 크게, 라벨 추가 */
-    .step-en {
-      font-size: 12px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--point); margin-bottom: 8px; display: block;
+    /* ══ 5. PROCESS — hairline grid ══ */
+    #process { background: var(--paper-deep); }
+    .proc-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0; border-top: 1px solid var(--rule); }
+    .proc-cell { padding: clamp(28px, 3vw, 46px) clamp(20px, 2.2vw, 34px) clamp(36px, 4vw, 58px); border-left: 1px solid var(--rule); }
+    .proc-cell:last-child { border-right: 1px solid var(--rule); }
+    .proc-idx {
+      font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; font-style: italic;
+      color: var(--accent); line-height: 1; margin-bottom: 26px; display: block;
     }
+    .proc-en { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+    .proc-title { font-size: 17px; font-weight: 700; letter-spacing: -0.028em; line-height: 1.4; margin-bottom: 14px; }
+    .proc-body { font-size: 14px; line-height: 1.8; color: var(--ink-mid); letter-spacing: -0.012em; }
 
-    /* ── SERVICES / PROCESS backgrounds ── */
-    #services { background: var(--bg-alt); }
-    #process  { background: var(--bg); }
-    .services-header, .process-header, .faq-header { margin-bottom: 56px; }
-
-    /* ── FAQ (list-row 재사용) ── */
-    #faq { background: var(--bg); }
-    .faq-list .row-num {
-      flex: 0 0 60px;
-      font-style: italic; letter-spacing: -0.01em;
-    }
-    .faq-list .row-title { flex: 0 0 340px; }
-    .faq-list .row-body strong { color: var(--point); }
-    @media (max-width: 960px) {
-      .faq-list .row-title { flex: 1 1 auto; }
-    }
-
-    /* ── PORTFOLIO (Editorial full-bleed work blocks) ── */
-    #portfolio { background: var(--bg-alt); padding: 0; }
-    .portfolio-header { padding: 120px 48px 56px; }
-
+    /* ══ 6. PORTFOLIO — full-bleed media blocks ══ */
+    #portfolio { background: var(--paper); padding: 0; }
+    .portfolio-header { padding: clamp(80px, 11vw, 168px) var(--gutter) clamp(40px, 5vw, 72px); max-width: var(--max-w); margin: 0 auto; }
     .work-block {
-      position: relative; height: 88vh; min-height: 460px;
+      position: relative; height: min(88vh, 860px); min-height: 440px;
       overflow: hidden; display: flex; align-items: flex-end;
-      text-decoration: none; cursor: pointer;
+      text-decoration: none; cursor: pointer; background: var(--ink);
     }
-    .work-block {
-      background-size: cover; background-repeat: no-repeat;
+    .work-bg {
+      position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat;
+      transition: transform 1.4s var(--ease); will-change: transform;
     }
-    .work-block:nth-of-type(1) { background-image: url('work-1-xcliam.jpg'); background-position: center 45%; }
-    .work-block:nth-of-type(2) { background-image: url('work-2-lookbook.jpg'); background-position: center 8%; }
-    .work-block:nth-of-type(3) { background-image: url('work-3-ooh.jpg'); background-position: center 23%; }
-    .work-block:nth-of-type(4) { background-image: url('work-4-krisw.jpg'); background-position: center 6%; }
+    .work-block:nth-of-type(1) .work-bg { background-image: url('work-1-xcliam.jpg'); background-position: center 45%; }
+    .work-block:nth-of-type(2) .work-bg { background-image: url('work-2-lookbook.jpg'); background-position: center 8%; }
+    .work-block:nth-of-type(3) .work-bg { background-image: url('work-3-ooh.jpg'); background-position: center 23%; }
+    .work-block:nth-of-type(4) .work-bg { background-image: url('work-4-krisw.jpg'); background-position: center 6%; }
     .work-block::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 58%);
-      transition: background 0.4s ease;
+      background: linear-gradient(to top, rgba(6,6,10,0.78) 0%, rgba(6,6,10,0.12) 52%, transparent 76%);
+      transition: background .5s var(--ease);
     }
-    @media (hover: hover) and (pointer: fine) {
-      .work-block:hover::before { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 55%); }
-      .work-block:hover .work-plus { color: rgba(79,192,255,0.8); transform: scale(1.15); }
-      .work-block:hover .work-caption h3 { color: #fff; }
-    }
-    .work-caption { position: relative; z-index: 2; padding: 44px 48px; max-width: var(--max-w); margin: 0 auto; width: 100%; }
-    .work-type {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.16em;
-      text-transform: uppercase; color: #4FC0FF; margin-bottom: 10px;
-    }
+    .work-caption { position: relative; z-index: 2; padding: clamp(32px, 4vw, 56px) var(--gutter); max-width: var(--max-w); margin: 0 auto; width: 100%; }
+    .work-type { font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #4FC0FF; margin-bottom: 12px; }
     .work-caption h3 {
       font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
-      font-size: clamp(26px, 3.4vw, 40px); color: rgba(255,255,255,0.94);
-      letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s;
+      font-size: clamp(28px, 3.8vw, 52px); color: rgba(255,255,255,0.96);
+      letter-spacing: -0.02em; line-height: 1.18; padding-bottom: .05em;
     }
-    .work-plus {
-      position: absolute; top: 50%; left: 50%; z-index: 2;
-      transform: translate(-50%,-50%);
-      font-size: 24px; color: rgba(255,255,255,0.18);
-      transition: color 0.3s, transform 0.3s;
+    .work-play {
+      position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 76px; height: 76px; border: 1px solid rgba(255,255,255,0.34); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.86); font-size: 15px; padding-left: 4px;
+      transition: background .4s var(--ease), border-color .4s, transform .5s var(--ease);
+      backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .work-block:hover .work-bg { transform: scale(1.045); }
+      .work-block:hover::before { background: linear-gradient(to top, rgba(6,6,10,0.86) 0%, rgba(6,6,10,0.2) 56%, transparent 80%); }
+      .work-block:hover .work-play { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.7); transform: translate(-50%,-50%) scale(1.08); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .work-bg, .work-play { transition: none; }
+      .work-block:hover .work-bg { transform: none; }
     }
 
-    .portfolio-lower { padding: 88px 48px 0; }
-    .portfolio-grid2 {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start;
+    /* ══ 7. CLIENTS + EXHIBITIONS — two-column split ══ */
+    #clients { background: var(--paper); }
+    .cl-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 112px); align-items: start; }
+    .cl-desc { font-size: 15.5px; color: var(--ink-mid); line-height: 1.9; letter-spacing: -0.015em; margin-bottom: 34px; max-width: 46ch; }
+    .btn-line {
+      position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px;
+      border: 1px solid var(--ink); padding: 16px 30px; background: transparent;
+      font-size: 13.5px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink);
+      text-decoration: none; white-space: nowrap; transition: color .45s var(--ease);
     }
-    .portfolio-left .section-title { margin-bottom: 20px; }
-    .portfolio-desc {
-      font-size: 15px; color: var(--text-muted);
-      line-height: 1.9; letter-spacing: -0.02em; margin-bottom: 36px;
+    .btn-line::before {
+      content: ''; position: absolute; inset: 0; background: var(--ink);
+      transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease);
     }
-    .btn-youtube {
-      position: relative; overflow: hidden;
-      display: inline-flex; align-items: center; gap: 10px;
-      border: 1px solid var(--text); padding: 16px 34px;
-      background: var(--card);
-      font-size: 14px; font-weight: 700; letter-spacing: 0.03em;
-      color: var(--text); text-decoration: none;
-      transition: color 0.4s, border-color 0.4s;
+    .btn-line:hover::before { transform: scaleX(1); }
+    .btn-line:hover { color: var(--paper); }
+    .btn-line > * { position: relative; z-index: 1; }
+    .btn-line svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .cl-cats { margin-top: 30px; display: flex; flex-direction: column; gap: 11px; }
+    .cl-cat { display: flex; align-items: baseline; gap: 12px; font-size: 14.5px; color: var(--ink-mid); letter-spacing: -0.015em; }
+    .cl-cat::before { content: ''; width: 14px; height: 1px; background: var(--accent); flex-shrink: 0; transform: translateY(-4px); }
+    .cl-sub { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 20px; }
+    .cl-names {
+      display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 24px;
+      margin-bottom: 44px; border-top: 1px solid var(--rule);
     }
-    .btn-youtube::before {
-      content: ''; position: absolute; inset: 0;
-      background: var(--text);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    .cl-names span {
+      font-size: 15px; color: var(--ink); letter-spacing: -0.018em;
+      padding: 13px 0; border-bottom: 1px solid var(--rule);
     }
-    .btn-youtube:hover::before { transform: scaleX(1); }
-    .btn-youtube:hover { color: #fff; border-color: var(--text); }
-    .btn-youtube > * { position: relative; z-index: 1; }
-    .btn-youtube svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .ex-item { padding: 20px 0; }
+    .ex-item + .ex-item { border-top: 1px solid var(--rule); }
+    .ex-title { font-size: 14.5px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 5px; }
+    .ex-place { font-size: 13px; color: var(--ink-soft); }
 
-    .portfolio-categories { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
-    .pcat-item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 14px; color: var(--text-muted); letter-spacing: -0.015em;
+    /* ══ 8. FAQ — native accordion ══ */
+    #faq { background: var(--paper-deep); }
+    .faq-list { border-top: 1px solid var(--rule); }
+    details.faq-item { border-bottom: 1px solid var(--rule); }
+    details.faq-item summary {
+      list-style: none; cursor: pointer; padding: clamp(24px, 2.6vw, 36px) 0;
+      display: grid; grid-template-columns: 56px minmax(0,1fr) 28px; gap: 16px;
+      align-items: baseline; transition: color .25s;
     }
-    .pcat-dot {
-      width: 6px; height: 6px;
-      background: var(--point); border-radius: 50%; flex-shrink: 0;
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary:hover { color: var(--accent); }
+    .faq-q {
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+      font-size: 26px; line-height: 1; color: var(--accent); opacity: .5;
     }
-    .clients-label {
-      font-size: 12px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--text-soft); margin-bottom: 18px;
+    .faq-t { font-size: clamp(17px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.45; }
+    .faq-x { position: relative; width: 15px; height: 15px; justify-self: end; align-self: center; }
+    .faq-x::before, .faq-x::after {
+      content: ''; position: absolute; left: 0; top: 7px; width: 15px; height: 1.5px;
+      background: var(--ink); transition: transform .4s var(--ease);
     }
-    .clients-list {
-      font-size: 15px; color: var(--text-muted);
-      line-height: 2.3; letter-spacing: -0.015em; margin-bottom: 44px;
+    .faq-x::after { transform: rotate(90deg); }
+    details[open] .faq-x::after { transform: rotate(0deg); }
+    .faq-a {
+      padding: 0 28px clamp(28px, 3vw, 40px) 72px;
+      font-size: 15.5px; line-height: 1.9; color: var(--ink-mid); letter-spacing: -0.015em; max-width: 74ch;
     }
-    .clients-list span { display: inline; }
-    .clients-list span::after { content: ' · '; }
-    .clients-list span:last-child::after { content: ''; }
-    .exhibitions { border-top: 1px solid var(--border); padding-top: 28px; }
-    .ex-item { padding: 18px 0; }
-    .ex-item + .ex-item { border-top: 1px solid var(--border); }
-    .ex-title { font-size: 14px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 4px; }
-    .ex-place { font-size: 13px; color: var(--text-soft); }
-    .portfolio-lower-pad { height: 100px; }
+    .faq-a strong { color: var(--ink); font-weight: 700; }
+    .faq-a a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); font-weight: 600; }
+    .faq-a a:hover { border-bottom-color: var(--accent); }
 
-    /* ── CONTACT ── */
-    #contact { background: var(--bg); }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 96px; align-items: start;
-    }
-    .contact-info { padding-top: 8px; }
-    .contact-info .section-title { margin-bottom: 20px; }
-    .contact-info .section-sub { margin-bottom: 52px; }
-    .info-item { margin-bottom: 20px; font-size: 16px; }
-    .info-label {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--text-soft); margin-bottom: 5px;
-    }
-    .info-val { color: var(--text); letter-spacing: -0.015em; }
-    .info-val a {
-      color: var(--point); text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .info-val a:hover { opacity: 0.75; }
-    .contact-meta {
-      margin-top: 36px; padding-top: 28px;
-      border-top: 1px solid var(--border);
-      display: flex; flex-direction: column; gap: 12px;
-    }
+    /* ══ 9. CONTACT ══ */
+    #contact { background: var(--paper); }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(44px, 7vw, 112px); align-items: start; }
+    .info-item { margin-bottom: 22px; }
+    .info-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+    .info-val { color: var(--ink); font-size: 16px; letter-spacing: -0.018em; }
+    .info-val a { color: var(--accent); text-decoration: none; }
+    .info-val a:hover { opacity: .75; }
+    .contact-meta { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 13px; }
     .contact-meta-item {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 14px; color: var(--text-muted);
-      line-height: 1.65; letter-spacing: -0.015em;
+      display: flex; align-items: flex-start; gap: 11px;
+      font-size: 14px; color: var(--ink-mid); line-height: 1.7; letter-spacing: -0.015em;
     }
-    .contact-meta-item svg { flex-shrink: 0; margin-top: 3px; color: var(--point); }
-    .contact-meta-item strong { color: var(--text); }
+    .contact-meta-item svg { flex-shrink: 0; margin-top: 4px; color: var(--accent); }
+    .contact-meta-item strong { color: var(--ink); }
 
-    /* ── FORM — bottom border only, sketch style ── */
     .contact-form { display: flex; flex-direction: column; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
-    .form-group { display: flex; flex-direction: column; gap: 8px; padding-bottom: 24px; }
-    label {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-soft);
-    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; padding-bottom: 26px; }
+    label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mid); }
     input, select, textarea {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 15px; letter-spacing: -0.015em;
-      color: var(--text); background: transparent;
-      border: none; border-bottom: 1px solid var(--border);
-      padding: 10px 0; outline: none;
-      transition: border-color 0.3s;
-      appearance: none; -webkit-appearance: none;
-      width: 100%; border-radius: 0;
+      font-family: inherit; font-size: 15px; letter-spacing: -0.015em;
+      color: var(--ink); background: transparent; border: none;
+      border-bottom: 1px solid var(--rule); padding: 11px 0; outline: none;
+      transition: border-color .3s; appearance: none; -webkit-appearance: none;
+      width: 100%; border-radius: var(--radius);
     }
-    input::placeholder, textarea::placeholder { color: rgba(131,133,143,0.55); font-size: 14px; }
-    input:focus, select:focus, textarea:focus { border-bottom-color: var(--point); }
-    textarea { resize: none; min-height: 100px; }
+    input::placeholder, textarea::placeholder { color: #9A9AA2; font-size: 14px; }
+    input:focus, select:focus, textarea:focus { border-bottom-color: var(--accent); }
+    textarea { resize: none; min-height: 104px; }
     select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%237A7C88' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%2355555E' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 4px center;
       padding-right: 24px; cursor: pointer;
     }
-
-    /* B2B 라디오 선택 */
-    .form-check-group { padding-bottom: 24px; }
+    .form-check-group { padding-bottom: 26px; }
     .form-check-group > label { display: block; margin-bottom: 14px; }
     .check-options { display: flex; flex-wrap: wrap; gap: 8px; }
-    .check-option { display: flex; align-items: center; }
     .check-option input[type="radio"] { display: none; }
     .check-option label {
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.02em; text-transform: none;
-      color: var(--text-muted); cursor: pointer;
-      padding: 6px 14px; border: 1px solid var(--border);
-      transition: border-color 0.25s, color 0.25s, background 0.25s;
+      font-size: 13px; font-weight: 500; letter-spacing: 0; text-transform: none;
+      color: var(--ink-mid); cursor: pointer; padding: 8px 16px;
+      border: 1px solid var(--rule); transition: border-color .25s, color .25s, background .25s;
     }
     .check-option input[type="radio"]:checked + label {
-      border-color: var(--point); color: var(--point); font-weight: 700;
-      background: rgba(0,144,234,0.06);
+      border-color: var(--accent); color: var(--accent); font-weight: 700; background: var(--accent-dim);
     }
-    .check-option label:hover { border-color: var(--point); color: var(--text); }
-
-    /* Privacy checkbox */
-    .privacy-row {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 14px; color: var(--text-muted); padding-bottom: 20px;
-    }
+    .check-option label:hover { border-color: var(--accent); color: var(--ink); }
+    .privacy-row { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--ink-mid); padding-bottom: 22px; }
     input[type="checkbox"] {
       appearance: checkbox !important; -webkit-appearance: checkbox !important;
       width: 16px !important; height: 16px !important; min-width: 16px !important;
-      padding: 0 !important; border: none !important;
-      margin-top: 2px; cursor: pointer;
-      accent-color: var(--point); flex-shrink: 0;
+      padding: 0 !important; border: none !important; margin-top: 3px; cursor: pointer;
+      accent-color: var(--accent); flex-shrink: 0;
     }
-    .privacy-link { color: var(--point); text-decoration: underline; cursor: pointer; font-weight: 600; }
-
-    /* btn-submit — letter-spacing bloom on hover */
+    .privacy-link { color: var(--accent); text-decoration: underline; cursor: pointer; font-weight: 600; }
     .btn-submit {
-      background: var(--text); color: #fff; border: none;
-      padding: 19px; font-family: 'Noto Sans KR', sans-serif;
-      font-size: 14px; font-weight: 700; letter-spacing: 0.07em;
-      cursor: pointer; width: 100%; margin-top: 8px;
-      transition: letter-spacing 0.35s ease, background 0.3s;
+      background: var(--ink); color: var(--paper); border: 1px solid var(--ink);
+      padding: 19px; font-family: inherit; font-size: 13.5px; font-weight: 700;
+      letter-spacing: 0.08em; cursor: pointer; width: 100%; margin-top: 8px;
+      border-radius: var(--radius); white-space: nowrap;
+      transition: background .3s, border-color .3s, transform .15s;
     }
-    .btn-submit:hover { letter-spacing: 0.14em; background: var(--point); }
-    .btn-submit:disabled { background: var(--border); cursor: not-allowed; letter-spacing: 0.07em; }
+    .btn-submit:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn-submit:active { transform: translateY(1px); }
+    .btn-submit:disabled { background: var(--ink-soft); border-color: var(--ink-soft); color: #fff; cursor: not-allowed; }
 
-    /* ── FOOTER ── */
+    /* ══ FOOTER ══ */
     footer {
-      background: #0A0B10; color: rgba(255,255,255,0.48);
-      padding: 60px 48px 44px; text-align: center;
-      font-size: 13px; letter-spacing: 0.01em;
+      background: #0B0B0F; color: rgba(255,255,255,0.5);
+      padding: clamp(56px, 7vw, 84px) var(--gutter) 46px;
+      text-align: center; font-size: 13px; letter-spacing: -0.005em;
     }
-    .footer-logo {
-      display: block; margin: 0 auto 28px;
-      height: 100px; width: auto;
-      mix-blend-mode: screen; opacity: 0.88;
-    }
-    footer strong { color: rgba(255,255,255,0.72); }
-    .footer-divider {
-      width: 28px; height: 1.5px;
-      background: linear-gradient(to right, var(--point), var(--accent));
-      margin: 22px auto; opacity: 0.55;
-    }
+    .footer-logo { display: block; margin: 0 auto 26px; height: 92px; width: auto; mix-blend-mode: screen; opacity: .9; }
+    footer strong { color: rgba(255,255,255,0.78); }
+    .footer-rule { width: 30px; height: 1px; background: var(--accent); margin: 24px auto; opacity: .8; }
 
-    /* ── VIDEO MODAL (포트폴리오 풀스크린 재생) ── */
-    .video-modal {
-      display: none; position: fixed; inset: 0;
-      background: #000; z-index: 300;
-      align-items: center; justify-content: center;
-    }
+    /* ══ VIDEO MODAL ══ */
+    .video-modal { display: none; position: fixed; inset: 0; background: #000; z-index: 300; align-items: center; justify-content: center; }
     .video-modal.open { display: flex; }
     .video-modal-close {
-      position: absolute; top: 20px; right: 20px; z-index: 2;
-      width: 42px; height: 42px; border-radius: 50%;
-      background: rgba(255,255,255,0.12); border: none; color: #fff;
+      position: absolute; top: 20px; right: 20px; z-index: 2; width: 44px; height: 44px;
+      border-radius: 50%; background: rgba(255,255,255,0.13); border: none; color: #fff;
       font-size: 22px; cursor: pointer; line-height: 1;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
+      display: flex; align-items: center; justify-content: center; transition: background .2s;
     }
-    .video-modal-close:hover { background: rgba(255,255,255,0.24); }
+    .video-modal-close:hover { background: rgba(255,255,255,0.26); }
     .video-modal-frame { position: relative; width: 100%; height: 100%; }
-    .video-modal-frame.ratio-16-9 {
-      max-width: min(100vw, 177.78vh); max-height: min(100vh, 56.25vw);
-      aspect-ratio: 16 / 9;
-    }
-    .video-modal-frame.ratio-9-16 {
-      max-width: min(100vw, 56.25vh); max-height: min(100vh, 177.78vw);
-      aspect-ratio: 9 / 16;
-    }
-    .video-modal-frame iframe {
-      position: absolute; inset: 0; width: 100%; height: 100%; border: none;
-    }
+    .video-modal-frame.ratio-16-9 { max-width: min(100vw, 177.78vh); max-height: min(100vh, 56.25vw); aspect-ratio: 16 / 9; }
+    .video-modal-frame.ratio-9-16 { max-width: min(100vw, 56.25vh); max-height: min(100vh, 177.78vw); aspect-ratio: 9 / 16; }
+    .video-modal-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
 
-    /* ── PRIVACY MODAL ── */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,0.65); z-index: 200;
-      align-items: center; justify-content: center;
-    }
+    /* ══ PRIVACY MODAL ══ */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,10,14,0.7); z-index: 200; align-items: center; justify-content: center; }
     .modal-overlay.open { display: flex; }
     .modal-box {
-      background: var(--card); max-width: 520px; width: 90%;
-      padding: 52px; position: relative;
-      max-height: 80vh; overflow-y: auto;
-      box-shadow: 0 32px 96px rgba(0,0,0,0.18);
+      background: var(--card); max-width: 540px; width: 90%; padding: clamp(32px, 5vw, 56px);
+      position: relative; max-height: 82vh; overflow-y: auto; border-radius: var(--radius);
+      box-shadow: 0 30px 90px rgba(15,15,17,0.22);
     }
-    .modal-title { font-size: 18px; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 28px; }
-    .modal-body { font-size: 14px; color: var(--text-muted); line-height: 1.9; letter-spacing: -0.015em; }
+    .modal-title { font-size: 19px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 26px; }
+    .modal-body { font-size: 14px; color: var(--ink-mid); line-height: 1.9; letter-spacing: -0.015em; }
     .modal-close {
-      position: absolute; top: 20px; right: 24px;
-      font-size: 22px; cursor: pointer;
-      color: var(--text-muted); background: none; border: none; line-height: 1;
-      transition: color 0.2s;
+      position: absolute; top: 20px; right: 24px; font-size: 22px; cursor: pointer;
+      color: var(--ink-mid); background: none; border: none; line-height: 1; transition: color .2s;
     }
-    .modal-close:hover { color: var(--text); }
+    .modal-close:hover { color: var(--ink); }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      section { padding: 80px 24px; }
-      nav { padding: 0 24px; }
-      .hero-inner { padding: 0 24px 64px; }
-      .hero-scroll { left: 50%; transform: translateX(-50%); }
-      .intro-strip { padding: 28px 24px; }
-      .intro-strip .inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .intro-desc { text-align: left; }
-      .portfolio-header { padding: 80px 24px 40px; }
-      .work-caption { padding: 32px 24px; }
-      .portfolio-lower { padding: 64px 24px 0; }
-      .portfolio-grid2, .contact-grid { grid-template-columns: 1fr; gap: 56px; }
-      .list-row { flex-wrap: wrap; gap: 8px 24px; }
-      .row-title { flex: 1 1 auto; }
-      .row-body { flex: 1 1 100%; order: 3; }
-      .row-tags { flex: 0 0 auto; order: 2; justify-content: flex-start; }
-      .row-link { flex: 0 0 auto; order: 4; text-align: left; }
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 1080px) {
+      .svc-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+      .svc-side { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: 20px; }
+      .proc-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .proc-cell:nth-child(2n) { border-right: 1px solid var(--rule); }
+      .proc-cell:nth-child(n+3) { border-top: 1px solid var(--rule); }
+    }
+    @media (max-width: 900px) {
+      :root { --gutter: 24px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .section-title { font-size: 28px; }
-    }
-    @media (max-width: 600px) {
-      .hero-eyebrow::before { display: none; }
-      .eyebrow-desktop { display: none; }
-      .eyebrow-mobile { display: inline; white-space: nowrap; }
-      #hero { min-height: 100dvh; }
-      .hero-scroll {
-        left: 50%; transform: translateX(-50%); bottom: 28px;
-      }
-      .hero-scroll::before { height: 36px; }
-      .hero-heading { font-size: 40px; letter-spacing: -0.025em; }
-      .hero-inner { flex-direction: column; align-items: flex-start; gap: 28px; padding-bottom: 130px; }
+      .statement-grid, .cl-grid, .contact-grid { grid-template-columns: 1fr; }
+      .statement-grid { gap: 28px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 34px; }
       .hero-meta { text-align: left; }
       .hero-meta-links { align-items: flex-start; }
-      .work-block { height: 78vh; }
+      .svc:nth-child(3) .svc-grid, .svc:nth-child(4) .svc-grid { padding-left: 0; }
+      .svc-grid { grid-template-columns: 1fr; gap: 18px; }
+      .svc-title { max-width: none; }
+    }
+    @media (max-width: 600px) {
+      .eyebrow-desktop { display: none; }
+      .eyebrow-mobile { display: inline; white-space: nowrap; }
+      .hero-eyebrow::before { display: none; }
+      .proc-grid { grid-template-columns: 1fr; }
+      .proc-cell { border-right: 1px solid var(--rule); }
+      .proc-cell:nth-child(n+2) { border-top: 1px solid var(--rule); }
+      .cl-names { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .check-options { gap: 6px; }
+      .work-block { height: 74vh; }
+      .work-play { width: 62px; height: 62px; }
+      details.faq-item summary { grid-template-columns: 38px minmax(0,1fr) 24px; gap: 12px; }
+      .faq-a { padding-left: 50px; padding-right: 0; }
+      .footer-logo { height: 74px; }
     }
   </style>
 </head>
@@ -874,350 +772,369 @@
   <a href="#contact" class="mobile-link nav-cta">문의하기</a>
 </div>
 
-<!-- HERO : Editorial 풀블리드 -->
+<!-- 1. HERO -->
 <section id="hero">
   <video autoplay muted loop playsinline preload="metadata" aria-label="그레이디랩 AI 패션 비주얼 쇼릴 영상">
     <source src="hero.mp4" type="video/mp4" />
   </video>
   <div class="hero-inner">
     <div>
-      <p class="hero-eyebrow"><span class="eyebrow-desktop">AI FASHION VISUAL STUDIO · <span class="no-wrap">그레이디랩</span></span><span class="eyebrow-mobile">AI FASHION VISUAL 그레이디랩</span></p>
-      <h1 class="hero-heading">The Next Era<br>of Fashion Visuals</h1>
+      <p class="hero-eyebrow"><span class="eyebrow-desktop">AI Fashion Visual Studio · <span class="no-wrap">그레이디랩</span></span><span class="eyebrow-mobile">AI Fashion Visual 그레이디랩</span></p>
+      <h1 class="t-display hero-heading">The Next Era<br>of Fashion Visuals</h1>
     </div>
     <div class="hero-meta">
       <p class="hero-meta-label"><span>Studio Director</span> · Kris W</p>
       <div class="hero-meta-links">
-        <a href="#contact" class="hero-link-primary">프로젝트 문의</a>
+        <a href="#contact" class="hero-link-primary">문의하기</a>
         <a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener" class="hero-link-secondary">포트폴리오 보기</a>
       </div>
     </div>
   </div>
-  <div class="hero-scroll">Scroll</div>
+  <div id="heroSentinel"></div>
 </section>
 
-<!-- INTRO STRIP -->
-<div class="intro-strip">
-  <div class="inner">
-    <p class="intro-desc">AI 영상 제작 · AI 패션쇼 · AI 룩북 등 AI 기반 하이엔드 패션 비주얼과 상업적 브랜드 솔루션. 패션 디자이너 출신 디렉터가 이끄는 한국 패션·리테일·광고 산업 특화 스튜디오.</p>
+<!-- 2. STATEMENT -->
+<section id="statement">
+  <div class="inner statement-grid">
+    <p class="statement-lead rv">촬영 세트도, 모델도 없이<br>브랜드의 톤앤매너를 완성합니다.</p>
+    <div>
+      <p class="statement-body rv rv-d1">AI 영상 제작 · AI 패션쇼 · AI 룩북 등 AI 기반 하이엔드 패션 비주얼과 상업적 브랜드 솔루션. 패션 디자이너 출신 디렉터가 이끄는 한국 패션·리테일·광고 산업 특화 스튜디오입니다.</p>
+      <p class="statement-body rv rv-d2">신세계 백화점, MBC, KITCT 한국섬유융합기술원을 비롯한 리테일·방송·브랜드 클라이언트와 협업하며, 실촬영 대비 평균 80% 비용 절감과 1/3 수준의 납품 기간을 실제 프로젝트에서 구현해 왔습니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>AI Fashion Film</span><span>Lookbook</span><span>Runway</span><span>OOH Campaign</span><span>Brand Consulting</span><span>AI Lecture</span>
+    <span>AI Fashion Film</span><span>Lookbook</span><span>Runway</span><span>OOH Campaign</span><span>Brand Consulting</span><span>AI Lecture</span>
   </div>
 </div>
 
-<!-- SERVICES -->
+<!-- 4. SERVICES -->
 <section id="services">
   <div class="inner">
-    <div class="services-header">
-      <p class="section-label">Our Services</p>
-      <h2 class="section-title">세 가지 핵심 서비스</h2>
-      <p class="section-sub">AI 기술과 패션 실무 경험을 결합한 상업적 솔루션을 제공합니다.</p>
+    <div class="sec-head rv">
+      <span class="t-label">Our Services</span>
+      <h2 class="t-h2">세 가지 핵심 서비스</h2>
+      <p class="t-body">AI 기술과 패션 실무 경험을 결합한 상업적 솔루션을 제공합니다.</p>
     </div>
-    <div class="list-section">
 
-      <div class="list-row">
-        <span class="row-num">01</span>
-        <h3 class="row-title">AI 패션 비주얼<br>&amp; AI 영상 제작</h3>
-        <p class="row-body">
+    <div class="svc rv">
+      <div class="svc-grid">
+        <div>
+          <span class="svc-num">01</span>
+          <h3 class="t-h3 svc-title">AI 패션 비주얼<br>&amp; AI 영상 제작</h3>
+        </div>
+        <p class="svc-body">
           실제 세트·모델 없이 4K 시네마틱 퀄리티의 AI 룩북, AI 패션쇼, OOH 광고 영상, 브랜드 필름을 제작합니다. 신세계 백화점·MBC 탐사보도 납품 이력 보유. 촬영 세트·모델비 대비 평균 <strong>80% 비용 절감</strong>, 납품 기간 1/3 단축.
         </p>
-        <div class="row-tags">
-          <span class="tag">AI Video</span><span class="tag">Lookbook</span><span class="tag">Fashion Film</span><span class="tag">OOH</span>
+        <div class="svc-side">
+          <div class="svc-tags">
+            <span class="tag">AI Video</span><span class="tag">Lookbook</span><span class="tag">Fashion Film</span><span class="tag">OOH</span>
+          </div>
+          <a href="#contact" class="svc-link">작업 문의</a>
         </div>
-        <a href="#contact" class="row-link">작업 문의</a>
       </div>
+    </div>
 
-      <div class="list-row">
-        <span class="row-num">02</span>
-        <h3 class="row-title">AI 기반 패션 디자인 대행<br>&amp; 브랜드 컨설팅</h3>
-        <p class="row-body">
+    <div class="svc rv">
+      <div class="svc-grid">
+        <div>
+          <span class="svc-num">02</span>
+          <h3 class="t-h3 svc-title">AI 기반 패션 디자인 대행<br>&amp; 브랜드 컨설팅</h3>
+        </div>
+        <p class="svc-body">
           패션 디자이너 출신 디렉터의 실무 감각과 AI 워크플로우를 결합해 BI 진단, 무드보드·가상 착장 비주얼, 실제 생산 연계 어드바이저리, 4K 브랜드 제안서(PDF) 딜리버리까지 4단계로 진행합니다. 브랜드 런칭 리드타임 <strong>60% 단축</strong>.
         </p>
-        <div class="row-tags">
-          <span class="tag">Brand Consulting</span><span class="tag">Design</span><span class="tag">Retail</span>
+        <div class="svc-side">
+          <div class="svc-tags">
+            <span class="tag">Brand Consulting</span><span class="tag">Design</span><span class="tag">Retail</span>
+          </div>
+          <a href="#contact" class="svc-link">컨설팅 문의</a>
         </div>
-        <a href="#contact" class="row-link">컨설팅 문의</a>
       </div>
-
-      <div class="list-row">
-        <span class="row-num">03</span>
-        <h3 class="row-title">AI 기업 강의<br>&amp; 전문 세미나</h3>
-        <p class="row-body">
-          "AI 시대, 패션 브랜드 기획" — 백화점·여성복·액티브웨어 실제 클라이언트 프로젝트 기반 실무 커리큘럼으로 패션 기업 임원·MD·디자이너·마케팅 담당자를 대상으로 합니다. 현장 적용 즉시 <strong>업무 효율 40% 향상</strong>.
-        </p>
-        <div class="row-tags">
-          <span class="tag">AI 패션 강의</span><span class="tag">Fashion Branding</span><span class="tag">B2B</span>
-        </div>
-        <a href="#contact" class="row-link">강의 문의</a>
-      </div>
-
     </div>
+
+    <div class="svc rv">
+      <div class="svc-grid">
+        <div>
+          <span class="svc-num">03</span>
+          <h3 class="t-h3 svc-title">AI 기업 강의<br>&amp; 전문 세미나</h3>
+        </div>
+        <p class="svc-body">
+          "AI 시대, 패션 브랜드 기획" 커리큘럼으로 진행합니다. 백화점·여성복·액티브웨어 실제 클라이언트 프로젝트를 기반으로 패션 기업 임원·MD·디자이너·마케팅 담당자를 대상으로 하며, 현장 적용 즉시 <strong>업무 효율 40% 향상</strong>.
+        </p>
+        <div class="svc-side">
+          <div class="svc-tags">
+            <span class="tag">AI 패션 강의</span><span class="tag">Fashion Branding</span><span class="tag">B2B</span>
+          </div>
+          <a href="#contact" class="svc-link">강의 문의</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- 5. PROCESS -->
 <section id="process">
   <div class="inner">
-    <div class="process-header">
-      <p class="section-label">Design &amp; Consulting Process</p>
-      <h2 class="section-title">4단계 실무 프로세스</h2>
-      <p class="section-sub">AI 기반 패션 디자인 대행의 단계별 진행 방식입니다.</p>
+    <div class="sec-head rv">
+      <h2 class="t-h2">4단계 실무 프로세스</h2>
+      <p class="t-body">AI 기반 패션 디자인 대행의 단계별 진행 방식입니다.</p>
     </div>
-    <div class="list-section">
-
-      <div class="list-row">
-        <span class="row-num">01</span>
-        <h3 class="row-title"><span class="step-en">Briefing &amp; Research</span>브랜드 진단 &amp; 리서치</h3>
-        <p class="row-body">클라이언트 BI 진단, 타깃 마켓 분석, 트렌드 데이터 기반 컬렉션 방향성 설정</p>
+    <div class="proc-grid rv">
+      <div class="proc-cell">
+        <span class="proc-idx">01</span>
+        <span class="proc-en">Briefing &amp; Research</span>
+        <h3 class="proc-title">브랜드 진단 &amp; 리서치</h3>
+        <p class="proc-body">클라이언트 BI 진단, 타깃 마켓 분석, 트렌드 데이터 기반 컬렉션 방향성 설정</p>
       </div>
-      <div class="list-row">
-        <span class="row-num">02</span>
-        <h3 class="row-title"><span class="step-en">AI Conceptualization</span>AI 시각화 &amp; 무드 셋업</h3>
-        <p class="row-body">AI 이미지 생성 · 3D 피팅 시뮬레이션 결합, 컬렉션 무드보드 개발, 가상 착장 비주얼 / 룩북 초안 기획</p>
+      <div class="proc-cell">
+        <span class="proc-idx">02</span>
+        <span class="proc-en">AI Conceptualization</span>
+        <h3 class="proc-title">AI 시각화 &amp; 무드 셋업</h3>
+        <p class="proc-body">AI 이미지 생성과 3D 피팅 시뮬레이션 결합, 컬렉션 무드보드 개발, 가상 착장 비주얼 및 룩북 초안 기획</p>
       </div>
-      <div class="list-row">
-        <span class="row-num">03</span>
-        <h3 class="row-title"><span class="step-en">Design Commercialization</span>상업적 디자인 어드바이저리</h3>
-        <p class="row-body">패턴·소재·봉제 연계, 리테일 관점의 디자인 셋 고도화, 기술적 피드백 제공</p>
+      <div class="proc-cell">
+        <span class="proc-idx">03</span>
+        <span class="proc-en">Commercialization</span>
+        <h3 class="proc-title">상업적 디자인 어드바이저리</h3>
+        <p class="proc-body">패턴·소재·봉제 연계, 리테일 관점의 디자인 셋 고도화, 기술적 피드백 제공</p>
       </div>
-      <div class="list-row">
-        <span class="row-num">04</span>
-        <h3 class="row-title"><span class="step-en">Final Delivery</span>최종 딜리버리 &amp; 론칭</h3>
-        <p class="row-body">4K 컬렉션 비주얼 세트, 디지털 룩북 소스, 브랜드 컨설팅 제안서(PDF), 미디어 캠페인 가이드라인</p>
+      <div class="proc-cell">
+        <span class="proc-idx">04</span>
+        <span class="proc-en">Final Delivery</span>
+        <h3 class="proc-title">최종 딜리버리 &amp; 론칭</h3>
+        <p class="proc-body">4K 컬렉션 비주얼 세트, 디지털 룩북 소스, 브랜드 컨설팅 제안서(PDF), 미디어 캠페인 가이드라인</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO : Editorial 풀블리드 워크 블록 -->
+<!-- 6. PORTFOLIO -->
 <section id="portfolio">
-  <div class="portfolio-header inner">
-    <p class="section-label">Selected Works</p>
-    <h2 class="section-title">대표 프로젝트</h2>
-    <p class="section-sub">실제 납품된 AI 광고 영상 · AI 패션 비주얼 작업 중 일부를 소개합니다.</p>
+  <div class="portfolio-header rv">
+    <span class="t-label" style="display:block;margin-bottom:18px;">Selected Works</span>
+    <h2 class="t-h2" style="margin-bottom:18px;">대표 프로젝트</h2>
+    <p class="t-body">실제 납품된 AI 광고 영상 · AI 패션 비주얼 작업 중 일부를 소개합니다.</p>
   </div>
 
   <a class="work-block" href="https://youtu.be/oAetnfvtTP0?si=UhP5oj4YJwIQwadb" data-video="oAetnfvtTP0">
-    <div class="work-plus">▶</div>
+    <div class="work-bg"></div>
+    <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">AI Fashion Film</p>
       <h3>XCLIAM · 2026 F/W 캠페인</h3>
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/2AHuOuhWm_M?si=JQbFrbLDbuzzeyR7" data-video="2AHuOuhWm_M">
-    <div class="work-plus">▶</div>
+    <div class="work-bg"></div>
+    <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">Lookbook</p>
       <h3>컬렉션 룩북 · AI 모델 비주얼</h3>
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/MylKuELOsVE?si=UVY8Rp9XF3u8kpnS" data-video="MylKuELOsVE">
-    <div class="work-plus">▶</div>
+    <div class="work-bg"></div>
+    <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">Brand Film</p>
       <h3>OOH 광고 영상 · 브랜드 캠페인</h3>
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/P7rgJx5XQZU?si=w0NSlMYY-tqrdDlw" data-video="P7rgJx5XQZU">
-    <div class="work-plus">▶</div>
+    <div class="work-bg"></div>
+    <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">AI Fashion Show</p>
       <h3>KRIS W · 2027 S/S 런웨이 컬렉션</h3>
     </div>
   </a>
+</section>
 
-  <div class="portfolio-lower inner">
-    <div class="portfolio-grid2">
-      <div class="portfolio-left">
-        <p class="section-label">Portfolio</p>
-        <h2 class="section-title">실제 작업물은<br>유튜브 채널에서</h2>
-        <p class="portfolio-desc">
-          AI 패션쇼, 룩북 영상, OOH 광고, 브랜드 필름 등<br>
-          전체 포트폴리오를 유튜브 채널에서 확인하실 수 있습니다.
-        </p>
-        <a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener" class="btn-youtube">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-          YouTube 포트폴리오 채널 바로가기
-        </a>
-        <div class="portfolio-categories">
-          <div class="pcat-item"><span class="pcat-dot"></span>AI 패션쇼 · 컬렉션 런웨이 필름</div>
-          <div class="pcat-item"><span class="pcat-dot"></span>OOH 광고 · 브랜드 캠페인 영상</div>
-          <div class="pcat-item"><span class="pcat-dot"></span>룩북 · 시즌 화보 · 리테일 비주얼</div>
-        </div>
-      </div>
-      <div class="portfolio-right">
-        <p class="clients-label">주요 클라이언트 &amp; 협업 이력</p>
-        <p class="clients-list">
-          <span>신세계 백화점</span><span>MBC</span>
-          <span>KITCT 한국섬유융합기술원</span><span>AurAI</span>
-          <span>m2e 미디어웍스</span><span>메종드이네스</span>
-          <span>잉크꾸띠르</span><span>아이디조이</span><span>외 다수</span>
-        </p>
-        <div class="exhibitions">
-          <p class="clients-label" style="margin-bottom:0;">전시 참여</p>
-          <div class="ex-item">
-            <p class="ex-title">2025 SEOULCon hAllyu Ignite 展</p>
-            <p class="ex-place">참여 작가 · DDP Design Lab Design Hall</p>
-          </div>
-          <div class="ex-item">
-            <p class="ex-title">AI Art Exhibition「青春, 첫사랑, 첫 만남」</p>
-            <p class="ex-place">참여 작가 · AI 갤러리 in 더리우</p>
-          </div>
-        </div>
+<!-- 7. CLIENTS + EXHIBITIONS -->
+<section id="clients">
+  <div class="inner cl-grid">
+    <div class="rv">
+      <h2 class="t-h2" style="margin-bottom:20px;">실제 작업물은<br>유튜브 채널에서</h2>
+      <p class="cl-desc">AI 패션쇼, 룩북 영상, OOH 광고, 브랜드 필름 등 전체 포트폴리오를 유튜브 채널에서 확인하실 수 있습니다.</p>
+      <a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener" class="btn-line">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+        <span>YouTube 채널 바로가기</span>
+      </a>
+      <div class="cl-cats">
+        <div class="cl-cat">AI 패션쇼 · 컬렉션 런웨이 필름</div>
+        <div class="cl-cat">OOH 광고 · 브랜드 캠페인 영상</div>
+        <div class="cl-cat">룩북 · 시즌 화보 · 리테일 비주얼</div>
       </div>
     </div>
-    <div class="portfolio-lower-pad"></div>
+    <div class="rv rv-d1">
+      <p class="cl-sub">주요 클라이언트 &amp; 협업 이력</p>
+      <div class="cl-names">
+        <span>신세계 백화점</span><span>MBC</span>
+        <span>KITCT 한국섬유융합기술원</span><span>AurAI</span>
+        <span>m2e 미디어웍스</span><span>메종드이네스</span>
+        <span>잉크꾸띠르</span><span>아이디조이</span>
+      </div>
+      <p class="cl-sub">전시 참여</p>
+      <div class="ex-item">
+        <p class="ex-title">2025 SEOULCon hAllyu Ignite 展</p>
+        <p class="ex-place">참여 작가 · DDP Design Lab Design Hall</p>
+      </div>
+      <div class="ex-item">
+        <p class="ex-title">AI Art Exhibition「青春, 첫사랑, 첫 만남」</p>
+        <p class="ex-place">참여 작가 · AI 갤러리 in 더리우</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- 8. FAQ -->
 <section id="faq">
   <div class="inner">
-    <div class="faq-header">
-      <p class="section-label">FAQ</p>
-      <h2 class="section-title">자주 묻는 질문</h2>
-      <p class="section-sub">AI 패션 영상 제작 관련 문의 전 자주 확인하시는 내용입니다.</p>
+    <div class="sec-head rv">
+      <h2 class="t-h2">자주 묻는 질문</h2>
+      <p class="t-body">AI 패션 영상 제작 관련 문의 전 자주 확인하시는 내용입니다.</p>
     </div>
-    <div class="list-section faq-list">
+    <div class="faq-list rv">
 
-      <div class="list-row">
-        <span class="row-num">Q1</span>
-        <h3 class="row-title">AI 패션 영상 제작<br>비용은 얼마인가요?</h3>
-        <p class="row-body">
-          프로젝트 규모와 결과물 길이에 따라 상이하며, 실제 세트·모델 촬영 대비 평균 <strong>80% 비용 절감</strong> 효과가 있습니다. 정확한 견적은 문의를 통해 안내드립니다.
-        </p>
-      </div>
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Q1</span>
+          <span class="faq-t">AI 패션 영상 제작 비용은 얼마인가요?</span>
+          <span class="faq-x"></span>
+        </summary>
+        <p class="faq-a">프로젝트 규모와 결과물 길이에 따라 상이하며, 실제 세트·모델 촬영 대비 평균 <strong>80% 비용 절감</strong> 효과가 있습니다. 정확한 견적은 문의를 통해 안내드립니다.</p>
+      </details>
 
-      <div class="list-row">
-        <span class="row-num">Q2</span>
-        <h3 class="row-title">제작 기간은<br>얼마나 걸리나요?</h3>
-        <p class="row-body">
-          실촬영 대비 납품 기간이 약 <strong>1/3 수준</strong>으로 단축됩니다. 정확한 일정은 프로젝트 범위에 따라 상담을 통해 안내드립니다.
-        </p>
-      </div>
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Q2</span>
+          <span class="faq-t">제작 기간은 얼마나 걸리나요?</span>
+          <span class="faq-x"></span>
+        </summary>
+        <p class="faq-a">실촬영 대비 납품 기간이 약 <strong>1/3 수준</strong>으로 단축됩니다. 정확한 일정은 프로젝트 범위에 따라 상담을 통해 안내드립니다.</p>
+      </details>
 
-      <div class="list-row">
-        <span class="row-num">Q3</span>
-        <h3 class="row-title">실제 모델·촬영 세트 없이<br>어떻게 제작하나요?</h3>
-        <p class="row-body">
-          AI 모델 생성과 3D 피팅 시뮬레이션을 결합해 실제 세트와 모델 없이 <strong>4K 시네마틱 퀄리티</strong>의 패션 비주얼을 완성합니다.
-        </p>
-      </div>
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Q3</span>
+          <span class="faq-t">실제 모델·촬영 세트 없이 어떻게 제작하나요?</span>
+          <span class="faq-x"></span>
+        </summary>
+        <p class="faq-a">AI 모델 생성과 3D 피팅 시뮬레이션을 결합해 실제 세트와 모델 없이 <strong>4K 시네마틱 퀄리티</strong>의 패션 비주얼을 완성합니다.</p>
+      </details>
 
-      <div class="list-row">
-        <span class="row-num">Q4</span>
-        <h3 class="row-title">영상 제작 외 다른<br>서비스도 있나요?</h3>
-        <p class="row-body">
-          AI 패션 영상 제작 외에도 AI 기반 패션 디자인 대행 및 브랜드 컨설팅, 기업 대상 AI 활용 강의·세미나를 제공합니다.
-        </p>
-        <a href="#services" class="row-link">서비스 자세히 보기</a>
-      </div>
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Q4</span>
+          <span class="faq-t">영상 제작 외 다른 서비스도 있나요?</span>
+          <span class="faq-x"></span>
+        </summary>
+        <p class="faq-a">AI 패션 영상 제작 외에도 AI 기반 패션 디자인 대행 및 브랜드 컨설팅, 기업 대상 AI 활용 강의·세미나를 제공합니다. <a href="#services">서비스 자세히 보기</a></p>
+      </details>
 
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- 9. CONTACT -->
 <section id="contact">
-  <div class="inner">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">프로젝트 문의</h2>
-        <p class="section-sub">프로젝트 의뢰 · 강의 신청 · 컨설팅 상담.<br>빠른 시일 내에 답변드립니다.</p>
-        <div style="margin-top:48px;display:flex;flex-direction:column;gap:20px;">
-          <div class="info-item">
-            <p class="info-label">Email</p>
-            <p class="info-val">bakhafactory@gmail.com</p>
-          </div>
-          <div class="info-item">
-            <p class="info-label">Tel</p>
-            <p class="info-val">010-7773-4857</p>
-          </div>
-          <div class="info-item">
-            <p class="info-label">YouTube</p>
-            <p class="info-val">
-              <a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener">@gray_d_lab</a>
-            </p>
-          </div>
+  <div class="inner contact-grid">
+    <div class="rv">
+      <h2 class="t-h2" style="margin-bottom:20px;">프로젝트 문의</h2>
+      <p class="t-body" style="margin-bottom:48px;">프로젝트 의뢰 · 강의 신청 · 컨설팅 상담.<br>빠른 시일 내에 답변드립니다.</p>
+      <div class="info-item">
+        <p class="info-label">Email</p>
+        <p class="info-val">bakhafactory@gmail.com</p>
+      </div>
+      <div class="info-item">
+        <p class="info-label">Tel</p>
+        <p class="info-val">010-7773-4857</p>
+      </div>
+      <div class="info-item">
+        <p class="info-label">YouTube</p>
+        <p class="info-val"><a href="https://www.youtube.com/@gray_d_lab" target="_blank" rel="noopener">@gray_d_lab</a></p>
+      </div>
+      <div class="contact-meta">
+        <div class="contact-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>평일 10:00 - 18:00 운영 · 문의 접수 후 <strong>24시간 이내</strong> 회신</span>
         </div>
-        <div class="contact-meta">
-          <div class="contact-meta-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>평일 10:00 — 18:00 운영 · 문의 접수 후 <strong>24시간 이내</strong> 회신</span>
-          </div>
-          <div class="contact-meta-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>서울 · 전국 출장 강의 및 화상 미팅 가능</span>
-          </div>
+        <div class="contact-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>서울 · 전국 출장 강의 및 화상 미팅 가능</span>
         </div>
       </div>
-
-      <form class="contact-form" id="contactForm"
-            action="https://formspree.io/f/mvzjrwro" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">이름 *</label>
-            <input type="text" id="name" name="name" required placeholder="홍길동" />
-          </div>
-          <div class="form-group">
-            <label for="company">회사명 / 브랜드명</label>
-            <input type="text" id="company" name="company" placeholder="브랜드명" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">이메일 *</label>
-            <input type="email" id="email" name="email" required placeholder="email@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="tel">연락처</label>
-            <input type="tel" id="tel" name="tel" placeholder="010-0000-0000" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="type">문의 유형 *</label>
-          <select id="type" name="type" required>
-            <option value="" disabled selected>선택해주세요</option>
-            <option value="video">AI 패션 영상 제작</option>
-            <option value="consulting">패션 디자인 대행 &amp; 브랜드 컨설팅</option>
-            <option value="lecture">강의 &amp; 세미나 신청</option>
-            <option value="other">기타</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="budget">희망 예산 범위</label>
-          <input type="text" id="budget" name="budget" placeholder="예: 500만원, 1,000~3,000만원 등 자유롭게 작성해 주세요." />
-        </div>
-
-        <div class="form-check-group">
-          <label>희망 착수 일정</label>
-          <div class="check-options">
-            <div class="check-option"><input type="radio" id="s1" name="schedule" value="즉시" /><label for="s1">즉시 가능</label></div>
-            <div class="check-option"><input type="radio" id="s2" name="schedule" value="1개월 내" /><label for="s2">1개월 내</label></div>
-            <div class="check-option"><input type="radio" id="s3" name="schedule" value="3개월 내" /><label for="s3">3개월 내</label></div>
-            <div class="check-option"><input type="radio" id="s4" name="schedule" value="미정" /><label for="s4">미정</label></div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="message">문의 내용 *</label>
-          <textarea id="message" name="message" required placeholder="프로젝트 내용, 참고 레퍼런스 등을 간략히 작성해 주세요."></textarea>
-        </div>
-        <input type="hidden" name="_replyto" value="bakhafactory@gmail.com" />
-        <input type="hidden" name="_subject" value="[GRaY D. Lab] 새 문의가 접수되었습니다" />
-        <input type="hidden" name="_to" value="bakhafactory@gmail.com" />
-        <input type="hidden" name="_next" value="" />
-
-        <div class="privacy-row">
-          <input type="checkbox" id="privacy" name="privacy" required />
-          <label for="privacy" style="font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted);cursor:pointer;">
-            <span class="privacy-link" onclick="event.stopPropagation();openPrivacy()">개인정보 수집 및 이용</span>에 동의합니다. (필수)
-          </label>
-        </div>
-        <button type="submit" class="btn-submit" id="submitBtn">문의 보내기</button>
-        <p id="formMsg" style="display:none;text-align:center;font-size:13px;color:var(--text-muted);margin-top:8px;"></p>
-      </form>
     </div>
+
+    <form class="contact-form rv rv-d1" id="contactForm"
+          action="https://formspree.io/f/mvzjrwro" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">이름 *</label>
+          <input type="text" id="name" name="name" required placeholder="홍길동" />
+        </div>
+        <div class="form-group">
+          <label for="company">회사명 / 브랜드명</label>
+          <input type="text" id="company" name="company" placeholder="브랜드명" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">이메일 *</label>
+          <input type="email" id="email" name="email" required placeholder="email@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="tel">연락처</label>
+          <input type="tel" id="tel" name="tel" placeholder="010-0000-0000" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="type">문의 유형 *</label>
+        <select id="type" name="type" required>
+          <option value="" disabled selected>선택해주세요</option>
+          <option value="video">AI 패션 영상 제작</option>
+          <option value="consulting">패션 디자인 대행 &amp; 브랜드 컨설팅</option>
+          <option value="lecture">강의 &amp; 세미나 신청</option>
+          <option value="other">기타</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="budget">희망 예산 범위</label>
+        <input type="text" id="budget" name="budget" placeholder="예: 500만원, 1,000~3,000만원 등 자유롭게 작성해 주세요." />
+      </div>
+      <div class="form-check-group">
+        <label>희망 착수 일정</label>
+        <div class="check-options">
+          <div class="check-option"><input type="radio" id="s1" name="schedule" value="즉시" /><label for="s1">즉시 가능</label></div>
+          <div class="check-option"><input type="radio" id="s2" name="schedule" value="1개월 내" /><label for="s2">1개월 내</label></div>
+          <div class="check-option"><input type="radio" id="s3" name="schedule" value="3개월 내" /><label for="s3">3개월 내</label></div>
+          <div class="check-option"><input type="radio" id="s4" name="schedule" value="미정" /><label for="s4">미정</label></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">문의 내용 *</label>
+        <textarea id="message" name="message" required placeholder="프로젝트 내용, 참고 레퍼런스 등을 간략히 작성해 주세요."></textarea>
+      </div>
+      <input type="hidden" name="_replyto" value="bakhafactory@gmail.com" />
+      <input type="hidden" name="_subject" value="[GRaY D. Lab] 새 문의가 접수되었습니다" />
+      <input type="hidden" name="_to" value="bakhafactory@gmail.com" />
+      <input type="hidden" name="_next" value="" />
+
+      <div class="privacy-row">
+        <input type="checkbox" id="privacy" name="privacy" required />
+        <label for="privacy" style="font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-mid);cursor:pointer;">
+          <span class="privacy-link" onclick="event.stopPropagation();openPrivacy()">개인정보 수집 및 이용</span>에 동의합니다. (필수)
+        </label>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">문의 보내기</button>
+      <p id="formMsg" style="display:none;text-align:center;font-size:13px;color:var(--ink-mid);margin-top:10px;"></p>
+    </form>
   </div>
 </section>
 
@@ -1226,7 +1143,7 @@
   <video class="footer-logo" src="logo_vid_001.mp4" autoplay muted loop playsinline></video>
   <p><strong>GRaY D. Lab</strong> · AI Fashion Visual Studio · 그레이디랩</p>
   <p>AI 영상 제작 · AI 패션 비주얼 · AI 패션쇼 · AI 룩북 · AI 기업 강의 전문 스튜디오</p>
-  <div class="footer-divider"></div>
+  <div class="footer-rule"></div>
   <p id="copyrightText"></p>
 </footer>
 
@@ -1256,75 +1173,88 @@
 </div>
 
 <script>
-  // ── 포트폴리오 영상 풀스크린 모달
-  const videoModal      = document.getElementById('videoModal');
-  const videoModalFrame = document.getElementById('videoModalFrame');
-  const videoIframe     = document.getElementById('videoModalIframe');
-  const videoModalClose = document.getElementById('videoModalClose');
+  // ── Scroll reveal (IntersectionObserver, no scroll listeners)
+  (function () {
+    var items = document.querySelectorAll('.rv');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+
+  // ── NAV dark/light via sentinel (replaces scroll listener)
+  (function () {
+    var mainNav  = document.getElementById('mainNav');
+    var sentinel = document.getElementById('heroSentinel');
+    if (!('IntersectionObserver' in window)) { mainNav.className = 'nav--light'; return; }
+    var navIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        mainNav.className = e.isIntersecting ? 'nav--dark' : 'nav--light';
+      });
+    }, { rootMargin: '-70px 0px 0px 0px', threshold: 0 });
+    navIO.observe(sentinel);
+  })();
+
+  // ── Portfolio video modal
+  var videoModal      = document.getElementById('videoModal');
+  var videoModalFrame = document.getElementById('videoModalFrame');
+  var videoIframe     = document.getElementById('videoModalIframe');
+  var videoModalClose = document.getElementById('videoModalClose');
 
   function openVideoModal(id, vertical) {
     videoModalFrame.className = 'video-modal-frame ' + (vertical ? 'ratio-9-16' : 'ratio-16-9');
     videoIframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
     videoModal.classList.add('open');
     document.body.style.overflow = 'hidden';
-    const req = videoModal.requestFullscreen || videoModal.webkitRequestFullscreen;
-    if (req) { try { req.call(videoModal).catch(function(){}); } catch (err) {} }
+    var req = videoModal.requestFullscreen || videoModal.webkitRequestFullscreen;
+    if (req) { try { req.call(videoModal).catch(function () {}); } catch (err) {} }
   }
   function closeVideoModal() {
     videoModal.classList.remove('open');
     videoIframe.src = '';
     document.body.style.overflow = '';
     if (document.fullscreenElement) {
-      document.exitFullscreen().catch(function(){});
+      document.exitFullscreen().catch(function () {});
     } else if (document.webkitFullscreenElement) {
       document.webkitExitFullscreen();
     }
   }
-  document.querySelectorAll('.work-block').forEach(function(block) {
-    block.addEventListener('click', function(e) {
+  document.querySelectorAll('.work-block').forEach(function (block) {
+    block.addEventListener('click', function (e) {
       e.preventDefault();
       openVideoModal(block.getAttribute('data-video'), block.hasAttribute('data-vertical'));
     });
   });
   videoModalClose.addEventListener('click', closeVideoModal);
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && videoModal.classList.contains('open')) closeVideoModal();
   });
 
-  // ── 카피라이트 연도 자동화
-  (function() {
-    const startYear = 2025;
-    const currentYear = new Date().getFullYear();
-    const yearStr = currentYear > startYear
-      ? startYear + '–' + currentYear
-      : String(startYear);
+  // ── Copyright year
+  (function () {
+    var startYear = 2025;
+    var currentYear = new Date().getFullYear();
+    var yearStr = currentYear > startYear ? startYear + '-' + currentYear : String(startYear);
     document.getElementById('copyrightText').textContent =
       '© ' + yearStr + ' GRaY D. Lab. All rights reserved.';
   })();
 
-  // ── NAV dark/light 전환
-  const mainNav = document.getElementById('mainNav');
-  const heroEl  = document.getElementById('hero');
-  function updateNav() {
-    if (heroEl.getBoundingClientRect().bottom > 68) {
-      mainNav.className = 'nav--dark';
-    } else {
-      mainNav.className = 'nav--light';
-    }
-  }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
   // ── Hamburger
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const mobileMenu   = document.getElementById('mobileMenu');
-  hamburgerBtn.addEventListener('click', function() {
-    const isOpen = mobileMenu.classList.toggle('open');
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu   = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', function () {
+    var isOpen = mobileMenu.classList.toggle('open');
     hamburgerBtn.classList.toggle('open', isOpen);
     hamburgerBtn.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
   });
-  document.querySelectorAll('.mobile-link').forEach(function(link) {
-    link.addEventListener('click', function() {
+  document.querySelectorAll('.mobile-link').forEach(function (link) {
+    link.addEventListener('click', function () {
       mobileMenu.classList.remove('open');
       hamburgerBtn.classList.remove('open');
     });
@@ -1333,30 +1263,32 @@
   // ── Privacy modal
   function openPrivacy()  { document.getElementById('privacyModal').classList.add('open'); }
   function closePrivacy() { document.getElementById('privacyModal').classList.remove('open'); }
-  document.getElementById('privacyModal').addEventListener('click', function(e) {
+  document.getElementById('privacyModal').addEventListener('click', function (e) {
     if (e.target === this) closePrivacy();
   });
 
   // ── Formspree AJAX
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', async function(e) {
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    const msg = document.getElementById('formMsg');
+    var btn = document.getElementById('submitBtn');
+    var msg = document.getElementById('formMsg');
     btn.disabled = true; btn.textContent = '전송 중...';
     try {
-      const res = await fetch(form.action, {
+      var res = await fetch(form.action, {
         method: 'POST', body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
         btn.textContent = '✓ 문의가 접수되었습니다';
-        btn.style.background = 'var(--point)';
+        btn.style.background = 'var(--accent)';
+        btn.style.borderColor = 'var(--accent)';
+        btn.style.color = '#fff';
         form.reset();
       } else { throw new Error(); }
     } catch {
       btn.disabled = false; btn.textContent = '문의 보내기';
-      msg.style.display = 'block'; msg.style.color = '#e05555';
+      msg.style.display = 'block'; msg.style.color = '#D8443C';
       msg.textContent = '전송에 실패했습니다. bakhafactory@gmail.com으로 직접 문의해주세요.';
     }
   });

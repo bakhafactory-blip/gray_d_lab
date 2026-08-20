@@ -554,15 +554,8 @@
     .cl-cat { display: flex; align-items: baseline; gap: 12px; font-size: 14.5px; color: var(--ink-mid); letter-spacing: -0.015em; }
     .cl-cat::before { content: ''; width: 14px; height: 1px; background: var(--accent); flex-shrink: 0; transform: translateY(-4px); }
     .cl-sub { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 20px; }
-    .cl-names {
-      display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 24px;
-      margin-bottom: 44px; border-top: 1px solid var(--rule);
-    }
-    .cl-names span {
-      font-size: 15px; color: var(--ink); letter-spacing: -0.018em;
-      padding: 13px 0; border-bottom: 1px solid var(--rule);
-    }
     .ex-item { padding: 20px 0; }
+    .ex-item:first-of-type { border-top: 1px solid var(--rule); }
     .ex-item + .ex-item { border-top: 1px solid var(--rule); }
     .ex-title { font-size: 14.5px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 5px; }
     .ex-place { font-size: 13px; color: var(--ink-soft); }
@@ -734,7 +727,6 @@
       .proc-grid { grid-template-columns: 1fr; }
       .proc-cell { border-right: 1px solid var(--rule); }
       .proc-cell:nth-child(n+2) { border-top: 1px solid var(--rule); }
-      .cl-names { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .work-block { height: 74vh; }
       .work-play { width: 62px; height: 62px; }
@@ -973,13 +965,6 @@
       </div>
     </div>
     <div class="rv rv-d1">
-      <p class="cl-sub">주요 클라이언트 &amp; 협업 이력</p>
-      <div class="cl-names">
-        <span>신세계 백화점</span><span>MBC</span>
-        <span>KITCT 한국섬유융합기술원</span><span>AurAI</span>
-        <span>m2e 미디어웍스</span><span>메종드이네스</span>
-        <span>잉크꾸띠르</span><span>아이디조이</span>
-      </div>
       <p class="cl-sub">전시 참여</p>
       <div class="ex-item">
         <p class="ex-title">2025 SEOULCon hAllyu Ignite 展</p>

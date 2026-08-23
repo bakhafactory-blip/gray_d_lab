@@ -208,9 +208,12 @@
       --ink-mid:    #52545E;
       --ink-soft:   #888A94;
       --rule:       #D6D6D1;
-      /* Single accent, locked page-wide */
+      /* Brand Blue (Text labels, numerals 01~04, links, icons) */
       --accent:     #0090EA;
       --accent-dim: rgba(0,144,234,0.14);
+      /* Neon Lime (Marquee Ticker Band, Play Cursor) */
+      --neon:       #DAFC4B;
+      --neon-dim:   rgba(218,252,75,0.25);
       /* Geometry */
       --max-w:      1400px;
       --gutter:     40px;
@@ -390,7 +393,7 @@
       font-size: 12px; font-weight: 600; letter-spacing: 0.2em;
       text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 22px;
     }
-    .hero-eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--accent); flex-shrink: 0; }
+    .hero-eyebrow::before { content: ''; width: 30px; height: 1.5px; background: var(--neon); flex-shrink: 0; }
     .hero-eyebrow .no-wrap { white-space: nowrap; }
     .eyebrow-mobile { display: none; }
     .hero-heading { color: #fff; max-width: 15ch; }
@@ -432,7 +435,7 @@
       font-size: clamp(24px, 2.6vw, 40px); color: var(--ink); white-space: nowrap; padding: 0 34px;
       display: inline-flex; align-items: center; gap: 34px;
     }
-    .marquee-track span::after { content: ''; width: 5px; height: 5px; background: var(--accent); flex-shrink: 0; }
+    .marquee-track span::after { content: ''; width: 5px; height: 5px; background: var(--neon); flex-shrink: 0; }
     @keyframes slide { to { transform: translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) {
       .marquee-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
@@ -512,7 +515,7 @@
       transition: background 0.4s var(--ease);
     }
     .work-caption { position: relative; z-index: 2; padding: clamp(32px, 4vw, 56px) var(--gutter); max-width: var(--max-w); margin: 0 auto; width: 100%; }
-    .work-type { font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #4FC0FF; margin-bottom: 12px; }
+    .work-type { font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #DAFC4B; margin-bottom: 12px; }
     .work-caption h3 {
       font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
       font-size: clamp(28px, 3.8vw, 52px); color: rgba(255,255,255,0.96);
@@ -522,9 +525,10 @@
     /* 모바일/터치용 중앙 재생 버튼 (기본) */
     .work-play {
       position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: 72px; height: 72px; border: 1px solid rgba(255,255,255,0.34); border-radius: 50%;
+      width: 72px; height: 72px; border: 1.5px solid rgba(218,252,75,0.6); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.9); font-size: 15px; padding-left: 4px;
+      background: rgba(218,252,75,0.15);
+      color: #DAFC4B; font-size: 15px; padding-left: 4px;
       transition: background .4s var(--ease), border-color .4s, transform .4s var(--ease);
       backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
     }
@@ -543,14 +547,14 @@
       .work-block:hover .work-bg { transform: none; }
     }
 
-    /* ══ Custom Mouse Cursor Indicator (Desktop Only) ══ */
+    /* ══ Custom Mouse Cursor Indicator (Desktop Only — Neon Lime) ══ */
     .custom-play-cursor {
       position: fixed; top: 0; left: 0; width: 74px; height: 74px;
       border-radius: 50%;
-      background: #00B8FF;
-      border: 1.5px solid rgba(255, 255, 255, 0.95);
-      box-shadow: 0 10px 28px rgba(0, 184, 255, 0.55), 0 0 18px rgba(0, 184, 255, 0.45);
-      color: #FFFFFF; font-size: 11.5px; font-weight: 800; letter-spacing: 0.16em;
+      background: #DAFC4B;
+      border: 1.5px solid #121316;
+      box-shadow: 0 10px 28px rgba(218, 252, 75, 0.45), 0 0 20px rgba(218, 252, 75, 0.35);
+      color: #121316; font-size: 11.5px; font-weight: 900; letter-spacing: 0.16em;
       text-transform: uppercase; display: flex; align-items: center; justify-content: center;
       pointer-events: none; z-index: 250; opacity: 0;
       will-change: transform, opacity;
@@ -560,26 +564,25 @@
       opacity: 1;
     }
     .custom-play-cursor svg {
-      width: 13px; height: 13px; fill: #FFFFFF; margin-right: 4px;
+      width: 13px; height: 13px; fill: #121316; margin-right: 4px;
     }
 
     /* ══ 7. CLIENTS & EXHIBITIONS (Infinite Marquee + Two Column) ══ */
     #clients { background: var(--paper); padding-top: clamp(60px, 8vw, 120px); }
     
-    /* Infinite Marquee Ticker for Clients (Bright Vivid Sky Blue) */
+    /* Infinite Marquee Ticker for Clients (Neon Lime Band) */
     .client-ticker-wrapper {
       margin-bottom: clamp(60px, 8vw, 100px);
     }
     .client-ticker-label {
       text-align: center; margin-bottom: 24px; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase; color: #00A6FF;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink);
     }
     .marquee-clients {
       overflow: hidden; padding: clamp(16px, 2.5vw, 22px) 0;
-      background: #00B8FF;
-      border-top: 1px solid rgba(255, 255, 255, 0.4);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 8px 30px rgba(0, 184, 255, 0.35);
+      background: #DAFC4B;
+      border: none;
+      box-shadow: 0 8px 30px rgba(218, 252, 75, 0.28);
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
               mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
       cursor: default;
@@ -598,15 +601,15 @@
     }
     .marquee-client-item {
       display: inline-flex; align-items: center; gap: 14px;
-      padding: 0 clamp(20px, 3.5vw, 38px); color: #FFFFFF;
+      padding: 0 clamp(20px, 3.5vw, 38px); color: #181A12;
       font-size: clamp(13.5px, 1.6vw, 15px); font-weight: 600; letter-spacing: 0.04em; white-space: nowrap;
     }
     .marquee-client-item strong {
-      color: #FFFFFF; font-size: clamp(14px, 1.8vw, 16px); font-weight: 800; letter-spacing: 0.06em;
+      color: #000000; font-size: clamp(14px, 1.8vw, 16px); font-weight: 800; letter-spacing: 0.06em;
     }
     .marquee-client-item .bullet {
       width: 5px; height: 5px; background: #FFFFFF; border-radius: 50%; margin-left: clamp(14px, 2.5vw, 24px);
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.95); flex-shrink: 0;
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.85); flex-shrink: 0;
     }
     @keyframes marqueeClientScroll {
       0% { transform: translateX(0); }
@@ -629,9 +632,9 @@
     .btn-line:hover { color: var(--paper); }
     .btn-line > * { position: relative; z-index: 1; }
     .btn-line svg { width: 15px; height: 15px; flex-shrink: 0; }
-    .cl-cats { margin-top: 30px; display: flex; flex-direction: column; gap: 11px; }
-    .cl-cat { display: flex; align-items: baseline; gap: 12px; font-size: 14.5px; color: var(--ink-mid); letter-spacing: -0.015em; }
-    .cl-cat::before { content: ''; width: 14px; height: 1px; background: var(--accent); flex-shrink: 0; transform: translateY(-4px); }
+    .cl-cats { margin-top: 30px; display: flex; flex-direction: column; gap: 13px; }
+    .cl-cat { display: flex; align-items: center; gap: 12px; font-size: 14.5px; color: var(--ink-mid); letter-spacing: -0.015em; line-height: 1.6; }
+    .cl-cat::before { content: ''; width: 16px; height: 2px; background: var(--accent); flex-shrink: 0; border-radius: 1px; display: inline-block; }
     .cl-sub { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 20px; }
     .ex-item { padding: 20px 0; }
     .ex-item:first-of-type { border-top: 1px solid var(--rule); }

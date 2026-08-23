@@ -204,9 +204,9 @@
       --paper:      #F1F1EF;
       --paper-deep: #E6E6E2;
       --card:       #FFFFFF;
-      --ink:        #0F0F11;
-      --ink-mid:    #55555E;
-      --ink-soft:   #8A8A92;
+      --ink:        #22242A;       /* Deep Dark Charcoal Gray (Replaces pure black) */
+      --ink-mid:    #52545E;
+      --ink-soft:   #888A94;
       --rule:       #D6D6D1;
       /* Single accent, locked page-wide */
       --accent:     #0090EA;
@@ -545,23 +545,22 @@
 
     /* ══ Custom Mouse Cursor Indicator (Desktop Only) ══ */
     .custom-play-cursor {
-      position: fixed; top: 0; left: 0; width: 72px; height: 72px;
-      margin-top: -36px; margin-left: -36px;
-      border-radius: 50%; background: rgba(10,10,14,0.88);
-      border: 1px solid rgba(255,255,255,0.35);
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      position: fixed; top: 0; left: 0; width: 74px; height: 74px;
+      border-radius: 50%;
+      background: #0090EA;
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 28px rgba(0, 144, 234, 0.45), 0 0 16px rgba(0, 144, 234, 0.35);
+      color: #FFFFFF; font-size: 11.5px; font-weight: 800; letter-spacing: 0.16em;
       text-transform: uppercase; display: flex; align-items: center; justify-content: center;
       pointer-events: none; z-index: 250; opacity: 0;
-      transform: scale(0.4);
-      transition: opacity 0.25s ease, transform 0.25s var(--ease), background 0.3s;
+      will-change: transform, opacity;
+      transition: opacity 0.2s ease;
     }
     .custom-play-cursor.active {
-      opacity: 1; transform: scale(1);
+      opacity: 1;
     }
     .custom-play-cursor svg {
-      width: 12px; height: 12px; fill: #fff; margin-right: 4px;
+      width: 13px; height: 13px; fill: #FFFFFF; margin-right: 4px;
     }
 
     /* ══ 7. CLIENTS & EXHIBITIONS (Infinite Marquee + Two Column) ══ */
@@ -573,11 +572,14 @@
     }
     .client-ticker-label {
       text-align: center; margin-bottom: 24px; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
     }
     .marquee-clients {
-      overflow: hidden; padding: 20px 0; background: #0E0E12;
-      border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden; padding: 22px 0;
+      background: #0090EA;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 144, 234, 0.25);
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
               mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
       cursor: default;
@@ -590,15 +592,16 @@
     }
     .marquee-client-item {
       display: inline-flex; align-items: center; gap: 14px;
-      padding: 0 38px; color: rgba(255,255,255,0.72);
-      font-size: 15px; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap;
+      padding: 0 38px; color: rgba(255,255,255,0.92);
+      font-size: 15px; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap;
       transition: color 0.25s;
     }
     .marquee-client-item strong {
-      color: #FFFFFF; font-size: 16px; font-weight: 700; letter-spacing: 0.06em;
+      color: #FFFFFF; font-size: 16px; font-weight: 800; letter-spacing: 0.06em;
     }
     .marquee-client-item .bullet {
-      width: 4px; height: 4px; background: rgba(255,255,255,0.28); border-radius: 50%; margin-left: 24px;
+      width: 5px; height: 5px; background: #FFFFFF; border-radius: 50%; margin-left: 24px;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.85);
     }
     .marquee-client-item:hover {
       color: #FFFFFF;
@@ -893,7 +896,7 @@
 
 <!-- 1. HERO -->
 <section id="hero">
-  <video autoplay muted loop playsinline preload="metadata" poster="og-image.jpg" aria-label="그레이디랩 AI 패션 비주얼 쇼릴 영상">
+  <video autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" aria-label="그레이디랩 AI 패션 비주얼 쇼릴 영상">
     <source src="hero.mp4" type="video/mp4" />
   </video>
   <div class="hero-inner">
@@ -1254,7 +1257,7 @@
       </div>
       <div class="form-group" id="group-budget">
         <label for="budget">희망 예산 범위</label>
-        <input type="text" id="budget" name="budget" placeholder="예: 150만원, 200~400만원 등 자유롭게 작성해 주세요." />
+        <input type="text" id="budget" name="budget" placeholder="예: 200만원, 400만원~600만원 등 자유롭게 작성해 주세요." />
       </div>
       <div class="form-check-group">
         <label>희망 착수 일정</label>
@@ -1397,23 +1400,16 @@
 
     var mouseX = -100, mouseY = -100;
     var posX = -100, posY = -100;
-    var isMoving = false;
 
     window.addEventListener('mousemove', function (e) {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      if (!isMoving) {
-        posX = mouseX; posY = mouseY;
-        cursor.style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0)';
-        isMoving = true;
-      }
     });
 
     function updateCursor() {
-      posX += (mouseX - posX) * 0.22;
-      posY += (mouseY - posY) * 0.22;
-      cursor.style.left = posX + 'px';
-      cursor.style.top  = posY + 'px';
+      posX += (mouseX - posX) * 0.25;
+      posY += (mouseY - posY) * 0.25;
+      cursor.style.transform = 'translate3d(' + (posX - 37) + 'px, ' + (posY - 37) + 'px, 0)';
       requestAnimationFrame(updateCursor);
     }
     requestAnimationFrame(updateCursor);

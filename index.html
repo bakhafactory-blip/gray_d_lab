@@ -496,7 +496,7 @@
       position: relative; height: min(88vh, 860px); min-height: 440px;
       overflow: hidden; display: flex; align-items: flex-end;
       text-decoration: none; cursor: pointer; background: var(--ink);
-      transition: transform 0.3s ease; will-change: transform;
+      transition: transform 0.35s ease; will-change: transform;
     }
     .work-bg {
       position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat;
@@ -518,19 +518,24 @@
       font-size: clamp(28px, 3.8vw, 52px); color: rgba(255,255,255,0.96);
       letter-spacing: -0.02em; line-height: 1.18; padding-bottom: .05em;
     }
+    
+    /* 모바일/터치용 중앙 재생 버튼 (기본) */
     .work-play {
       position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%);
-      width: 76px; height: 76px; border: 1px solid rgba(255,255,255,0.34); border-radius: 50%;
+      width: 72px; height: 72px; border: 1px solid rgba(255,255,255,0.34); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.86); font-size: 15px; padding-left: 4px;
+      color: rgba(255,255,255,0.9); font-size: 15px; padding-left: 4px;
       transition: background .4s var(--ease), border-color .4s, transform .4s var(--ease);
-      backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
     }
+    
+    /* 데스크톱 마우스 환경: 중앙 버튼은 숨기고 커스텀 마우스 커서만 깔끔하게 동작 */
     @media (hover: hover) and (pointer: fine) {
+      .work-block { cursor: none; }
+      .work-play { display: none; }
       .work-block:hover { transform: scale(1.03); z-index: 2; }
       .work-block:hover .work-bg { transform: scale(1.05); }
       .work-block:hover::before { background: linear-gradient(to top, rgba(6,6,10,0.88) 0%, rgba(6,6,10,0.28) 56%, transparent 80%); }
-      .work-block:hover .work-play { background: rgba(0,144,234,0.3); border-color: rgba(255,255,255,0.85); transform: translate(-50%,-50%) scale(1.12); }
     }
     @media (prefers-reduced-motion: reduce) {
       .work-block, .work-bg, .work-play { transition: none; }
@@ -538,17 +543,18 @@
       .work-block:hover .work-bg { transform: none; }
     }
 
-    /* ══ Custom Mouse Cursor Indicator ══ */
+    /* ══ Custom Mouse Cursor Indicator (Desktop Only) ══ */
     .custom-play-cursor {
-      position: fixed; top: 0; left: 0; width: 68px; height: 68px;
-      margin-top: -34px; margin-left: -34px;
-      border-radius: 50%; background: rgba(15,15,17,0.85);
-      border: 1px solid rgba(255,255,255,0.4);
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      position: fixed; top: 0; left: 0; width: 72px; height: 72px;
+      margin-top: -36px; margin-left: -36px;
+      border-radius: 50%; background: rgba(10,10,14,0.88);
+      border: 1px solid rgba(255,255,255,0.35);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
       text-transform: uppercase; display: flex; align-items: center; justify-content: center;
       pointer-events: none; z-index: 250; opacity: 0;
-      transform: scale(0.5);
+      transform: scale(0.4);
       transition: opacity 0.25s ease, transform 0.25s var(--ease), background 0.3s;
     }
     .custom-play-cursor.active {

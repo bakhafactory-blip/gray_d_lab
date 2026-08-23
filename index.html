@@ -282,6 +282,7 @@
     .rv-d1 { transition-delay: .08s; }
     .rv-d2 { transition-delay: .16s; }
     .rv-d3 { transition-delay: .24s; }
+    .rv-d4 { transition-delay: .32s; }
     @media (prefers-reduced-motion: reduce) {
       .rv { opacity: 1; transform: none; transition: none; }
     }
@@ -369,11 +370,13 @@
     #hero {
       position: relative; min-height: 100dvh;
       display: flex; align-items: flex-end; padding: 0; overflow: hidden;
+      background: #08080C;
     }
     #hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     #hero::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(6,6,10,0.90) 0%, rgba(6,6,10,0.34) 46%, rgba(6,6,10,0.10) 74%);
+      /* Dark Overlay: rgba(0, 0, 0, 0.45 ~ 0.6) range for optimal text readability & visual punch */
+      background: linear-gradient(180deg, rgba(6,6,10,0.52) 0%, rgba(6,6,10,0.45) 45%, rgba(6,6,10,0.62) 100%);
     }
     .hero-inner {
       position: relative; z-index: 2; width: 100%;
@@ -416,7 +419,7 @@
     .statement-body { font-size: 15.5px; line-height: 1.95; color: var(--ink-mid); letter-spacing: -0.015em; }
     .statement-body + .statement-body { margin-top: 18px; }
 
-    /* ══ 3. MARQUEE — capability band (one per page) ══ */
+    /* ══ 3. MARQUEE — capability band ══ */
     .marquee {
       border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
       overflow: hidden; padding: 22px 0; background: var(--paper);
@@ -445,7 +448,7 @@
     .svc { position: relative; padding: clamp(40px, 5vw, 68px) 0; border-top: 1px solid var(--rule); }
     .svc:last-child { border-bottom: 1px solid var(--rule); }
     .svc-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr) minmax(0, 2fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
-    /* asymmetric offsets, variance 8 */
+    /* asymmetric offsets */
     .svc:nth-child(2) .svc-grid { padding-left: 0; }
     .svc:nth-child(3) .svc-grid { padding-left: clamp(0px, 4vw, 72px); }
     .svc:nth-child(4) .svc-grid { padding-left: clamp(0px, 8vw, 144px); }
@@ -487,16 +490,17 @@
     .proc-body { font-size: 14px; line-height: 1.8; color: var(--ink-mid); letter-spacing: -0.012em; }
 
     /* ══ 6. PORTFOLIO — full-bleed media blocks ══ */
-    #portfolio { background: var(--paper); padding: 0; }
+    #portfolio { background: var(--paper); padding: 0; position: relative; }
     .portfolio-header { padding: clamp(80px, 11vw, 168px) var(--gutter) clamp(40px, 5vw, 72px); max-width: var(--max-w); margin: 0 auto; }
     .work-block {
       position: relative; height: min(88vh, 860px); min-height: 440px;
       overflow: hidden; display: flex; align-items: flex-end;
       text-decoration: none; cursor: pointer; background: var(--ink);
+      transition: transform 0.3s ease; will-change: transform;
     }
     .work-bg {
       position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat;
-      transition: transform 1.4s var(--ease); will-change: transform;
+      transition: transform 0.8s var(--ease); will-change: transform;
     }
     .work-block:nth-of-type(1) .work-bg { background-image: url('work-1-xcliam.jpg'); background-position: center 45%; }
     .work-block:nth-of-type(2) .work-bg { background-image: url('work-2-lookbook.jpg'); background-position: center 8%; }
@@ -505,7 +509,7 @@
     .work-block::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(to top, rgba(6,6,10,0.78) 0%, rgba(6,6,10,0.12) 52%, transparent 76%);
-      transition: background .5s var(--ease);
+      transition: background 0.4s var(--ease);
     }
     .work-caption { position: relative; z-index: 2; padding: clamp(32px, 4vw, 56px) var(--gutter); max-width: var(--max-w); margin: 0 auto; width: 100%; }
     .work-type { font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #4FC0FF; margin-bottom: 12px; }
@@ -519,21 +523,85 @@
       width: 76px; height: 76px; border: 1px solid rgba(255,255,255,0.34); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       color: rgba(255,255,255,0.86); font-size: 15px; padding-left: 4px;
-      transition: background .4s var(--ease), border-color .4s, transform .5s var(--ease);
+      transition: background .4s var(--ease), border-color .4s, transform .4s var(--ease);
       backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
     }
     @media (hover: hover) and (pointer: fine) {
-      .work-block:hover .work-bg { transform: scale(1.045); }
-      .work-block:hover::before { background: linear-gradient(to top, rgba(6,6,10,0.86) 0%, rgba(6,6,10,0.2) 56%, transparent 80%); }
-      .work-block:hover .work-play { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.7); transform: translate(-50%,-50%) scale(1.08); }
+      .work-block:hover { transform: scale(1.03); z-index: 2; }
+      .work-block:hover .work-bg { transform: scale(1.05); }
+      .work-block:hover::before { background: linear-gradient(to top, rgba(6,6,10,0.88) 0%, rgba(6,6,10,0.28) 56%, transparent 80%); }
+      .work-block:hover .work-play { background: rgba(0,144,234,0.3); border-color: rgba(255,255,255,0.85); transform: translate(-50%,-50%) scale(1.12); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .work-bg, .work-play { transition: none; }
+      .work-block, .work-bg, .work-play { transition: none; }
+      .work-block:hover { transform: none; }
       .work-block:hover .work-bg { transform: none; }
     }
 
-    /* ══ 7. CLIENTS + EXHIBITIONS — two-column split ══ */
-    #clients { background: var(--paper); }
+    /* ══ Custom Mouse Cursor Indicator ══ */
+    .custom-play-cursor {
+      position: fixed; top: 0; left: 0; width: 68px; height: 68px;
+      margin-top: -34px; margin-left: -34px;
+      border-radius: 50%; background: rgba(15,15,17,0.85);
+      border: 1px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; display: flex; align-items: center; justify-content: center;
+      pointer-events: none; z-index: 250; opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.25s ease, transform 0.25s var(--ease), background 0.3s;
+    }
+    .custom-play-cursor.active {
+      opacity: 1; transform: scale(1);
+    }
+    .custom-play-cursor svg {
+      width: 12px; height: 12px; fill: #fff; margin-right: 4px;
+    }
+
+    /* ══ 7. CLIENTS & EXHIBITIONS (Infinite Marquee + Two Column) ══ */
+    #clients { background: var(--paper); padding-top: clamp(60px, 8vw, 120px); }
+    
+    /* Infinite Marquee Ticker for Clients */
+    .client-ticker-wrapper {
+      margin-bottom: clamp(60px, 8vw, 100px);
+    }
+    .client-ticker-label {
+      text-align: center; margin-bottom: 24px; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+    }
+    .marquee-clients {
+      overflow: hidden; padding: 20px 0; background: #0E0E12;
+      border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      cursor: default;
+    }
+    .marquee-clients-track {
+      display: flex; width: max-content; animation: marqueeClientScroll 32s linear infinite;
+    }
+    .marquee-clients:hover .marquee-clients-track {
+      animation-play-state: paused;
+    }
+    .marquee-client-item {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 0 38px; color: rgba(255,255,255,0.72);
+      font-size: 15px; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap;
+      transition: color 0.25s;
+    }
+    .marquee-client-item strong {
+      color: #FFFFFF; font-size: 16px; font-weight: 700; letter-spacing: 0.06em;
+    }
+    .marquee-client-item .bullet {
+      width: 4px; height: 4px; background: rgba(255,255,255,0.28); border-radius: 50%; margin-left: 24px;
+    }
+    .marquee-client-item:hover {
+      color: #FFFFFF;
+    }
+    @keyframes marqueeClientScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     .cl-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 112px); align-items: start; }
     .cl-desc { font-size: 15.5px; color: var(--ink-mid); line-height: 1.9; letter-spacing: -0.015em; margin-bottom: 34px; max-width: 46ch; }
     .btn-line {
@@ -609,17 +677,50 @@
 
     .contact-form { display: flex; flex-direction: column; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px; }
-    .form-group { display: flex; flex-direction: column; gap: 8px; padding-bottom: 26px; }
-    label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mid); }
+    .form-group { display: flex; flex-direction: column; gap: 8px; padding-bottom: 24px; position: relative; }
+    label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mid); transition: color .2s; }
     input, select, textarea {
       font-family: inherit; font-size: 15px; letter-spacing: -0.015em;
       color: var(--ink); background: transparent; border: none;
       border-bottom: 1px solid var(--rule); padding: 11px 0; outline: none;
-      transition: border-color .3s; appearance: none; -webkit-appearance: none;
+      transition: border-color .3s, box-shadow .3s; appearance: none; -webkit-appearance: none;
       width: 100%; border-radius: var(--radius);
     }
     input::placeholder, textarea::placeholder { color: #9A9AA2; font-size: 14px; }
-    input:focus, select:focus, textarea:focus { border-bottom-color: var(--accent); }
+    
+    /* Form Focus States */
+    input:focus, select:focus, textarea:focus {
+      border-bottom-color: var(--accent);
+      box-shadow: 0 1px 0 var(--accent);
+    }
+    .form-group:focus-within label {
+      color: var(--accent);
+    }
+    
+    /* Form Error States */
+    .form-group.has-error input,
+    .form-group.has-error select,
+    .form-group.has-error textarea {
+      border-bottom-color: #E53935;
+      box-shadow: 0 1px 0 #E53935;
+    }
+    .form-group.has-error label {
+      color: #E53935;
+    }
+    .field-error {
+      display: none; font-size: 12px; font-weight: 600; color: #E53935;
+      letter-spacing: -0.015em; margin-top: 2px;
+    }
+    .form-group.has-error .field-error {
+      display: block;
+      animation: fieldShake 0.3s ease;
+    }
+    @keyframes fieldShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+
     textarea { resize: none; min-height: 104px; }
     select {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%2355555E' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
@@ -639,7 +740,8 @@
       border-color: var(--accent); color: var(--accent); font-weight: 700; background: var(--accent-dim);
     }
     .check-option label:hover { border-color: var(--accent); color: var(--ink); }
-    .privacy-row { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--ink-mid); padding-bottom: 22px; }
+    .privacy-row { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--ink-mid); padding-bottom: 22px; position: relative; }
+    .privacy-row.has-error label { color: #E53935; }
     input[type="checkbox"] {
       appearance: checkbox !important; -webkit-appearance: checkbox !important;
       width: 16px !important; height: 16px !important; min-width: 16px !important;
@@ -647,16 +749,27 @@
       accent-color: var(--accent); flex-shrink: 0;
     }
     .privacy-link { color: var(--accent); text-decoration: underline; cursor: pointer; font-weight: 600; }
+    
     .btn-submit {
       background: var(--ink); color: var(--paper); border: 1px solid var(--ink);
       padding: 19px; font-family: inherit; font-size: 13.5px; font-weight: 700;
       letter-spacing: 0.08em; cursor: pointer; width: 100%; margin-top: 8px;
       border-radius: var(--radius); white-space: nowrap;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
       transition: background .3s, border-color .3s, transform .15s;
     }
-    .btn-submit:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .btn-submit:active { transform: translateY(1px); }
-    .btn-submit:disabled { background: var(--ink-soft); border-color: var(--ink-soft); color: #fff; cursor: not-allowed; }
+    .btn-submit:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn-submit:active:not(:disabled) { transform: translateY(1px); }
+    .btn-submit:disabled { background: var(--ink-soft); border-color: var(--ink-soft); color: #fff; cursor: not-allowed; opacity: 0.85; }
+
+    /* Loading Spinner */
+    .btn-spinner {
+      display: none; width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.35); border-top-color: #fff;
+      border-radius: 50%; animation: btnSpin 0.75s linear infinite; flex-shrink: 0;
+    }
+    .btn-submit.loading .btn-spinner { display: inline-block; }
+    @keyframes btnSpin { to { transform: rotate(360deg); } }
 
     /* ══ FOOTER ══ */
     footer {
@@ -668,19 +781,27 @@
     footer strong { color: rgba(255,255,255,0.78); }
     .footer-rule { width: 30px; height: 1px; background: var(--accent); margin: 24px auto; opacity: .8; }
 
-    /* ══ VIDEO MODAL ══ */
-    .video-modal { display: none; position: fixed; inset: 0; background: #000; z-index: 300; align-items: center; justify-content: center; }
-    .video-modal.open { display: flex; }
-    .video-modal-close {
-      position: absolute; top: 20px; right: 20px; z-index: 2; width: 44px; height: 44px;
-      border-radius: 50%; background: rgba(255,255,255,0.13); border: none; color: #fff;
-      font-size: 22px; cursor: pointer; line-height: 1;
-      display: flex; align-items: center; justify-content: center; transition: background .2s;
+    /* ══ VIDEO MODAL (Lightbox) ══ */
+    .video-modal {
+      display: none; position: fixed; inset: 0; background: rgba(5,5,8,0.94);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      z-index: 300; align-items: center; justify-content: center; padding: 24px;
     }
-    .video-modal-close:hover { background: rgba(255,255,255,0.26); }
-    .video-modal-frame { position: relative; width: 100%; height: 100%; }
-    .video-modal-frame.ratio-16-9 { max-width: min(100vw, 177.78vh); max-height: min(100vh, 56.25vw); aspect-ratio: 16 / 9; }
-    .video-modal-frame.ratio-9-16 { max-width: min(100vw, 56.25vh); max-height: min(100vh, 177.78vw); aspect-ratio: 9 / 16; }
+    .video-modal.open { display: flex; }
+    .video-modal-backdrop { position: absolute; inset: 0; cursor: pointer; }
+    .video-modal-close {
+      position: absolute; top: 24px; right: 24px; z-index: 2; width: 46px; height: 46px;
+      border-radius: 50%; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; font-size: 24px; cursor: pointer; line-height: 1;
+      display: flex; align-items: center; justify-content: center; transition: background .2s, transform .2s;
+    }
+    .video-modal-close:hover { background: rgba(255,255,255,0.25); transform: rotate(90deg); }
+    .video-modal-frame {
+      position: relative; z-index: 1; width: 100%; max-width: 1100px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1);
+    }
+    .video-modal-frame.ratio-16-9 { aspect-ratio: 16 / 9; max-height: 82vh; }
+    .video-modal-frame.ratio-9-16 { max-width: 480px; aspect-ratio: 9 / 16; max-height: 85vh; }
     .video-modal-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
 
     /* ══ PRIVACY MODAL ══ */
@@ -766,7 +887,7 @@
 
 <!-- 1. HERO -->
 <section id="hero">
-  <video autoplay muted loop playsinline preload="metadata" aria-label="그레이디랩 AI 패션 비주얼 쇼릴 영상">
+  <video autoplay muted loop playsinline preload="metadata" poster="og-image.jpg" aria-label="그레이디랩 AI 패션 비주얼 쇼릴 영상">
     <source src="hero.mp4" type="video/mp4" />
   </video>
   <div class="hero-inner">
@@ -796,7 +917,7 @@
   </div>
 </section>
 
-<!-- 3. MARQUEE -->
+<!-- 3. MARQUEE (Capabilities) -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span>AI Fashion Film</span><span>Lookbook</span><span>Runway</span><span>OOH Campaign</span><span>Brand Consulting</span><span>AI Lecture</span>
@@ -813,7 +934,7 @@
       <p class="t-body">AI 기술과 패션 실무 경험을 결합한 상업적 솔루션을 제공합니다.</p>
     </div>
 
-    <div class="svc rv">
+    <div class="svc rv rv-d1">
       <div class="svc-grid">
         <div>
           <span class="svc-num">01</span>
@@ -831,7 +952,7 @@
       </div>
     </div>
 
-    <div class="svc rv">
+    <div class="svc rv rv-d2">
       <div class="svc-grid">
         <div>
           <span class="svc-num">02</span>
@@ -849,7 +970,7 @@
       </div>
     </div>
 
-    <div class="svc rv">
+    <div class="svc rv rv-d3">
       <div class="svc-grid">
         <div>
           <span class="svc-num">03</span>
@@ -877,26 +998,26 @@
       <h2 class="t-h2">4단계 실무 프로세스</h2>
       <p class="t-body">AI 기반 패션 디자인 대행의 단계별 진행 방식입니다.</p>
     </div>
-    <div class="proc-grid rv">
-      <div class="proc-cell">
+    <div class="proc-grid">
+      <div class="proc-cell rv rv-d1">
         <span class="proc-idx">01</span>
         <span class="proc-en">Briefing &amp; Research</span>
         <h3 class="proc-title">브랜드 진단 &amp; 리서치</h3>
         <p class="proc-body">클라이언트 BI 진단, 타깃 마켓 분석, 트렌드 데이터 기반 컬렉션 방향성 설정</p>
       </div>
-      <div class="proc-cell">
+      <div class="proc-cell rv rv-d2">
         <span class="proc-idx">02</span>
         <span class="proc-en">AI Conceptualization</span>
         <h3 class="proc-title">AI 시각화 &amp; 무드 셋업</h3>
         <p class="proc-body">AI 이미지 생성과 3D 피팅 시뮬레이션 결합, 컬렉션 무드보드 개발, 가상 착장 비주얼 및 룩북 초안 기획</p>
       </div>
-      <div class="proc-cell">
+      <div class="proc-cell rv rv-d3">
         <span class="proc-idx">03</span>
         <span class="proc-en">Commercialization</span>
         <h3 class="proc-title">상업적 디자인 어드바이저리</h3>
         <p class="proc-body">패턴·소재·봉제 연계, 리테일 관점의 디자인 셋 고도화, 기술적 피드백 제공</p>
       </div>
-      <div class="proc-cell">
+      <div class="proc-cell rv rv-d4">
         <span class="proc-idx">04</span>
         <span class="proc-en">Final Delivery</span>
         <h3 class="proc-title">최종 딜리버리 &amp; 론칭</h3>
@@ -911,10 +1032,10 @@
   <div class="portfolio-header rv">
     <span class="t-label" style="display:block;margin-bottom:18px;">Selected Works</span>
     <h2 class="t-h2" style="margin-bottom:18px;">대표 프로젝트</h2>
-    <p class="t-body">실제 납품된 AI 광고 영상 · AI 패션 비주얼 작업 중 일부를 소개합니다.</p>
+    <p class="t-body">실제 납품된 AI 광고 영상 · AI 패션 비주얼 작업 중 일부를 소개합니다. 클릭 시 영상이 재생됩니다.</p>
   </div>
 
-  <a class="work-block" href="https://youtu.be/oAetnfvtTP0?si=UhP5oj4YJwIQwadb" data-video="oAetnfvtTP0">
+  <a class="work-block" href="https://youtu.be/oAetnfvtTP0" data-video="oAetnfvtTP0" aria-label="XCLIAM 2026 F/W 캠페인 영상 보기">
     <div class="work-bg"></div>
     <div class="work-play">▶</div>
     <div class="work-caption">
@@ -922,7 +1043,7 @@
       <h3>XCLIAM · 2026 F/W 캠페인</h3>
     </div>
   </a>
-  <a class="work-block" href="https://youtu.be/2AHuOuhWm_M?si=JQbFrbLDbuzzeyR7" data-video="2AHuOuhWm_M">
+  <a class="work-block" href="https://youtu.be/2AHuOuhWm_M" data-video="2AHuOuhWm_M" aria-label="컬렉션 룩북 AI 모델 비주얼 영상 보기">
     <div class="work-bg"></div>
     <div class="work-play">▶</div>
     <div class="work-caption">
@@ -930,7 +1051,7 @@
       <h3>컬렉션 룩북 · AI 모델 비주얼</h3>
     </div>
   </a>
-  <a class="work-block" href="https://youtu.be/MylKuELOsVE?si=UVY8Rp9XF3u8kpnS" data-video="MylKuELOsVE">
+  <a class="work-block" href="https://youtu.be/MylKuELOsVE" data-video="MylKuELOsVE" aria-label="OOH 광고 영상 브랜드 캠페인 보기">
     <div class="work-bg"></div>
     <div class="work-play">▶</div>
     <div class="work-caption">
@@ -938,7 +1059,7 @@
       <h3>OOH 광고 영상 · 브랜드 캠페인</h3>
     </div>
   </a>
-  <a class="work-block" href="https://youtu.be/P7rgJx5XQZU?si=w0NSlMYY-tqrdDlw" data-video="P7rgJx5XQZU">
+  <a class="work-block" href="https://youtu.be/P7rgJx5XQZU" data-video="P7rgJx5XQZU" aria-label="KRIS W 2027 S/S 런웨이 컬렉션 영상 보기">
     <div class="work-bg"></div>
     <div class="work-play">▶</div>
     <div class="work-caption">
@@ -948,8 +1069,41 @@
   </a>
 </section>
 
-<!-- 7. CLIENTS + EXHIBITIONS -->
+<!-- Custom Floating Play Cursor for Portfolio -->
+<div class="custom-play-cursor" id="customPlayCursor" aria-hidden="true">
+  <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+  <span>PLAY</span>
+</div>
+
+<!-- 7. CLIENTS & EXHIBITIONS (Infinite Marquee + Info) -->
 <section id="clients">
+  <div class="client-ticker-wrapper rv">
+    <p class="client-ticker-label">Trusted By &amp; Collaborations</p>
+    <div class="marquee-clients" aria-label="주요 클라이언트 및 협업 이력">
+      <div class="marquee-clients-track">
+        <span class="marquee-client-item"><strong>SHINSEGAE</strong> 신세계 백화점 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>MBC</strong> 탐사기획 AI 다큐 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>KITCT</strong> 한국섬유융합기술원 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>AurAI</strong> AI 패션 솔루션 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>Maison de Ines</strong> 메종드이네스 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>XCLIAM</strong> 브랜드 캠페인 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>KRIS W</strong> S/S 런웨이 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>DDP SEOULCon</strong> hAllyu Ignite 展 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>더리우</strong> AI Art Exhibition <span class="bullet"></span></span>
+        <!-- Duplicated for seamless infinite loop -->
+        <span class="marquee-client-item"><strong>SHINSEGAE</strong> 신세계 백화점 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>MBC</strong> 탐사기획 AI 다큐 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>KITCT</strong> 한국섬유융합기술원 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>AurAI</strong> AI 패션 솔루션 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>Maison de Ines</strong> 메종드이네스 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>XCLIAM</strong> 브랜드 캠페인 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>KRIS W</strong> S/S 런웨이 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>DDP SEOULCon</strong> hAllyu Ignite 展 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>더리우</strong> AI Art Exhibition <span class="bullet"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div class="inner cl-grid">
     <div class="rv">
       <h2 class="t-h2" style="margin-bottom:20px;">실제 작업물은<br>유튜브 채널에서</h2>
@@ -1058,40 +1212,43 @@
     </div>
 
     <form class="contact-form rv rv-d1" id="contactForm"
-          action="https://formspree.io/f/mvzjrwro" method="POST">
+          action="https://formspree.io/f/mvzjrwro" method="POST" novalidate>
       <div class="form-row">
-        <div class="form-group">
+        <div class="form-group" id="group-name">
           <label for="name">이름 *</label>
-          <input type="text" id="name" name="name" required placeholder="홍길동" />
+          <input type="text" id="name" name="name" placeholder="홍길동" autocomplete="name" />
+          <span class="field-error" id="nameError">이름을 입력해주세요.</span>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="group-company">
           <label for="company">회사명 / 브랜드명</label>
-          <input type="text" id="company" name="company" placeholder="브랜드명" />
+          <input type="text" id="company" name="company" placeholder="브랜드명" autocomplete="organization" />
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group">
+        <div class="form-group" id="group-email">
           <label for="email">이메일 *</label>
-          <input type="email" id="email" name="email" required placeholder="email@example.com" />
+          <input type="email" id="email" name="email" placeholder="email@example.com" autocomplete="email" />
+          <span class="field-error" id="emailError">유효한 이메일 주소를 입력해주세요.</span>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="group-tel">
           <label for="tel">연락처</label>
-          <input type="tel" id="tel" name="tel" placeholder="010-0000-0000" />
+          <input type="tel" id="tel" name="tel" placeholder="010-0000-0000" autocomplete="tel" />
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group" id="group-type">
         <label for="type">문의 유형 *</label>
-        <select id="type" name="type" required>
+        <select id="type" name="type">
           <option value="" disabled selected>선택해주세요</option>
           <option value="video">AI 패션 영상 제작</option>
           <option value="consulting">패션 디자인 대행 &amp; 브랜드 컨설팅</option>
           <option value="lecture">강의 &amp; 세미나 신청</option>
           <option value="other">기타</option>
         </select>
+        <span class="field-error" id="typeError">문의 유형을 선택해주세요.</span>
       </div>
-      <div class="form-group">
+      <div class="form-group" id="group-budget">
         <label for="budget">희망 예산 범위</label>
-        <input type="text" id="budget" name="budget" placeholder="예: 500만원, 1,000~3,000만원 등 자유롭게 작성해 주세요." />
+        <input type="text" id="budget" name="budget" placeholder="예: 150만원, 200~400만원 등 자유롭게 작성해 주세요." />
       </div>
       <div class="form-check-group">
         <label>희망 착수 일정</label>
@@ -1102,23 +1259,29 @@
           <div class="check-option"><input type="radio" id="s4" name="schedule" value="미정" /><label for="s4">미정</label></div>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group" id="group-message">
         <label for="message">문의 내용 *</label>
-        <textarea id="message" name="message" required placeholder="프로젝트 내용, 참고 레퍼런스 등을 간략히 작성해 주세요."></textarea>
+        <textarea id="message" name="message" placeholder="프로젝트 내용, 참고 레퍼런스 등을 간략히 작성해 주세요."></textarea>
+        <span class="field-error" id="messageError">문의 내용을 입력해주세요.</span>
       </div>
       <input type="hidden" name="_replyto" value="bakhafactory@gmail.com" />
       <input type="hidden" name="_subject" value="[GRaY D. Lab] 새 문의가 접수되었습니다" />
       <input type="hidden" name="_to" value="bakhafactory@gmail.com" />
       <input type="hidden" name="_next" value="" />
 
-      <div class="privacy-row">
-        <input type="checkbox" id="privacy" name="privacy" required />
+      <div class="privacy-row" id="privacyRow">
+        <input type="checkbox" id="privacy" name="privacy" />
         <label for="privacy" style="font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-mid);cursor:pointer;">
           <span class="privacy-link" onclick="event.stopPropagation();openPrivacy()">개인정보 수집 및 이용</span>에 동의합니다. (필수)
         </label>
       </div>
-      <button type="submit" class="btn-submit" id="submitBtn">문의 보내기</button>
-      <p id="formMsg" style="display:none;text-align:center;font-size:13px;color:var(--ink-mid);margin-top:10px;"></p>
+      <span class="field-error" id="privacyError" style="margin-top:-14px;margin-bottom:14px;">개인정보 수집 및 이용 동의가 필요합니다.</span>
+      
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span class="btn-spinner"></span>
+        <span class="btn-text">문의 보내기</span>
+      </button>
+      <p id="formMsg" style="display:none;text-align:center;font-size:13.5px;color:var(--ink-mid);margin-top:14px;line-height:1.6;"></p>
     </form>
   </div>
 </section>
@@ -1132,8 +1295,9 @@
   <p id="copyrightText"></p>
 </footer>
 
-<!-- VIDEO MODAL -->
+<!-- VIDEO MODAL (Lightbox) -->
 <div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
   <button class="video-modal-close" id="videoModalClose" aria-label="닫기">×</button>
   <div class="video-modal-frame ratio-16-9" id="videoModalFrame">
     <iframe id="videoModalIframe" src="" title="GRaY D. Lab 포트폴리오 영상"
@@ -1158,7 +1322,7 @@
 </div>
 
 <script>
-  // ── Scroll reveal (IntersectionObserver, no scroll listeners)
+  // ── 1. Scroll reveal (IntersectionObserver, Staggered animation)
   (function () {
     var items = document.querySelectorAll('.rv');
     if (!('IntersectionObserver' in window)) {
@@ -1169,11 +1333,11 @@
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
     items.forEach(function (el) { io.observe(el); });
   })();
 
-  // ── NAV dark/light via sentinel (replaces scroll listener)
+  // ── 2. NAV dark/light via sentinel
   (function () {
     var mainNav  = document.getElementById('mainNav');
     var sentinel = document.getElementById('heroSentinel');
@@ -1186,29 +1350,24 @@
     navIO.observe(sentinel);
   })();
 
-  // ── Portfolio video modal
+  // ── 3. Portfolio Video Lightbox Modal
   var videoModal      = document.getElementById('videoModal');
   var videoModalFrame = document.getElementById('videoModalFrame');
   var videoIframe     = document.getElementById('videoModalIframe');
   var videoModalClose = document.getElementById('videoModalClose');
+  var videoBackdrop   = document.getElementById('videoModalBackdrop');
 
   function openVideoModal(id, vertical) {
+    if (!id) return;
     videoModalFrame.className = 'video-modal-frame ' + (vertical ? 'ratio-9-16' : 'ratio-16-9');
-    videoIframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+    videoIframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1&modestbranding=1';
     videoModal.classList.add('open');
     document.body.style.overflow = 'hidden';
-    var req = videoModal.requestFullscreen || videoModal.webkitRequestFullscreen;
-    if (req) { try { req.call(videoModal).catch(function () {}); } catch (err) {} }
   }
   function closeVideoModal() {
     videoModal.classList.remove('open');
     videoIframe.src = '';
     document.body.style.overflow = '';
-    if (document.fullscreenElement) {
-      document.exitFullscreen().catch(function () {});
-    } else if (document.webkitFullscreenElement) {
-      document.webkitExitFullscreen();
-    }
   }
   document.querySelectorAll('.work-block').forEach(function (block) {
     block.addEventListener('click', function (e) {
@@ -1216,67 +1375,230 @@
       openVideoModal(block.getAttribute('data-video'), block.hasAttribute('data-vertical'));
     });
   });
-  videoModalClose.addEventListener('click', closeVideoModal);
+  if (videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
+  if (videoBackdrop) videoBackdrop.addEventListener('click', closeVideoModal);
+  videoModal.addEventListener('click', function (e) {
+    if (e.target === videoModal) closeVideoModal();
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && videoModal.classList.contains('open')) closeVideoModal();
   });
 
-  // ── Copyright year
+  // ── 4. Custom Mouse Cursor for Portfolio (Desktop only)
+  (function () {
+    var cursor = document.getElementById('customPlayCursor');
+    if (!cursor || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    var mouseX = -100, mouseY = -100;
+    var posX = -100, posY = -100;
+    var isMoving = false;
+
+    window.addEventListener('mousemove', function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!isMoving) {
+        posX = mouseX; posY = mouseY;
+        cursor.style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0)';
+        isMoving = true;
+      }
+    });
+
+    function updateCursor() {
+      posX += (mouseX - posX) * 0.22;
+      posY += (mouseY - posY) * 0.22;
+      cursor.style.left = posX + 'px';
+      cursor.style.top  = posY + 'px';
+      requestAnimationFrame(updateCursor);
+    }
+    requestAnimationFrame(updateCursor);
+
+    var portfolioBlocks = document.querySelectorAll('#portfolio .work-block');
+    portfolioBlocks.forEach(function (block) {
+      block.addEventListener('mouseenter', function () {
+        cursor.classList.add('active');
+      });
+      block.addEventListener('mouseleave', function () {
+        cursor.classList.remove('active');
+      });
+    });
+  })();
+
+  // ── 5. Contact Form Validation & Async Submission
+  var form       = document.getElementById('contactForm');
+  var submitBtn  = document.getElementById('submitBtn');
+  var btnText    = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+  var formMsg    = document.getElementById('formMsg');
+
+  function clearError(groupId, errorId) {
+    var group = document.getElementById(groupId);
+    var err = document.getElementById(errorId);
+    if (group) group.classList.remove('has-error');
+    if (err) err.style.display = 'none';
+  }
+
+  function showError(groupId, errorId, msg) {
+    var group = document.getElementById(groupId);
+    var err = document.getElementById(errorId);
+    if (group) group.classList.add('has-error');
+    if (err) {
+      if (msg) err.textContent = msg;
+      err.style.display = 'block';
+    }
+  }
+
+  // Real-time error clearance
+  ['name', 'email', 'type', 'message'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function () { clearError('group-' + id, id + 'Error'); });
+      el.addEventListener('change', function () { clearError('group-' + id, id + 'Error'); });
+    }
+  });
+  var privacyCheck = document.getElementById('privacy');
+  if (privacyCheck) {
+    privacyCheck.addEventListener('change', function () {
+      clearError('privacyRow', 'privacyError');
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      var hasError = false;
+      var firstErrorEl = null;
+
+      var nameVal = document.getElementById('name').value.trim();
+      if (!nameVal) {
+        showError('group-name', 'nameError', '이름을 입력해주세요.');
+        hasError = true;
+        if (!firstErrorEl) firstErrorEl = document.getElementById('name');
+      } else {
+        clearError('group-name', 'nameError');
+      }
+
+      var emailVal = document.getElementById('email').value.trim();
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailVal || !emailRegex.test(emailVal)) {
+        showError('group-email', 'emailError', '올바른 이메일 주소를 입력해주세요.');
+        hasError = true;
+        if (!firstErrorEl) firstErrorEl = document.getElementById('email');
+      } else {
+        clearError('group-email', 'emailError');
+      }
+
+      var typeVal = document.getElementById('type').value;
+      if (!typeVal) {
+        showError('group-type', 'typeError', '문의 유형을 선택해주세요.');
+        hasError = true;
+        if (!firstErrorEl) firstErrorEl = document.getElementById('type');
+      } else {
+        clearError('group-type', 'typeError');
+      }
+
+      var msgVal = document.getElementById('message').value.trim();
+      if (!msgVal) {
+        showError('group-message', 'messageError', '문의 내용을 입력해주세요.');
+        hasError = true;
+        if (!firstErrorEl) firstErrorEl = document.getElementById('message');
+      } else {
+        clearError('group-message', 'messageError');
+      }
+
+      if (!privacyCheck.checked) {
+        showError('privacyRow', 'privacyError', '개인정보 수집 및 이용 동의가 필요합니다.');
+        hasError = true;
+        if (!firstErrorEl) firstErrorEl = privacyCheck;
+      } else {
+        clearError('privacyRow', 'privacyError');
+      }
+
+      if (hasError) {
+        if (firstErrorEl) {
+          firstErrorEl.focus();
+          firstErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+
+      // UI state: loading
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+      if (btnText) btnText.textContent = '문의 전송 중...';
+      formMsg.style.display = 'none';
+
+      try {
+        var res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          submitBtn.classList.remove('loading');
+          if (btnText) btnText.textContent = '✓ 문의가 접수되었습니다';
+          submitBtn.style.background = 'var(--accent)';
+          submitBtn.style.borderColor = 'var(--accent)';
+          submitBtn.style.color = '#fff';
+          formMsg.style.display = 'block';
+          formMsg.style.color = 'var(--accent)';
+          formMsg.textContent = '문의가 성공적으로 전달되었습니다. 24시간 이내에 기재해주신 이메일로 답변드리겠습니다.';
+          form.reset();
+          setTimeout(function () {
+            submitBtn.disabled = false;
+            submitBtn.style.background = '';
+            submitBtn.style.borderColor = '';
+            submitBtn.style.color = '';
+            if (btnText) btnText.textContent = '문의 보내기';
+          }, 6000);
+        } else {
+          throw new Error('전송 실패');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+        if (btnText) btnText.textContent = '문의 보내기';
+        formMsg.style.display = 'block';
+        formMsg.style.color = '#E53935';
+        formMsg.textContent = '일시적인 오류로 전송에 실패했습니다. bakhafactory@gmail.com으로 직접 문의해주세요.';
+      }
+    });
+  }
+
+  // ── 6. Copyright year
   (function () {
     var startYear = 2025;
     var currentYear = new Date().getFullYear();
     var yearStr = currentYear > startYear ? startYear + '-' + currentYear : String(startYear);
-    document.getElementById('copyrightText').textContent =
-      '© ' + yearStr + ' GRaY D. Lab. All rights reserved.';
+    var el = document.getElementById('copyrightText');
+    if (el) el.textContent = '© ' + yearStr + ' GRaY D. Lab. All rights reserved.';
   })();
 
-  // ── Hamburger
+  // ── 7. Hamburger Mobile Navigation
   var hamburgerBtn = document.getElementById('hamburgerBtn');
   var mobileMenu   = document.getElementById('mobileMenu');
-  hamburgerBtn.addEventListener('click', function () {
-    var isOpen = mobileMenu.classList.toggle('open');
-    hamburgerBtn.classList.toggle('open', isOpen);
-    hamburgerBtn.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
-  });
-  document.querySelectorAll('.mobile-link').forEach(function (link) {
-    link.addEventListener('click', function () {
-      mobileMenu.classList.remove('open');
-      hamburgerBtn.classList.remove('open');
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('open', isOpen);
+      hamburgerBtn.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
     });
-  });
-
-  // ── Privacy modal
-  function openPrivacy()  { document.getElementById('privacyModal').classList.add('open'); }
-  function closePrivacy() { document.getElementById('privacyModal').classList.remove('open'); }
-  document.getElementById('privacyModal').addEventListener('click', function (e) {
-    if (e.target === this) closePrivacy();
-  });
-
-  // ── Formspree AJAX
-  var form = document.getElementById('contactForm');
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    var btn = document.getElementById('submitBtn');
-    var msg = document.getElementById('formMsg');
-    btn.disabled = true; btn.textContent = '전송 중...';
-    try {
-      var res = await fetch(form.action, {
-        method: 'POST', body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+    document.querySelectorAll('.mobile-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.classList.remove('open');
       });
-      if (res.ok) {
-        btn.textContent = '✓ 문의가 접수되었습니다';
-        btn.style.background = 'var(--accent)';
-        btn.style.borderColor = 'var(--accent)';
-        btn.style.color = '#fff';
-        form.reset();
-      } else { throw new Error(); }
-    } catch {
-      btn.disabled = false; btn.textContent = '문의 보내기';
-      msg.style.display = 'block'; msg.style.color = '#D8443C';
-      msg.textContent = '전송에 실패했습니다. bakhafactory@gmail.com으로 직접 문의해주세요.';
-    }
-  });
+    });
+  }
+
+  // ── 8. Privacy modal
+  function openPrivacy()  { var m = document.getElementById('privacyModal'); if (m) m.classList.add('open'); }
+  function closePrivacy() { var m = document.getElementById('privacyModal'); if (m) m.classList.remove('open'); }
+  var privModal = document.getElementById('privacyModal');
+  if (privModal) {
+    privModal.addEventListener('click', function (e) {
+      if (e.target === this) closePrivacy();
+    });
+  }
 </script>
 </body>
 </html>

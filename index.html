@@ -435,7 +435,7 @@
       font-size: clamp(24px, 2.6vw, 40px); color: var(--ink); white-space: nowrap; padding: 0 34px;
       display: inline-flex; align-items: center; gap: 34px;
     }
-    .marquee-track span::after { content: ''; width: 5px; height: 5px; background: var(--neon); flex-shrink: 0; }
+    .marquee-track span::after { content: ''; width: 5px; height: 5px; background: var(--accent); flex-shrink: 0; }
     @keyframes slide { to { transform: translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) {
       .marquee-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; }
@@ -601,11 +601,11 @@
     }
     .marquee-client-item {
       display: inline-flex; align-items: center; gap: 14px;
-      padding: 0 clamp(20px, 3.5vw, 38px); color: #181A12;
+      padding: 0 clamp(20px, 3.5vw, 38px); color: var(--ink);
       font-size: clamp(13.5px, 1.6vw, 15px); font-weight: 600; letter-spacing: 0.04em; white-space: nowrap;
     }
     .marquee-client-item strong {
-      color: #000000; font-size: clamp(14px, 1.8vw, 16px); font-weight: 800; letter-spacing: 0.06em;
+      color: var(--ink); font-size: clamp(14px, 1.8vw, 16px); font-weight: 800; letter-spacing: 0.06em;
     }
     .marquee-client-item .bullet {
       width: 5px; height: 5px; background: #FFFFFF; border-radius: 50%; margin-left: clamp(14px, 2.5vw, 24px);

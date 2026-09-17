@@ -857,7 +857,11 @@
 @media(max-width:960px){.hero-inner{padding-bottom:42px}.hero-meta-links{flex-direction:row;align-items:center;gap:24px}.hero-meta-label{display:none}#hero{min-height:720px}.contact-grid{gap:35px}.svc-grid{gap:20px}}
 @media(max-width:600px){#hero{min-height:670px;height:90svh}.hero-heading{font-size:44px}.hero-inner{gap:28px}.hero-meta-links{font-size:14px}.hero-description{font-size:15px}.hero-pause{top:88px;font-size:12px}#portfolio{grid-template-columns:1fr;padding-top:55px;padding-bottom:60px;gap:22px}.work-block{aspect-ratio:4/5}.work-caption{padding:23px}.work-caption h3{font-size:23px}.contact-form{padding:22px 18px}.proc-cell{padding-left:0;padding-right:0}.statement-grid{gap:22px}.marquee-client-item{font-size:13px}.hero-link-primary{padding:12px 16px!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style><style>.marquee-clients{background:transparent!important}.marquee-clients::before,.marquee-clients::after{display:none}.marquee-client-item .bullet{background:#AEBAC8}.statement-lead{font-family:inherit;font-weight:500;font-style:normal}</style></head>
+</style><style>.marquee-clients{background:transparent!important}.marquee-clients::before,.marquee-clients::after{display:none}.marquee-client-item .bullet{background:#AEBAC8}.statement-lead{font-family:inherit;font-weight:500;font-style:normal}</style>  <style id="hero-monochrome">
+    /* Soft monochrome for the hero video and its poster only. */
+    #hero video { filter: grayscale(1) contrast(0.96); }
+  </style>
+</head>
 <body><a class="skip-link" href="#portfolio">대표 작업으로 건너뛰기</a>
 
 <!-- NAV -->
@@ -928,8 +932,24 @@
     <p class="t-body">캠페인, 룩북, 런웨이. 프로젝트를 선택해 영상을 확인하세요.</p>
   </div>
 
+  <a class="work-block" href="https://youtu.be/P7rgJx5XQZU" data-video="P7rgJx5XQZU" aria-label="KRIS W 2027 S/S 런웨이 컬렉션 영상 보기">
+    <div class="work-bg" style="background-image:url('work-4-krisw.jpg');background-position:center 6%;"></div>
+    <div class="work-play">▶</div>
+    <div class="work-caption">
+      <p class="work-type">AI Fashion Show</p>
+      <h3>KRIS W · 2027 S/S 런웨이 컬렉션</h3>
+    </div>
+  </a>
+  <a class="work-block" href="https://youtu.be/pOj7f8MGMbI" data-video="pOj7f8MGMbI" aria-label="BABA FASHION 2026 WINTER 브랜드 필름 프리뷰 영상 보기">
+    <div class="work-bg" style="background-image:url('2026-09-18-baba-fashion-thumbnail.png');background-position:center 42%;"></div>
+    <div class="work-play" aria-hidden="true">▶</div>
+    <div class="work-caption">
+      <p class="work-type">AI Brand Film · Preview</p>
+      <h3>BABA FASHION · 2026 WINTER</h3>
+    </div>
+  </a>
   <a class="work-block" href="https://youtu.be/oAetnfvtTP0" data-video="oAetnfvtTP0" aria-label="XCLIAM 2026 F/W 캠페인 영상 보기">
-    <div class="work-bg"></div>
+    <div class="work-bg" style="background-image:url('work-1-xcliam.jpg');background-position:center 45%;"></div>
     <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">AI Fashion Film</p>
@@ -937,7 +957,7 @@
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/2AHuOuhWm_M" data-video="2AHuOuhWm_M" aria-label="컬렉션 룩북 AI 모델 비주얼 영상 보기">
-    <div class="work-bg"></div>
+    <div class="work-bg" style="background-image:url('work-2-lookbook.jpg');background-position:center 8%;"></div>
     <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">Lookbook</p>
@@ -945,19 +965,11 @@
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/MylKuELOsVE" data-video="MylKuELOsVE" aria-label="OOH 광고 영상 브랜드 캠페인 보기">
-    <div class="work-bg"></div>
+    <div class="work-bg" style="background-image:url('work-3-ooh.jpg');background-position:center 23%;"></div>
     <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">Brand Film</p>
       <h3>OOH 광고 영상 · 브랜드 캠페인</h3>
-    </div>
-  </a>
-  <a class="work-block" href="https://youtu.be/P7rgJx5XQZU" data-video="P7rgJx5XQZU" aria-label="KRIS W 2027 S/S 런웨이 컬렉션 영상 보기">
-    <div class="work-bg"></div>
-    <div class="work-play">▶</div>
-    <div class="work-caption">
-      <p class="work-type">AI Fashion Show</p>
-      <h3>KRIS W · 2027 S/S 런웨이 컬렉션</h3>
     </div>
   </a>
 </section>

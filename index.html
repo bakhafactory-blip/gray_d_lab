@@ -861,6 +861,24 @@
     /* Soft monochrome for the hero video and its poster only. */
     #hero video { filter: grayscale(1) contrast(0.96); }
   </style>
+<style id="client-marquee-restored">
+.marquee-clients{overflow:hidden;box-shadow:none}
+.marquee-clients-track{width:max-content;flex-wrap:nowrap;justify-content:flex-start;gap:0;animation:marqueeClientScroll 45s linear infinite}
+.marquee-client-item,.marquee-client-item:nth-child(n+10){display:inline-flex;flex-shrink:0}
+
+.marquee-clients.is-paused .marquee-clients-track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.marquee-clients{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.marquee-clients-track{animation:none}.marquee-client-item:nth-child(n+10){display:none}}
+</style><style id="mobile-process-borderless">
+@media(max-width:600px){#process .proc-grid,#process .proc-grid .proc-cell{border:0}}
+</style><style id="minimal-decorative-borders">
+/* Keep control boundaries and keyboard focus; remove presentation-only rules. */
+#mainNav.nav--light,#mainNav.nav--dark{border-bottom:0}
+#services .svc,#services .svc:last-child,#services .tag,#services .tag:hover{border:0}
+#process .proc-grid,#process .proc-grid .proc-cell{border:0}
+#clients .ex-item,#contact .contact-meta{border:0}
+#faq .faq-list,#faq details.faq-item{border:0}
+footer .footer-rule{display:none}
+</style>
 </head>
 <body><a class="skip-link" href="#portfolio">대표 작업으로 건너뛰기</a>
 
@@ -1630,5 +1648,7 @@ let restoreFocus=null;
 ['videoModal','privacyModal'].forEach(id=>{const modal=document.getElementById(id);if(!modal)return;modal.setAttribute('role','dialog');modal.setAttribute('aria-modal','true');modal.setAttribute('aria-label',id==='videoModal'?'프로젝트 영상':'개인정보 수집 및 이용');modal.inert=true;
 new MutationObserver(()=>{const open=modal.classList.contains('open');modal.inert=!open;if(open){restoreFocus=document.activeElement;modal.querySelector('button').focus()}else if(restoreFocus){restoreFocus.focus()}}).observe(modal,{attributes:true,attributeFilter:['class']});
 modal.addEventListener('keydown',e=>{if(e.key==='Escape'){if(id==='privacyModal')closePrivacy();return}if(e.key!=='Tab')return;const items=[...modal.querySelectorAll('button,a[href],iframe,input')].filter(x=>x.getClientRects().length);const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}})});
+</script><script>
+(()=>{const region=document.querySelector('.marquee-clients');const track=region.querySelector('.marquee-clients-track');[...track.children].slice(9).forEach(el=>el.setAttribute('aria-hidden','true'));})();
 </script></body>
 </html>

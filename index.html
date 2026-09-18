@@ -466,10 +466,10 @@
       position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat;
       transition: transform 0.8s var(--ease); will-change: transform;
     }
-    .work-block:nth-of-type(1) .work-bg { background-image: url('work-1-xcliam.jpg'); background-position: center 45%; }
-    .work-block:nth-of-type(2) .work-bg { background-image: url('work-2-lookbook.jpg'); background-position: center 8%; }
-    .work-block:nth-of-type(3) .work-bg { background-image: url('work-3-ooh.jpg'); background-position: center 23%; }
-    .work-block:nth-of-type(4) .work-bg { background-image: url('work-4-krisw.jpg'); background-position: center 6%; }
+    
+    
+    
+    
     .work-block::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(to top, rgba(6,6,10,0.78) 0%, rgba(6,6,10,0.12) 52%, transparent 76%);
@@ -879,7 +879,10 @@
 #faq .faq-list,#faq details.faq-item{border:0}
 footer .footer-rule{display:none}
 </style>
-</head>
+<style>
+#portfolio .work-image{width:100%;height:100%;object-fit:cover}.hero-sound{position:absolute;z-index:3;right:var(--gutter);top:105px;padding:10px 16px;border:1px solid #ffffff80;background:#17202a80;color:white;cursor:pointer;font:inherit;font-size:13px}
+@media(max-width:600px){.hero-sound{top:88px;font-size:12px}}
+</style></head>
 <body><a class="skip-link" href="#portfolio">대표 작업으로 건너뛰기</a>
 
 <!-- NAV -->
@@ -911,7 +914,7 @@ footer .footer-rule{display:none}
 <!-- 1. HERO -->
 <section id="hero">
   <video autoplay muted loop playsinline preload="metadata" poster="hero-poster.jpg" aria-label="그레이디랩 AI 패션 비주얼 쇼릴 영상">
-    <source src="hero.mp4" type="video/mp4" />
+    <source src="2026-09-19-hero-mobile-clear-audio.mp4" media="(max-width: 767px)" type="video/mp4" /><source src="2026-09-19-hero-desktop-clear-audio.mp4" type="video/mp4" />
   </video>
   <div class="hero-inner">
     <div>
@@ -926,7 +929,7 @@ footer .footer-rule{display:none}
       </div>
     </div>
   </div>
-  <button type="button" class="hero-pause" id="heroPause" aria-label="배경 영상 일시정지">영상 일시정지 Ⅱ</button><div id="heroSentinel"></div>
+  <button type="button" class="hero-sound" id="heroSound" aria-pressed="false">음악 켜기 ♪</button><div id="heroSentinel"></div>
 </section>
 
 <!-- 2. STATEMENT -->
@@ -951,7 +954,7 @@ footer .footer-rule{display:none}
   </div>
 
   <a class="work-block" href="https://youtu.be/P7rgJx5XQZU" data-video="P7rgJx5XQZU" aria-label="KRIS W 2027 S/S 런웨이 컬렉션 영상 보기">
-    <div class="work-bg" style="background-image:url('work-4-krisw.jpg');background-position:center 6%;"></div>
+    <img class="work-bg work-image" src="2026-09-19-work-krisw.webp" alt="" loading="lazy" decoding="async" style="object-position:center 6%" />
     <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">AI Fashion Show</p>
@@ -959,7 +962,7 @@ footer .footer-rule{display:none}
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/pOj7f8MGMbI" data-video="pOj7f8MGMbI" aria-label="BABA FASHION 2026 WINTER 브랜드 필름 프리뷰 영상 보기">
-    <div class="work-bg" style="background-image:url('2026-09-18-baba-fashion-thumbnail.png');background-position:center 42%;"></div>
+    <img class="work-bg work-image" src="2026-09-19-work-baba.webp" alt="" loading="lazy" decoding="async" style="object-position:center 42%" />
     <div class="work-play" aria-hidden="true">▶</div>
     <div class="work-caption">
       <p class="work-type">AI Brand Film · Preview</p>
@@ -967,7 +970,7 @@ footer .footer-rule{display:none}
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/oAetnfvtTP0" data-video="oAetnfvtTP0" aria-label="XCLIAM 2026 F/W 캠페인 영상 보기">
-    <div class="work-bg" style="background-image:url('work-1-xcliam.jpg');background-position:center 45%;"></div>
+    <img class="work-bg work-image" src="2026-09-19-work-xcliam.webp" alt="" loading="lazy" decoding="async" style="object-position:center 45%" />
     <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">AI Fashion Film</p>
@@ -975,7 +978,7 @@ footer .footer-rule{display:none}
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/2AHuOuhWm_M" data-video="2AHuOuhWm_M" aria-label="컬렉션 룩북 AI 모델 비주얼 영상 보기">
-    <div class="work-bg" style="background-image:url('work-2-lookbook.jpg');background-position:center 8%;"></div>
+    <img class="work-bg work-image" src="2026-09-19-work-lookbook.webp" alt="" loading="lazy" decoding="async" style="object-position:center 8%" />
     <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">Lookbook</p>
@@ -983,7 +986,7 @@ footer .footer-rule{display:none}
     </div>
   </a>
   <a class="work-block" href="https://youtu.be/MylKuELOsVE" data-video="MylKuELOsVE" aria-label="OOH 광고 영상 브랜드 캠페인 보기">
-    <div class="work-bg" style="background-image:url('work-3-ooh.jpg');background-position:center 23%;"></div>
+    <img class="work-bg work-image" src="2026-09-19-work-ooh.webp" alt="" loading="lazy" decoding="async" style="object-position:center 23%" />
     <div class="work-play">▶</div>
     <div class="work-caption">
       <p class="work-type">Brand Film</p>
@@ -1309,7 +1312,7 @@ footer .footer-rule{display:none}
 
 <!-- FOOTER -->
 <footer>
-  <video class="footer-logo" src="logo_vid_001.mp4" autoplay muted loop playsinline></video>
+  <video class="footer-logo" data-src="2026-09-19-footer-logo.mp4" preload="none" muted loop playsinline></video>
   <p><strong>GRaY D. Lab</strong> · AI Fashion Visual Studio · 그레이디랩</p>
   <p>AI 영상 제작 · AI 패션 비주얼 · AI 패션쇼 · AI 룩북 · AI 기업 강의 전문 스튜디오</p>
   <div class="footer-rule"></div>
@@ -1633,9 +1636,9 @@ footer .footer-rule{display:none}
   }
 </script>
 <script>
-const heroVideo=document.querySelector('#hero video'), pauseButton=document.querySelector('#heroPause');
-function syncVideo(){pauseButton.textContent=heroVideo.paused?'영상 재생 ▷':'영상 일시정지 Ⅱ';pauseButton.setAttribute('aria-label',heroVideo.paused?'배경 영상 재생':'배경 영상 일시정지')}
-pauseButton.addEventListener('click',()=>{if(heroVideo.paused)heroVideo.play().catch(syncVideo);else heroVideo.pause()});heroVideo.addEventListener('play',syncVideo);heroVideo.addEventListener('pause',syncVideo);
+const heroVideo=document.querySelector('#hero video');
+function syncVideo(){const b=document.getElementById('heroSound');if(b){b.textContent=heroVideo.muted?'음악 켜기 ♪':'음악 끄기 ♪';b.setAttribute('aria-pressed',String(!heroVideo.muted));}}
+heroVideo.addEventListener('play',syncVideo);heroVideo.addEventListener('pause',syncVideo);
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video').forEach(v=>{v.autoplay=false;v.pause()});syncVideo()}
 document.querySelectorAll('[data-inquiry]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('type').value=a.dataset.inquiry}));
 const menuBtn=document.getElementById('hamburgerBtn'), menu=document.getElementById('mobileMenu');
@@ -1650,5 +1653,16 @@ new MutationObserver(()=>{const open=modal.classList.contains('open');modal.iner
 modal.addEventListener('keydown',e=>{if(e.key==='Escape'){if(id==='privacyModal')closePrivacy();return}if(e.key!=='Tab')return;const items=[...modal.querySelectorAll('button,a[href],iframe,input')].filter(x=>x.getClientRects().length);const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}})});
 </script><script>
 (()=>{const region=document.querySelector('.marquee-clients');const track=region.querySelector('.marquee-clients-track');[...track.children].slice(9).forEach(el=>el.setAttribute('aria-hidden','true'));})();
+</script><script>
+(()=>{const v=document.querySelector('#hero video'),btn=document.getElementById('heroSound');
+function soundLabel(){btn.textContent=v.muted?'음악 켜기 ♪':'음악 끄기 ♪';btn.setAttribute('aria-pressed',String(!v.muted))}
+btn.addEventListener('click',()=>{v.muted=!v.muted;soundLabel();if(!v.muted)v.play().catch(()=>{v.muted=true;soundLabel();syncVideo()})});v.addEventListener('volumechange',soundLabel);syncVideo();
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches)v.play().catch(syncVideo);
+const foot=document.querySelector('footer video');function loadFooter(){if(!foot.dataset.src)return;foot.src=foot.dataset.src;delete foot.dataset.src;foot.play().catch(()=>{})}
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){loadFooter();io.disconnect()}},{rootMargin:'150px'});io.observe(foot)}else loadFooter()}
+// Avoid competing soundtracks when a project opens; restore only if previously playing.
+let resumeHero=false;const modal=document.getElementById('videoModal');new MutationObserver(()=>{if(modal.classList.contains('open')){resumeHero=!v.paused;v.pause()}else if(resumeHero){resumeHero=false;v.play().catch(syncVideo)}}).observe(modal,{attributes:true,attributeFilter:['class']});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){v.pause();foot.pause()}});
+})();
 </script></body>
 </html>

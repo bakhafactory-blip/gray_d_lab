@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>그레이디랩 | GRaY D. Lab — AI 패션 비주얼 · 광고 영상 · 기업 강의</title>
   <meta name="description" content="하이엔드 AI 패션·광고 영상 제작 전문 기업 '그레이디랩(GRaY D. Lab)'. 패션 디자이너 출신 디렉터 Kris W가 이끄는 실무 기반 AI 패션 강의 및 브랜드 컨설팅 솔루션." />
   <meta name="google-site-verification" content="vMGJSkN_BIqBYEcGynY_9_1enVWgyjp58CAR3tU-Kok" />
@@ -253,15 +253,8 @@
 
     /* ══ NAV ══ */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;            /* inset 단축속성 미지원 WebView 폴백 */
-      inset: 0 0 auto 0;
-      z-index: 100;
-      height: 70px;                         /* env() 미지원 폴백 */
-      padding: 0 var(--gutter);             /* env() 미지원 폴백 */
-      height: calc(70px + env(safe-area-inset-top, 0px));
-      padding: env(safe-area-inset-top, 0px) var(--gutter) 0;
-      display: flex; align-items: center;
+      position: fixed; inset: 0 0 auto 0; z-index: 100; height: 70px;
+      display: flex; align-items: center; padding: 0 var(--gutter);
       transition: background .45s var(--ease), border-color .45s var(--ease), backdrop-filter .45s;
     }
     nav.nav--light {
@@ -312,25 +305,15 @@
       display: none; flex-direction: column; justify-content: center; gap: 5px;
       width: 30px; height: 30px; cursor: pointer; background: none; border: none; padding: 0;
     }
-    .hamburger span {
-      display: block; width: 100%; height: 2px;
-      background: #fff;                     /* 클래스 미적용 상황 대비 기본값 */
-      transition: transform .28s var(--ease), opacity .2s;
-    }
+    .hamburger span { display: block; height: 1.5px; transition: transform .28s var(--ease), opacity .2s; }
     nav.nav--light .hamburger span { background: var(--ink); }
     nav.nav--dark  .hamburger span { background: #fff; }
-    /* flex gap 미지원 WebView 폴백 */
-    @supports not (gap: 5px) {
-      .hamburger span + span { margin-top: 5px; }
-    }
     .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
     .mobile-menu {
-      display: none; position: fixed; left: 0; right: 0; z-index: 99;
-      top: 70px;
-      top: calc(70px + env(safe-area-inset-top, 0px));
+      display: none; position: fixed; top: 70px; left: 0; right: 0; z-index: 99;
       background: rgba(241,241,239,0.985);
       backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
       padding: 16px 24px 30px; flex-direction: column;
@@ -349,12 +332,10 @@
 
     /* ══ 1. HERO — full-bleed media, asymmetric ══ */
     #hero {
-      position: relative;
-      min-height: 100vh;                    /* dvh 미지원 폴백 */
+      position: relative; min-height: 100dvh;
       display: flex; align-items: flex-end; padding: 0; overflow: hidden;
       background: #08080C;
     }
-    @supports (min-height: 100dvh) { #hero { min-height: 100dvh; } }
     #hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     #hero::after {
       content: ''; position: absolute; inset: 0;
@@ -866,16 +847,15 @@
 :root{--paper:#FAFBFC;--paper-deep:#EEF1F5;--ink:#20252D;--ink-mid:#505A68;--ink-soft:#646F7C;--rule:#D8DEE6;--accent:#0069B5;--neon:#FFFFFF;--gutter:clamp(22px,4vw,64px)}
 :focus-visible{outline:3px solid #168EE0;outline-offset:5px}section{scroll-margin-top:86px}.skip-link{position:fixed;top:-100px;left:20px;z-index:9999;background:white;padding:12px}.skip-link:focus{top:12px}
 .t-h2{font-family:inherit;font-size:clamp(28px,3.3vw,48px);font-weight:600;line-height:1.35;letter-spacing:-.045em}.t-label{font-size:12px}.rv{opacity:1;transform:none}
-#hero{height:min(880px,95vh);min-height:650px}@supports (height:100svh){#hero{height:min(880px,95svh)}}#hero::after{background:linear-gradient(90deg,rgba(10,18,29,.74),rgba(10,18,29,.08)),linear-gradient(0deg,rgba(10,18,29,.55),transparent 60%)}
+#hero{height: min(880px,95svh);min-height:650px}#hero::after{background:linear-gradient(90deg,rgba(10,18,29,.74),rgba(10,18,29,.08)),linear-gradient(0deg,rgba(10,18,29,.55),transparent 60%)}
 .hero-inner{width:100%;align-items:end;padding-bottom:70px}.hero-heading{font-family:inherit;font-style:normal;font-weight:550;font-size:clamp(42px,5.8vw,86px);line-height:1.18;letter-spacing:-.055em;max-width:15ch}.hero-description{color:#E3E8EE;font-size:clamp(15px,1.3vw,19px);line-height:1.8;margin-top:28px}.hero-eyebrow{color:#fff}.hero-meta-label{color:#DCE3ED}.hero-link-primary{background:#fff!important;color:#20252D!important;padding:15px 25px!important;border:0!important}.hero-link-secondary{color:white!important}.hero-meta-links{gap:22px}.hero-pause{position:absolute;z-index:3;right:var(--gutter);top:105px;border:1px solid #ffffff80;background:#17202a80;color:white;padding:10px 16px;cursor:pointer}
 #statement{padding-top:70px;padding-bottom:70px}.statement-lead{font-size:clamp(23px,2.6vw,37px);line-height:1.45}.statement-body{font-size:16px}
 #portfolio{padding:80px var(--gutter) 100px;display:grid;grid-template-columns:1fr 1fr;gap:36px 24px;max-width:1600px;margin:auto}.portfolio-header{grid-column:1/-1;padding:0 0 12px;margin:0;width:100%}.work-block{height:auto;min-height:0;aspect-ratio:1.2;cursor:pointer!important}.work-block:hover{transform:none}.work-caption{padding:28px}.work-caption h3{font-family:inherit;font-style:normal;font-size:clamp(20px,2vw,28px);font-weight:550;line-height:1.4}.work-type{color:#fff;font-size:11px}.work-play{display:flex!important;width:48px;height:48px;top:28px;right:28px;left:auto;transform:none;background:#ffffff20;border-color:#ffffff90;color:#fff}.custom-play-cursor{display:none!important}.work-block:hover .work-bg{transform:scale(1.035)}
 #services{background:var(--paper-deep)}.svc-num{display:none}.svc{padding:38px 0}.svc-title{font-size:24px}.svc-body{font-size:16px}.tag{font-size:12px}.svc-link{font-size:15px}#process{background:white}.proc-idx{font-family:inherit;font-style:normal;font-size:22px;font-weight:500}.proc-body{font-size:15px}.proc-en{color:var(--ink-mid)}
 .marquee-clients-track{animation:none;flex-wrap:wrap;justify-content:center;gap:20px 32px;width:auto}.marquee-client-item{font-size:16px}.marquee-client-item:nth-child(n+10){display:none}.marquee-clients{overflow:visible}.client-ticker-wrapper{padding:50px var(--gutter);background:var(--paper-deep)}.cl-grid{padding-top:70px;padding-bottom:70px}.cl-cats{display:none}
 #contact{background:var(--paper-deep)}.contact-form{background:white;padding:34px}.contact-grid{gap:60px}.info-val{overflow-wrap:anywhere}.privacy-link{border:0;background:none;font:inherit;color:var(--accent);text-decoration:underline;cursor:pointer;padding:0}.btn-submit{background:var(--ink);color:white}.nav-links a{font-size:14px}.mobile-menu{max-height:calc(100svh - 68px);overflow:auto}.footer-logo{max-height:110px}footer{padding:55px var(--gutter)}
-@media(max-width:900px){.hero-inner{padding-bottom:42px}.hero-meta-links{flex-direction:row;align-items:center;gap:24px}.hero-meta-label{display:none}#hero{min-height:720px}.contact-grid{gap:35px}.svc-grid{gap:20px}}
-@media(max-width:600px){#hero{min-height:670px;height:90vh}.hero-heading{font-size:44px}.hero-inner{gap:28px}.hero-meta-links{font-size:14px}.hero-description{font-size:15px}.hero-pause{top:88px;font-size:12px}#portfolio{grid-template-columns:1fr;padding-top:55px;padding-bottom:60px;gap:22px}.work-block{aspect-ratio:4/5}.work-caption{padding:23px}.work-caption h3{font-size:23px}.contact-form{padding:22px 18px}.proc-cell{padding-left:0;padding-right:0}.statement-grid{gap:22px}.marquee-client-item{font-size:13px}.hero-link-primary{padding:12px 16px!important}}
-@supports (height:100svh){@media(max-width:600px){#hero{height:90svh}}}
+@media(max-width:960px){.hero-inner{padding-bottom:42px}.hero-meta-links{flex-direction:row;align-items:center;gap:24px}.hero-meta-label{display:none}#hero{min-height:720px}.contact-grid{gap:35px}.svc-grid{gap:20px}}
+@media(max-width:600px){#hero{min-height:670px;height:90svh}.hero-heading{font-size:44px}.hero-inner{gap:28px}.hero-meta-links{font-size:14px}.hero-description{font-size:15px}.hero-pause{top:88px;font-size:12px}#portfolio{grid-template-columns:1fr;padding-top:55px;padding-bottom:60px;gap:22px}.work-block{aspect-ratio:4/5}.work-caption{padding:23px}.work-caption h3{font-size:23px}.contact-form{padding:22px 18px}.proc-cell{padding-left:0;padding-right:0}.statement-grid{gap:22px}.marquee-client-item{font-size:13px}.hero-link-primary{padding:12px 16px!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style><style>.marquee-clients{background:transparent!important}.marquee-clients::before,.marquee-clients::after{display:none}.marquee-client-item .bullet{background:#AEBAC8}.statement-lead{font-family:inherit;font-weight:500;font-style:normal}</style>  <style id="hero-monochrome">
     /* Soft monochrome for the hero video and its poster only. */
@@ -1385,8 +1365,7 @@ footer .footer-rule{display:none}
   (function () {
     var mainNav  = document.getElementById('mainNav');
     var sentinel = document.getElementById('heroSentinel');
-    if (!sentinel) return;                                    /* 요소 누락 시 이후 스크립트 중단 방지 */
-    if (!('IntersectionObserver' in window)) { mainNav.className = 'nav--dark'; return; }
+    if (!('IntersectionObserver' in window)) { mainNav.className = 'nav--light'; return; }
     var navIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         mainNav.className = e.isIntersecting ? 'nav--dark' : 'nav--light';
@@ -1666,7 +1645,7 @@ const menuBtn=document.getElementById('hamburgerBtn'), menu=document.getElementB
 function syncMenu(){const open=menu.classList.contains('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');menu.inert=!open}
 new MutationObserver(syncMenu).observe(menu,{attributes:true,attributeFilter:['class']});syncMenu();
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');menuBtn.classList.remove('open');menuBtn.focus()}});
-const desktop=matchMedia('(min-width:901px)');desktop.addEventListener('change',()=>{if(desktop.matches){menu.classList.remove('open');menuBtn.classList.remove('open')}});
+const desktop=matchMedia('(min-width:961px)');desktop.addEventListener('change',()=>{if(desktop.matches){menu.classList.remove('open');menuBtn.classList.remove('open')}});
 ['name','email','type','message','privacy'].forEach(id=>{const el=document.getElementById(id);el.required=true;el.setAttribute('aria-describedby',id+'Error')});
 let restoreFocus=null;
 ['videoModal','privacyModal'].forEach(id=>{const modal=document.getElementById(id);if(!modal)return;modal.setAttribute('role','dialog');modal.setAttribute('aria-modal','true');modal.setAttribute('aria-label',id==='videoModal'?'프로젝트 영상':'개인정보 수집 및 이용');modal.inert=true;
@@ -1685,39 +1664,5 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){if('IntersectionObse
 let resumeHero=false;const modal=document.getElementById('videoModal');new MutationObserver(()=>{if(modal.classList.contains('open')){resumeHero=!v.paused;v.pause()}else if(resumeHero){resumeHero=false;v.play().catch(syncVideo)}}).observe(modal,{attributes:true,attributeFilter:['class']});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){v.pause();foot.pause()}});
 })();
-</script>
-
-<!-- ══════════════════════════════════════════════════════════════
-  [선택 적용] 모바일 하단 고정 CTA 바
-  인앱 브라우저에서 상단 내비게이션이 가려지는 상황에 대비한 문의 동선 보험.
-  활성화 방법: 이 주석 블록의 시작/끝 표시만 제거하면 즉시 적용됩니다.
-
-<style id="fixed-mobile-cta">
-@media (max-width: 900px){
-  .fixed-cta{
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
-    display: flex; gap: 10px;
-    padding: 12px var(--gutter);
-    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-    background: rgba(8,8,12,.88);
-    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
-  }
-  .fixed-cta a{
-    flex: 1; text-align: center; padding: 13px 0;
-    font-size: 13px; font-weight: 600; letter-spacing: .06em;
-    text-decoration: none;
-  }
-  .fixed-cta .cta-primary{ background:#fff; color: var(--ink); }
-  .fixed-cta .cta-ghost{ border:1px solid rgba(255,255,255,.45); color:#fff; }
-  footer{ padding-bottom: 92px; }
-}
-@media (min-width: 901px){ .fixed-cta{ display: none; } }
-</style>
-<div class="fixed-cta">
-  <a href="#contact" class="cta-primary">프로젝트 문의</a>
-  <a href="#portfolio" class="cta-ghost">대표 작업</a>
-</div>
-
-══════════════════════════════════════════════════════════════ -->
-</body>
+</script></body>
 </html>

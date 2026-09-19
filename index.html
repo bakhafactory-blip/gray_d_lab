@@ -882,7 +882,17 @@ footer .footer-rule{display:none}
 <style>
 #portfolio .work-image{width:100%;height:100%;object-fit:cover}.hero-sound{position:absolute;z-index:3;right:var(--gutter);top:105px;padding:10px 16px;border:1px solid #ffffff80;background:#17202a80;color:white;cursor:pointer;font:inherit;font-size:13px}
 @media(max-width:600px){.hero-sound{top:88px;font-size:12px}}
-</style></head>
+</style>
+<style id="mobile-menu-visibility-fix">
+@media(max-width:960px){
+#mainNav .hamburger{position:relative;flex:0 0 44px;width:44px;height:44px;min-width:44px;min-height:44px;align-items:center;justify-content:center;gap:5px;background:#fff;color:#20252D;border:0;border-radius:4px;appearance:none;-webkit-appearance:none;opacity:1;isolation:isolate}
+#mainNav .hamburger span{width:22px;min-width:22px;height:2px;min-height:2px;flex:0 0 2px;background:#20252D;opacity:1;transform-origin:center}
+#mainNav .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#mainNav .hamburger.open span:nth-child(2){opacity:0}
+#mainNav .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+</style>
+</head>
 <body><a class="skip-link" href="#portfolio">대표 작업으로 건너뛰기</a>
 
 <!-- NAV -->

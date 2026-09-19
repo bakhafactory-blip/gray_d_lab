@@ -885,8 +885,11 @@ footer .footer-rule{display:none}
 </style>
 <style id="mobile-menu-visibility-fix">
 @media(max-width:960px){
-#mainNav .hamburger{position:relative;flex:0 0 44px;width:44px;height:44px;min-width:44px;min-height:44px;align-items:center;justify-content:center;gap:5px;background:#fff;color:#20252D;border:0;border-radius:4px;appearance:none;-webkit-appearance:none;opacity:1;isolation:isolate}
-#mainNav .hamburger span{width:22px;min-width:22px;height:2px;min-height:2px;flex:0 0 2px;background:#20252D;opacity:1;transform-origin:center}
+#mainNav .hamburger{position:relative;flex:0 0 44px;width:44px;height:44px;min-width:44px;min-height:44px;align-items:center;justify-content:center;gap:5px;background:transparent;color:#20252D;border:0;border-radius:4px;appearance:none;-webkit-appearance:none;opacity:1;isolation:isolate}
+#mainNav .hamburger span{width:22px;min-width:22px;height:2px;min-height:2px;flex:0 0 2px;background:currentColor;opacity:1;transform-origin:center}
+#mainNav.nav--dark .hamburger{color:#fff}
+#mainNav.nav--light .hamburger{color:#20252D}
+#mainNav .hamburger.open{color:#20252D}
 #mainNav .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 #mainNav .hamburger.open span:nth-child(2){opacity:0}
 #mainNav .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}

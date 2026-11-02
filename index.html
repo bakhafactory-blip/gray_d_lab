@@ -880,7 +880,7 @@
 #statement{padding-top:70px;padding-bottom:70px}.statement-lead{font-size:clamp(23px,2.6vw,37px);line-height:1.45}.statement-body{font-size:16px}
 #portfolio{padding:80px var(--gutter) 100px;display:grid;grid-template-columns:1fr 1fr;gap:36px 24px;max-width:1600px;margin:auto}.portfolio-header{grid-column:1/-1;padding:0 0 12px;margin:0;width:100%}.work-block{height:auto;min-height:0;aspect-ratio:1.2;cursor:pointer!important}.work-block:hover{transform:none}.work-caption{padding:28px}.work-caption h3{font-family:inherit;font-style:normal;font-size:clamp(20px,2vw,28px);font-weight:550;line-height:1.4}.work-type{color:#fff;font-size:11px}.work-play{display:flex!important;width:48px;height:48px;top:28px;right:28px;left:auto;transform:none;background:#ffffff20;border-color:#ffffff90;color:#fff}.custom-play-cursor{display:none!important}.work-block:hover .work-bg{transform:scale(1.035)}
 #services{background:var(--paper-deep)}.svc-num{display:none}.svc{padding:38px 0}.svc-title{font-size:24px}.svc-body{font-size:16px}.tag{font-size:12px}.svc-link{font-size:15px}#process{background:white}.proc-idx{font-family:inherit;font-style:normal;font-size:22px;font-weight:500}.proc-body{font-size:15px}.proc-en{color:var(--ink-mid)}
-.marquee-clients-track{animation:none;flex-wrap:wrap;justify-content:center;gap:20px 32px;width:auto}.marquee-client-item{font-size:16px}.marquee-client-item:nth-child(n+10){display:none}.marquee-clients{overflow:visible}.client-ticker-wrapper{padding:50px var(--gutter);background:var(--paper-deep)}.cl-grid{padding-top:70px;padding-bottom:70px}.cl-cats{display:none}
+.marquee-clients-track{animation:none;flex-wrap:wrap;justify-content:center;gap:20px 32px;width:auto}.marquee-client-item{font-size:16px}.marquee-client-item[aria-hidden="true"]{display:none}.marquee-clients{overflow:visible}.client-ticker-wrapper{padding:50px var(--gutter);background:var(--paper-deep)}.cl-grid{padding-top:70px;padding-bottom:70px}.cl-cats{display:none}
 #contact{background:var(--paper-deep)}.contact-form{background:white;padding:34px}.contact-grid{gap:60px}.info-val{overflow-wrap:anywhere}.privacy-link{border:0;background:none;font:inherit;color:var(--accent);text-decoration:underline;cursor:pointer;padding:0}.btn-submit{background:var(--ink);color:white}.nav-links a{font-size:14px}.mobile-menu{max-height:calc(100svh - 68px);overflow:auto}.footer-logo{max-height:110px}footer{padding:55px var(--gutter)}
 @media(max-width:960px){.hero-inner{padding-bottom:42px}.hero-meta-links{flex-direction:row;align-items:center;gap:24px}.hero-meta-label{display:none}#hero{min-height:720px}.contact-grid{gap:35px}.svc-grid{gap:20px}}
 @media(max-width:600px){#hero{min-height:670px;height:90svh}.hero-heading{font-size:44px}.hero-inner{gap:28px}.hero-meta-links{font-size:14px}.hero-description{font-size:15px}.hero-pause{top:88px;font-size:12px}#portfolio{grid-template-columns:1fr;padding-top:55px;padding-bottom:60px;gap:22px}.work-block{aspect-ratio:4/5}.work-caption{padding:23px}.work-caption h3{font-size:23px}.contact-form{padding:22px 18px}.proc-cell{padding-left:0;padding-right:0}.statement-grid{gap:22px}.marquee-client-item{font-size:13px}.hero-link-primary{padding:12px 16px!important}}
@@ -897,7 +897,7 @@
 .marquee-client-item,.marquee-client-item:nth-child(n+10){display:inline-flex;flex-shrink:0}
 
 .marquee-clients.is-paused .marquee-clients-track{animation-play-state:paused}
-@media(prefers-reduced-motion:reduce){.marquee-clients{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.marquee-clients-track{animation:none}.marquee-client-item:nth-child(n+10){display:none}}
+@media(prefers-reduced-motion:reduce){.marquee-clients{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.marquee-clients-track{animation:none}.marquee-client-item[aria-hidden="true"]{display:none}}
 </style><style id="mobile-process-borderless">
 @media(max-width:600px){#process .proc-grid,#process .proc-grid .proc-cell{border:0}}
 </style><style id="minimal-decorative-borders">
@@ -1175,6 +1175,7 @@ footer .footer-rule{display:none}
         <span class="marquee-client-item"><strong>KITCT</strong> 한국섬유융합기술원 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>AurAI</strong> AI 패션 솔루션 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>BABATHE.COM</strong> 바바더닷컴 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>INDUST</strong> 인더스트 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>Maison de Ines</strong> 메종드이네스 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>XCLIAM</strong> 브랜드 캠페인 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>KRIS W</strong> S/S 런웨이 <span class="bullet"></span></span>
@@ -1186,6 +1187,7 @@ footer .footer-rule{display:none}
         <span class="marquee-client-item"><strong>KITCT</strong> 한국섬유융합기술원 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>AurAI</strong> AI 패션 솔루션 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>BABATHE.COM</strong> 바바더닷컴 <span class="bullet"></span></span>
+        <span class="marquee-client-item"><strong>INDUST</strong> 인더스트 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>Maison de Ines</strong> 메종드이네스 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>XCLIAM</strong> 브랜드 캠페인 <span class="bullet"></span></span>
         <span class="marquee-client-item"><strong>KRIS W</strong> S/S 런웨이 <span class="bullet"></span></span>

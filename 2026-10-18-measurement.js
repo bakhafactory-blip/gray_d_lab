@@ -7,7 +7,8 @@
   const services = ['ai-fashion-show','ai-fashion-lookbook','fashion-brand-film','retail-ooh-video','projects','studio','inquiry'];
   const requested = new URLSearchParams(location.search).get('service');
   const service = services.includes(requested) ? requested : '';
-  const events = ['content_view','inquiry_click','email_click','phone_click','inquiry_success'];
+  const events = ['content_view','quote_request_click','email_click','phone_click','generate_lead'];
+  const aliases = {inquiry_click:'quote_request_click', inquiry_success:'generate_lead'};
   const safeLocation = 'https://graydlab.ai.kr' + location.pathname;
   let referrer = '';
   try { referrer = new URL(document.referrer).origin + '/'; } catch (_) {}
@@ -32,6 +33,7 @@
     document.head.append(script);
   }
   window.graydTrack = event => {
+    event = aliases[event] || event;
     if (!events.includes(event)) return;
     const data = {event,page_path:location.pathname,service};
     window.dataLayer.push(data);
@@ -42,7 +44,7 @@
   document.addEventListener('click',e => {
     const a = e.target.closest && e.target.closest('a');
     if (!a) return;
-    if (events.includes(a.dataset.event)) window.graydTrack(a.dataset.event);
+    if (events.includes(a.dataset.event) || aliases[a.dataset.event]) window.graydTrack(a.dataset.event);
     else if (a.href.startsWith('mailto:')) window.graydTrack('email_click');
     else if (a.href.startsWith('tel:')) window.graydTrack('phone_click');
   });

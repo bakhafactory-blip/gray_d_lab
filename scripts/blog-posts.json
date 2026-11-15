@@ -1,7 +1,53 @@
 {
   "guidePath": "2026-11-12-production-guides.html",
-  "guideModified": "2026-11-14",
+  "guideModified": "2026-11-16",
   "posts": [
+    {
+      "path": "2026-11-16-popup-signage-vs-event-opening.html",
+      "title": "팝업스토어 사이니지 vs 행사 오프닝 영상, 같은 재킷인데 왜 두 편이 필요할까?",
+      "description": "팝업스토어 사이니지와 행사 오프닝 영상의 차이를 비교합니다. 매장 반복 재생, LED 화면 비율, 현장 음향, 송출 테스트와 납품 일정까지 패션 브랜드가 제작 전에 확인할 기준을 정리했습니다.",
+      "published": "2026-11-16",
+      "image": "https://graydlab.ai.kr/2026-11-16-signage-guide-image-1.png",
+      "ogImage": "https://graydlab.ai.kr/2026-11-16-signage-guide-image-1.png",
+      "relatedCount": 3,
+      "faq": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "행사까지 3주가 채 남지 않았는데 상담할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네. 오픈일과 파일 전달 마감일, 현재 확보된 자료를 알려주시면 그 일정 안에서 가능한 제작 범위를 먼저 검토합니다. 일정이 촉박할수록 빨리 연락 주시는 것이 선택지를 넓히는 방법입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "행사 메인 스크린용 가로 영상과 SNS용 세로 영상도 함께 받을 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "함께 제작할 수 있습니다. 주 송출 화면을 먼저 정하고, 세로 버전에 필요한 구도와 편집 범위를 확인한 뒤 추가 납품 범위를 안내드립니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "팝업 인테리어 시안만 있어도 상담할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네. 공간 조감도나 시즌 룩북을 바탕으로, 고객이 영상을 어디서 보고 어떤 제품을 기억하면 좋을지부터 정리합니다. 그 내용을 바탕으로 콘셉트와 장면 구성, 제작 범위를 함께 협의합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "매장 사이니지 영상은 소리가 꼭 필요한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "매장 환경에 따라 무음 재생이 많아 화면만으로 이해되도록 만드는 것이 기본입니다. 소리를 쓸 수 있는 공간이라면 매장 음악과 어울리는 사운드를 함께 제안드립니다."
+            }
+          }
+        ]
+      }
+    },
     {
       "path": "2026-11-13-lookbook-vs-ai-fashion-editorial.html",
       "title": "룩북 촬영 vs AI 화보, 패션 브랜드는 무엇을 선택해야 할까?",

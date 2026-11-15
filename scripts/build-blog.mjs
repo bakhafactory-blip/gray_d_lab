@@ -121,7 +121,7 @@ export function generateBlog(files, { guidePath, guideModified, posts }) {
       throw new Error("Invalid article dates: " + post.path);
     }
     seen.add(post.path);
-    const related = orderedPosts.filter(item => item.path !== post.path).slice(0, 2);
+    const related = orderedPosts.filter(item => item.path !== post.path).slice(0, post.relatedCount ?? 2);
     output[post.path] = publishPost(files[post.path], post, related, guidePath);
   }
   output[guidePath] = updateRegion(files[guidePath], "listing",

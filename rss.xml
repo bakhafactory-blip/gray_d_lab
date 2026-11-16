@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>그레이디랩 (GRaY D. Lab) 제작 가이드</title>
+    <link>https://graydlab.ai.kr/2026-11-12-production-guides.html</link>
+    <description>패션 브랜드와 대행사 실무자를 위한 AI 영상 제작 가이드</description>
+    <language>ko</language>
+    <item>
+      <title>팝업스토어 사이니지 vs 행사 오프닝 영상, 같은 재킷인데 왜 두 편이 필요할까?</title>
+      <link>https://graydlab.ai.kr/2026-11-16-popup-signage-vs-event-opening.html</link>
+      <guid>https://graydlab.ai.kr/2026-11-16-popup-signage-vs-event-opening.html</guid>
+      <pubDate>Sun, 15 Nov 2026 15:00:00 GMT</pubDate>
+      <description>&lt;p class=&quot;tag&quot;&gt;글 &lt;a href=&quot;https://graydlab.ai.kr/kris-w.html&quot;&gt;Kris W (감우식)&lt;/a&gt; · &lt;time datetime=&quot;2026-11-16&quot;&gt;2026년 11월 16일&lt;/time&gt;&lt;/p&gt;
+        &lt;p class=&quot;lead&quot;&gt;팝업스토어 사이니지는 어느 장면에서 봐도 제품이 보여야 하고, 행사 오프닝 영상은 첫 장면부터 공개 순간까지 관객의 시선을 이끌어야 합니다.&lt;/p&gt;
+
+
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-16-signage-guide-image-1.png&quot; alt=&quot;같은 재킷을 보여주는 팝업스토어 화면과 행사 무대 화면 비교&quot; width=&quot;936&quot; height=&quot;529&quot; fetchpriority=&quot;high&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;같은 장면도 공간에 따라 다르게 설계합니다 · AI 활용&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;blockquote&gt;팝업 입구에도, 오프닝 행사에도 같은 영상을 틀면 안 되나요?&lt;/blockquote&gt;
+&lt;p&gt;팝업스토어와 런칭 행사를 함께 준비하는 브랜드 담당자분들이 자주 하시는 질문입니다. 같은 시즌, 같은 재킷을 보여주는 영상이니 한 편이면 충분해 보입니다. 그런데 막상 현장에 걸어 보면 결과가 달라집니다.&lt;/p&gt;
+&lt;p&gt;입구에서는 손님이 걸어가다 화면을 잠깐 봅니다. 하필 영상의 중간을 봤는데, 화면에는 풍경만 나오고 재킷은 몇 초 뒤에야 등장합니다. 그 사이 손님은 이미 지나갔습니다.&lt;/p&gt;
+&lt;p&gt;반대로 행사장에서는 진행자가 무대에 오르기 전, 모든 관객의 시선이 화면에 모입니다. 이때 첫 장면부터 재킷을 다 보여주면 기대감이 생길 틈이 없습니다. 원단의 움직임이나 실루엣으로 궁금증을 만든 뒤, 마지막에 첫 착장을 공개하는 편이 훨씬 강렬합니다.&lt;/p&gt;
+&lt;p&gt;음악으로 비유하면 쉽습니다. 매장 BGM은 손님이 언제 들어와도 어색하지 않아야 하고, 패션쇼 음악은 첫 모델 등장부터 피날레까지 흐름이 설계되어 있습니다. 같은 브랜드라도 매장 음악과 쇼 음악을 따로 고르는 이유입니다. 영상도 마찬가지입니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;한눈에 보는 매장 사이니지 vs 행사 오프닝 영상&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;구분&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;팝업스토어·매장 사이니지&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;행사 오프닝 영상&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;관객이 보는 방식&lt;/th&gt;&lt;td&gt;지나가며 중간부터 잠깐&lt;/td&gt;&lt;td&gt;정해진 시점에 모두 함께&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;장면 구성&lt;/th&gt;&lt;td&gt;대표 제품·브랜드가 곳곳에서 보이게&lt;/td&gt;&lt;td&gt;첫 장면 → 공개 장면까지 하나의 흐름&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;첫 장면의 역할&lt;/th&gt;&lt;td&gt;어디서 봐도 읽히는 것이 우선&lt;/td&gt;&lt;td&gt;시선을 모으는 결정적 장면&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;소리&lt;/th&gt;&lt;td&gt;무음 재생 기준&lt;/td&gt;&lt;td&gt;현장 음향과 장면 동기화&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;반복&lt;/th&gt;&lt;td&gt;끝과 시작이 자연스럽게 이어져야&lt;/td&gt;&lt;td&gt;1회 재생, 끝난 뒤 무대 전환까지 설계&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;납품 기준일&lt;/th&gt;&lt;td&gt;매장 오픈 전 설치일&lt;/td&gt;&lt;td&gt;리허설·송출 테스트일&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;이 차이를 먼저 정하면 콘티부터 납품 파일까지 결정이 훨씬 쉬워집니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;1. 사이니지는 &#39;어느 장면에서 봐도&#39;, 오프닝은 &#39;첫 장면부터 끝까지&#39;&lt;/h2&gt;
+&lt;p&gt;매장 사이니지 영상의 핵심은 중간부터 봐도 읽히는 것입니다. 대표 제품과 브랜드가 영상 곳곳에서 보이도록 배치하고, 소리 없이 재생되어도 화면만으로 이해되는지 확인합니다. 반복 재생이 기본이라 마지막 장면이 첫 장면으로 자연스럽게 이어지는지도 봅니다.&lt;/p&gt;
+&lt;p&gt;행사 오프닝 영상의 핵심은 하나의 흐름입니다. 첫 장면에서 시선을 모으고, 공개할 제품이나 메시지까지 긴장을 쌓습니다. 현장 음향을 쓸 수 있다면 음악과 효과음을 장면에 맞추고, 영상이 끝난 뒤 조명 전환이나 진행자 등장으로 어떻게 이어지는지까지 함께 설계합니다.&lt;/p&gt;
+&lt;p&gt;패션 디렉팅에서는 이 차이가 &#39;무엇을 먼저 보여줄지&#39;로 이어집니다.&lt;/p&gt;
+&lt;p&gt;· 매장 입구: 재킷의 전체 실루엣을 먼저 보여주고, 시선이 조금 더 머물면 소재가 읽히도록&lt;/p&gt;
+&lt;p&gt;· 행사 오프닝: 원단 디테일에서 시작해, 움직임을 따라 전신이 드러나도록&lt;/p&gt;
+&lt;p&gt;대행사 PM이나 브랜드 VMD 담당자가 내부 보고를 할 때도 이렇게 한 문장으로 정리할 수 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;입구에서는 멀리서도 대표 착장이 보이게 하고, 오프닝에서는 첫 착장 공개 타이밍에 맞춰 영상과 음악을 끝냅니다.&lt;/blockquote&gt;
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-16-signage-guide-image-2.png&quot; alt=&quot;매장 입구의 사이니지와 행사 메인 스크린 연출 비교&quot; width=&quot;936&quot; height=&quot;529&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;지나가며 보는 화면과 모두가 함께 보는 화면, 무엇을 먼저 보여줄지가 다릅니다 · AI 활용&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2&gt;2. 화면 규격은 콘티를 그리기 전에 확인합니다&lt;/h2&gt;
+&lt;p&gt;가로 영상에서 모델이 왼쪽부터 오른쪽까지 걷는 장면을 떠올려 보세요. 이 영상을 좁은 기둥형 LED에 맞춰 가운데만 잘라내면, 모델이 몇 초 동안 화면 밖에 있게 됩니다.&lt;/p&gt;
+&lt;p&gt;처음부터 그 화면을 기준으로 만들었다면 이야기가 달라집니다. 카메라를 향해 걸어오는 동선을 쓰거나, 전신과 소재 디테일을 번갈아 보여주는 구성을 선택할 수 있습니다. 같은 장면도 화면에 맞춰 다시 설계하는 것과 나중에 잘라내는 것은 결과가 완전히 다릅니다.&lt;/p&gt;
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-16-signage-guide-image-3.png&quot; alt=&quot;LED 화면에 맞춘 영상 구도와 단순 크롭 비교&quot; width=&quot;936&quot; height=&quot;529&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;나중에 잘라낸 화면과 처음부터 설계한 화면의 차이 · AI 활용&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;화면이 여러 면으로 나뉘는 LED라면 인물 얼굴이나 로고가 경계에 걸리지 않는지도 콘티 단계에서 반영합니다. 가로형과 세로형을 함께 쓸 계획이라면, 어떤 장면을 공유하고 어떤 장면을 매체별로 다시 구성할지 초기에 정하는 편이 좋습니다.&lt;/p&gt;
+&lt;p&gt;색감도 공간에 따라 다르게 보입니다. 밝은 매장에서는 검은 옷의 주름이 묻힐 수 있고, 어두운 행사장에서는 밝은 화면이 관객에게 지나치게 강하게 느껴질 수 있습니다. 가능하면 실제 화면이나 비슷한 환경에서 옷의 명암, 로고의 가독성, 컷 전환을 미리 확인합니다.&lt;/p&gt;
+&lt;h3&gt;송출 사양, 이것만 확인하면 됩니다&lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;화면비와 실제 송출 해상도&lt;/li&gt;&lt;li&gt;화면 설치 위치와 관객이 보는 거리&lt;/li&gt;&lt;li&gt;분할 화면 여부와 경계 위치&lt;/li&gt;&lt;li&gt;재생 장비와 요구 파일 형식&lt;/li&gt;&lt;li&gt;소리 송출 가능 여부&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;운영사에서 받은 송출 사양서가 있다면 그대로 전달만 해주세요. 아직 받지 못하셨다면, 운영 담당자에게 확인할 항목을 GRaY D. Lab이 정리해 드립니다.&lt;/p&gt;
+&lt;h2&gt;3. 오픈일이 정해졌다면, 송출 테스트 날짜부터 잡습니다&lt;/h2&gt;
+&lt;p&gt;행사 영상의 마감일은 오픈일이 아닙니다. 현장에서는 완성 파일을 장비에 올려 재생해 보는 시간이 필요하기 때문입니다.&lt;/p&gt;
+&lt;p&gt;예를 들어 금요일 오픈, 수요일 송출 테스트가 예정되어 있다면 제작 일정은 금요일이 아니라 수요일을 기준으로 거꾸로 잡습니다.&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;시점&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;할 일&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;금요일&lt;/th&gt;&lt;td&gt;팝업 오픈·행사 당일&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;수요일&lt;/th&gt;&lt;td&gt;현장 송출 테스트 ← 제작 일정의 기준일&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;화요일까지&lt;/th&gt;&lt;td&gt;최종 파일 전달&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;그 이전&lt;/th&gt;&lt;td&gt;콘셉트·제품 자료·송출 사양 확정 시점을 함께 역산&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;GRaY D. Lab의 제작 기간은 30초 이내 영상 약 2주, 1~2분 영상 약 3주를 기준으로 상담합니다. 기획 범위와 장면 수, 자료와 피드백 일정에 따라 달라지므로, 구체적인 납품일은 송출 테스트일을 기준으로 함께 정합니다.&lt;/p&gt;
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-16-signage-guide-image-4.png&quot; alt=&quot;행사 오픈 전 현장 송출 테스트 예시&quot; width=&quot;936&quot; height=&quot;529&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;오픈 전 송출 테스트, 영상 일정은 이날을 기준으로 거꾸로 잡습니다 · AI 활용&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h2&gt;첫 상담은 세 가지면 충분합니다&lt;/h2&gt;
+&lt;p&gt;행사 영상은 일정이 가장 중요하기 때문에, 시리즈의 다른 글에서 말씀드린 두 가지에 하나만 더 여쭤봅니다.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;무엇을 보여주고 싶은지 – 대표 제품이나 메시지&lt;/li&gt;&lt;li&gt;어디에 쓸 영상인지 – 팝업 입구, 매장 내부, 행사 메인 스크린 등&lt;/li&gt;&lt;li&gt;오픈일과 리허설 일정 – 파일 전달 마감일이 정해졌다면 함께&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;공간 조감도, 시즌 룩북, 제품 사진, 송출 사양서가 있다면 함께 보내주세요. 없어도 상담은 시작할 수 있습니다.&lt;/p&gt;
+&lt;h2&gt;자주 묻는 질문&lt;/h2&gt;
+&lt;h3&gt;행사까지 3주가 채 남지 않았는데 상담할 수 있나요?&lt;/h3&gt;
+&lt;p&gt;네. 오픈일과 파일 전달 마감일, 현재 확보된 자료를 알려주시면 그 일정 안에서 가능한 제작 범위를 먼저 검토합니다. 일정이 촉박할수록 빨리 연락 주시는 것이 선택지를 넓히는 방법입니다.&lt;/p&gt;
+&lt;h3&gt;행사 메인 스크린용 가로 영상과 SNS용 세로 영상도 함께 받을 수 있나요?&lt;/h3&gt;
+&lt;p&gt;함께 제작할 수 있습니다. 주 송출 화면을 먼저 정하고, 세로 버전에 필요한 구도와 편집 범위를 확인한 뒤 추가 납품 범위를 안내드립니다.&lt;/p&gt;
+&lt;h3&gt;팝업 인테리어 시안만 있어도 상담할 수 있나요?&lt;/h3&gt;
+&lt;p&gt;네. 공간 조감도나 시즌 룩북을 바탕으로, 고객이 영상을 어디서 보고 어떤 제품을 기억하면 좋을지부터 정리합니다. 그 내용을 바탕으로 콘셉트와 장면 구성, 제작 범위를 함께 협의합니다.&lt;/p&gt;
+&lt;h3&gt;매장 사이니지 영상은 소리가 꼭 필요한가요?&lt;/h3&gt;
+&lt;p&gt;매장 환경에 따라 무음 재생이 많아 화면만으로 이해되도록 만드는 것이 기본입니다. 소리를 쓸 수 있는 공간이라면 매장 음악과 어울리는 사운드를 함께 제안드립니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;행사 오프닝이라면 관객이 마지막 장면을 본 뒤 무엇을 보게 될지, 매장 사이니지라면 관객이 어느 장면에서 멈춰도 무엇을 알아볼 수 있을지부터 정해 보세요. 그 답이 콘티와 송출 계획의 출발점이 됩니다.&lt;/p&gt;
+&lt;p&gt;같은 재킷도 매장에서는 BGM처럼, 무대에서는 쇼 음악처럼. 공간에 맞춰 설계된 영상이 브랜드를 더 오래 기억하게 만듭니다.&lt;/p&gt;
+&lt;p class=&quot;note&quot;&gt;글 · &lt;a href=&quot;https://graydlab.ai.kr/kris-w.html&quot;&gt;Kris W (감우식)&lt;/a&gt; | GRaY D. Lab 대표, 패션 디자이너 출신 크리에이티브 디렉터&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>룩북 촬영 vs AI 화보, 패션 브랜드는 무엇을 선택해야 할까?</title>
+      <link>https://graydlab.ai.kr/2026-11-13-lookbook-vs-ai-fashion-editorial.html</link>
+      <guid>https://graydlab.ai.kr/2026-11-13-lookbook-vs-ai-fashion-editorial.html</guid>
+      <pubDate>Thu, 12 Nov 2026 15:00:00 GMT</pubDate>
+      <description>&lt;p class=&quot;tag&quot;&gt;글 &lt;a href=&quot;https://graydlab.ai.kr/kris-w.html&quot;&gt;Kris W (감우식)&lt;/a&gt; · &lt;time datetime=&quot;2026-11-13&quot;&gt;2026년 11월 13일&lt;/time&gt;&lt;/p&gt;
+        &lt;p class=&quot;lead&quot;&gt;핏과 소재를 보여주는 컷과 시즌 분위기를 전하는 장면은 제작 기준이 다릅니다.&lt;/p&gt;
+
+
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-lookbook-comparison-image-1.png&quot; alt=&quot;GRaY D. Lab AI 패션 화보 작업 예시&quot; width=&quot;936&quot; height=&quot;530&quot; fetchpriority=&quot;high&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;GRaY D. Lab AI 화보 작업 예시&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-lookbook-comparison-image-2.png&quot; alt=&quot;피팅룸 컷과 쇼윈도 컷의 역할을 비교한 AI 예시&quot; width=&quot;936&quot; height=&quot;522&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;피팅룸 컷과 쇼윈도 컷, 한 시즌 안에서도 역할은 다릅니다 (AI 예시)&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;blockquote&gt;촬영하는 게 나을까요, AI로 하는 게 나을까요?&lt;/blockquote&gt;
+&lt;p&gt;룩북 촬영이나 화보 촬영 견적을 알아보던 브랜드 담당자분들이 상담에서 가장 자주 하시는 질문입니다. GRaY D. Lab은 AI 영상을 만드는 회사지만, 이 질문에 늘 &amp;quot;AI가 낫습니다&amp;quot;라고 답하지는 않습니다. 같은 시즌 안에서도 장면마다 답이 다르기 때문입니다.&lt;/p&gt;
+&lt;p&gt;매장을 떠올려 보시면 쉽습니다. 매장에는 고객이 옷을 만져 보고 입어 보는 행거와 피팅룸이 있고, 길을 걷던 사람의 발걸음을 멈추게 하는 쇼윈도가 있습니다. 둘 다 꼭 필요하지만 역할은 완전히 다릅니다.&lt;/p&gt;
+&lt;p&gt;패션 콘텐츠도 같습니다. 상품의 핏과 소재를 확인시키는 &#39;피팅룸 컷&#39;은 실제 옷을 입혀 찍는 의류 촬영이 강하고, 시즌의 분위기로 시선을 붙잡는 &#39;쇼윈도 컷&#39;은 AI 화보와 AI 룩북이 강점을 가집니다. 이 글에서는 어떤 장면에 무엇을 써야 하는지, 판단 기준을 정리했습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;룩북 촬영 vs AI 화보, 한눈에 비교하기&lt;/h2&gt;
+&lt;p&gt;같은 착장이라도 상세페이지에서는 재킷의 어깨선과 여밈이 중요하고, 캠페인 첫 장면에서는 전체 실루엣과 움직임이 먼저 보여야 합니다. 필요한 결과물을 용도별로 적어 보면 어떤 장면에 촬영이 필요하고, 어떤 장면에 연출의 여지를 둘 수 있는지 보입니다.&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;구분&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;룩북 촬영·화보 촬영&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;AI 화보·AI 룩북&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;강한 장면&lt;/th&gt;&lt;td&gt;핏·소재·디테일 확인 (피팅룸 컷)&lt;/td&gt;&lt;td&gt;시즌 무드·캠페인 연출 (쇼윈도 컷)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;제품 재현 정확도&lt;/th&gt;&lt;td&gt;실제 제품 그대로&lt;/td&gt;&lt;td&gt;디테일 검수 필요, 일부 달라질 수 있음&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;공간·연출&lt;/th&gt;&lt;td&gt;섭외 가능한 장소·날씨·시간에 좌우&lt;/td&gt;&lt;td&gt;해외 로케·현실에 없는 공간도 연출&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;모델&lt;/th&gt;&lt;td&gt;일정·인상·체형에 맞춰 섭외&lt;/td&gt;&lt;td&gt;브랜드에 맞는 인상 설계, 실제 착용은 불가&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;수정&lt;/th&gt;&lt;td&gt;촬영 후 변경은 재촬영 필요&lt;/td&gt;&lt;td&gt;단계별 시안 비교, 확정 후 큰 변경은 재작업&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;비용 구조&lt;/th&gt;&lt;td&gt;모델·공간·스태프·후반 작업&lt;/td&gt;&lt;td&gt;기획·장면 생성·디테일 검수·편집&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;일정 변수&lt;/th&gt;&lt;td&gt;섭외·날씨·스튜디오 일정&lt;/td&gt;&lt;td&gt;기획 확정과 피드백 일정&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;매체별 버전&lt;/th&gt;&lt;td&gt;촬영 시 구도 확보 필요&lt;/td&gt;&lt;td&gt;매체별 구도 재구성 비교적 유연&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;비용도 구조가 다릅니다. 룩북 촬영 비용에는 모델, 공간, 스태프, 후반 작업이 영향을 주고, AI 방식에서는 장면 설계와 생성, 제품 디테일을 확인하고 보정하는 범위가 영향을 줍니다. 양쪽 견적을 비교하실 때는 같은 착장 수, 같은 결과물 수, 같은 납품 화면 비율을 기준으로 놓고 보시는 것이 정확합니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;피팅룸 컷: 실제 핏과 소재가 구매를 좌우할 때는 촬영&lt;/h2&gt;
+&lt;p&gt;고객이 화면에서 본 핏과 디테일을 기준으로 상품을 고른다면 의류 촬영이 맞습니다. 허리선이 어디에 놓이는지, 움직일 때 밑단이 어떻게 떨어지는지, 조명에 따라 원단의 광택이 어떻게 달라지는지는 실제 옷을 입혀 촬영할 때 가장 정확하게 담깁니다. 상세페이지나 바이어에게 보여줄 상품 소개 자료라면 더욱 그렇습니다.&lt;/p&gt;
+&lt;p&gt;원단 스와치로 색과 조직을 확인해도, 착용했을 때의 드레이프는 샘플을 입혀 봐야 판단할 수 있는 것과 같습니다. 예를 들어 짐웨어의 허리 밴드가 움직일 때 어디에 놓이는지 보여줘야 한다면, 모델이 실제 제품을 입고 동작하는 모습을 기준 컷으로 확보하는 편이 좋습니다.&lt;/p&gt;
+&lt;p&gt;이런 장면은 GRaY D. Lab도 촬영을 권합니다. 판매에 직접 연결되는 정보가 정확하지 않으면, 아무리 멋진 영상도 반품과 문의로 돌아오기 때문입니다.&lt;/p&gt;
+&lt;p&gt;촬영을 준비하신다면 두 가지를 챙겨 보세요.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;룩북 모델: 브랜드가 원하는 인상과 함께, 해당 착장이 어떤 체형에서 어떻게 보이는지 확인&lt;/li&gt;&lt;li&gt;의류 촬영 스튜디오: 공간의 분위기뿐 아니라 원단 조직과 어두운 색의 디테일이 조명 아래에서 어떻게 보이는지 확인&lt;/li&gt;&lt;/ul&gt;
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-lookbook-comparison-image-3.png&quot; alt=&quot;착장 전신과 소재 및 마감 근접 컷의 AI 예시&quot; width=&quot;936&quot; height=&quot;522&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;전신 컷으로 핏을, 근접 컷으로 소재와 마감을 보여줍니다 (AI 예시)&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2&gt;쇼윈도 컷: 시즌 분위기와 캠페인 장면은 AI 화보&lt;/h2&gt;
+&lt;p&gt;반대로 컬렉션의 인상을 남기는 장면이라면 AI 룩북과 AI 화보가 강점을 보입니다. 시즌의 색감, 장소, 조명, 모델의 움직임을 하나의 분위기로 묶어 보여줄 수 있기 때문입니다.&lt;/p&gt;
+&lt;p&gt;예를 들어 늦가을 컬렉션을 낮은 햇빛이 드는 유럽의 골목으로 설정했다고 해 보겠습니다. 촬영이라면 로케이션 섭외와 날씨, 해 질 녘의 짧은 시간을 모두 맞춰야 합니다. AI 화보에서는 같은 착장을 두고 배경의 밝기와 카메라 앵글을 달리한 시안을 여러 개 비교한 뒤 방향을 고를 수 있습니다.&lt;/p&gt;
+&lt;p&gt;패션 화보를 기획할 때는 메인 컷의 목적부터 정해 보세요. 컬렉션의 인상을 남기는 컷이라면 빛과 공간에 더 많은 연출을 줄 수 있습니다. 반면 상품을 특정할 수 있어야 하는 장면이라면 원단 색, 로고 위치, 포켓 모양처럼 실제 제품과 맞아야 할 항목을 먼저 정해야 합니다.&lt;/p&gt;
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-lookbook-comparison-image-4.png&quot; alt=&quot;서로 다른 공간과 조명을 비교한 AI 화보 시안&quot; width=&quot;936&quot; height=&quot;524&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;AI 화보는 공간과 빛을 여러 방향으로 비교할 수 있습니다&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2&gt;AI 화보의 한계도 알고 선택해야 합니다&lt;/h2&gt;
+&lt;p&gt;AI 화보와 영상에서는 원단의 광택이 달라지거나, 컷이 바뀔 때 단추 수와 스티치가 달라질 수 있습니다. 움직임이 들어가는 영상은 정지 화면에서 맞아 보였던 디테일이 다음 컷에서 달라지기도 합니다.&lt;/p&gt;
+&lt;p&gt;그래서 GRaY D. Lab은 판매에 중요한 디테일을 실제 제품과 대조해 검수하고, 정확도를 확보하기 어려운 장면은 촬영본을 쓰시도록 먼저 말씀드립니다. 할 수 있는 것과 어려운 것을 처음부터 구분해 드리는 것이 결국 일정과 비용을 아끼는 길이기 때문입니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;가장 효과적인 방법: 피팅룸 컷은 촬영, 쇼윈도 컷은 AI&lt;/h2&gt;
+&lt;p&gt;실제로는 한쪽만 고르기보다 두 방식을 나눠 쓰는 경우가 많습니다. 먼저 실제 제품을 확인시킬 컷과 시즌의 인상을 전할 장면을 나눕니다. 예를 들어 코트의 여밈과 소매 길이, 걸을 때의 실루엣은 촬영으로 담고, 캠페인 오프닝에는 컬렉션의 색감에 맞춘 AI 공간과 움직임을 넣는 방식입니다.&lt;/p&gt;
+&lt;p&gt;두 결과물을 한 영상에 넣을 때는 기준 컷을 먼저 정합니다. 기준 컷의 색감, 빛의 방향, 카메라 높이를 맞추면 장면이 바뀌어도 같은 시즌의 콘텐츠로 자연스럽게 이어집니다. 상세페이지에서는 촬영 컷을 상품 설명에 쓰고, 캠페인에서는 AI 연출 컷으로 분위기를 연 뒤 실제 제품 컷으로 이어갈 수도 있습니다.&lt;/p&gt;
+&lt;p&gt;홈페이지와 세로형 SNS에 함께 쓸 계획이라면, 처음부터 어느 화면에서 어떤 디테일을 보여줄지 정해 두세요. 가로 16:9에서 잘 보이던 코트 밑단이 세로 9:16으로 자르면 화면 밖으로 나갈 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이 &#39;장면 나누기&#39;가 GRaY D. Lab이 가장 먼저 하는 일입니다. 기획 전에 브랜드의 포지션과 타깃을 분석하고, 패션 디자인 디렉터의 관점에서 어떤 장면이 상품을 설명해야 하고 어떤 장면이 분위기를 만들어야 하는지 구분해 제안합니다.&lt;/p&gt;
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-lookbook-comparison-image-5.png&quot; alt=&quot;장면 역할과 매체별 구도 비교&quot; width=&quot;936&quot; height=&quot;522&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;figcaption&gt;장면을 나누고, 매체별 구도를 확인합니다&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h2&gt;1분 자가 진단: 우리 브랜드에는 무엇이 맞을까?&lt;/h2&gt;
+&lt;p&gt;아래 질문에 &#39;예&#39;라고 답한 개수를 세어 보세요.&lt;/p&gt;
+&lt;h3&gt;A. 촬영이 필요하다는 신호&lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;고객이 이 콘텐츠를 보고 핏이나 소재까지 판단해야 한다&lt;/li&gt;&lt;li&gt;로고, 봉제선, 패턴 등 실제 제품과 정확히 맞아야 하는 부분이 많다&lt;/li&gt;&lt;li&gt;실제 모델이 제품을 입고 움직이는 모습이 꼭 필요하다&lt;/li&gt;&lt;/ul&gt;
+&lt;h3&gt;B. AI 화보를 검토해 볼 신호&lt;/h3&gt;
+&lt;ul&gt;&lt;li&gt;이번 콘텐츠의 주된 역할은 시즌이나 브랜드의 분위기 전달이다&lt;/li&gt;&lt;li&gt;섭외하기 어려운 장소나 여러 공간·조명 시안을 비교해 보고 싶다&lt;/li&gt;&lt;li&gt;SNS, 홈페이지, 매장 등 여러 매체에 맞춘 버전이 필요하다&lt;/li&gt;&lt;li&gt;A가 많다면: 룩북 촬영·화보 촬영을 중심으로 계획하세요.&lt;/li&gt;&lt;li&gt;B가 많다면: AI 화보와 AI 룩북으로 먼저 시안을 받아 보세요.&lt;/li&gt;&lt;li&gt;A와 B가 비슷하다면: 장면을 나눠 촬영과 AI를 함께 쓰는 방식이 효과적입니다.&lt;/li&gt;&lt;/ul&gt;
+&lt;h2&gt;이런 경우라면 상담이 특히 도움이 됩니다&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;시즌 오픈이 다가오는데 촬영 일정과 장소 섭외가 맞지 않을 때&lt;/li&gt;&lt;li&gt;해외 로케이션이나 현실에서 만들기 어려운 공간이 필요할 때&lt;/li&gt;&lt;li&gt;상품 컷은 이미 있는데 캠페인 분위기를 만들 장면이 부족할 때&lt;/li&gt;&lt;li&gt;촬영 견적을 받아 두었는데 AI로 대체하거나 보완할 수 있는 장면이 있는지 궁금할 때&lt;/li&gt;&lt;/ul&gt;
+&lt;h2&gt;자주 묻는 질문&lt;/h2&gt;
+&lt;h3&gt;AI 화보만으로 상세페이지를 만들 수 있나요?&lt;/h3&gt;
+&lt;p&gt;분위기 컷은 가능하지만, 핏과 소재로 구매가 결정되는 상품이라면 실제 촬영 컷을 함께 쓰시길 권합니다.&lt;/p&gt;
+&lt;h3&gt;이미 촬영한 사진이 있는데 활용할 수 있나요?&lt;/h3&gt;
+&lt;p&gt;가능합니다. 보유하신 사진을 검토해 제품 기준 자료로 활용하고, 부족한 장면을 AI로 연출하는 방향을 함께 제안드립니다.&lt;/p&gt;
+&lt;h3&gt;촬영과 AI 중 어느 쪽이 더 저렴한가요?&lt;/h3&gt;
+&lt;p&gt;장면 수, 착장 수, 결과물 수에 따라 달라 한쪽이 항상 저렴하다고 말씀드리기 어렵습니다. 같은 조건으로 비교해 보시는 것이 정확합니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;상담은 두 가지 질문으로 시작합니다&lt;/h2&gt;
+&lt;p&gt;AI 영상 제작을 검토 중이라면, 무엇을 보여주고 싶은지와 어디에 쓸 영상인지만 먼저 알려주세요. AI 영상 제작 업체와의 첫 상담도 이 두 가지면 충분합니다. 레퍼런스가 없어도 원하는 무드를 말씀해 주시면 됩니다.&lt;/p&gt;
+&lt;p&gt;이미 받아 두신 촬영 견적이나 기획안이 있다면 함께 보내주세요. 어떤 장면은 촬영이 맞고, 어떤 장면은 AI로 대체하거나 보완할 수 있는지 비교해 드립니다.&lt;/p&gt;
+&lt;p&gt;피팅룸 컷과 쇼윈도 컷을 제대로 나누는 것, 그것이 같은 예산으로 더 좋은 시즌 콘텐츠를 만드는 출발점입니다.&lt;/p&gt;
+&lt;figure class=&quot;cost-figure&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-lookbook-comparison-image-6.png&quot; alt=&quot;GRaY D. Lab 작업 이미지&quot; width=&quot;936&quot; height=&quot;378&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/figure&gt;
+&lt;p class=&quot;note&quot;&gt;글 · &lt;a href=&quot;https://graydlab.ai.kr/kris-w.html&quot;&gt;Kris W (감우식)&lt;/a&gt;&lt;br&gt;GRaY D. Lab 대표 | 한국AI크리에이터협회 패션분과장&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://graydlab.ai.kr/#portfolio&quot;&gt;GRaY D. Lab 제작 사례&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI 패션 영상은 어떻게 만들어질까? 디렉터가 답한 제작 과정 5단계</title>
+      <link>https://graydlab.ai.kr/2026-11-13-ai-fashion-video-process.html</link>
+      <guid>https://graydlab.ai.kr/2026-11-13-ai-fashion-video-process.html</guid>
+      <pubDate>Thu, 12 Nov 2026 15:00:00 GMT</pubDate>
+      <description>&lt;figure&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-process-image-1.png&quot; alt=&quot;AI 패션 영상 완성 장면 모음&quot; loading=&quot;eager&quot;&gt;&lt;figcaption&gt;AI 패션 영상 완성 장면 모음&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;&quot;AI로 브랜드 캠페인 영상을 만들고 싶은데, 뭘 얼마나 준비해야 하나요?&quot;&lt;/p&gt;&lt;p&gt;&quot;AI 모델은 어떻게 정하고, 완성 전에 중간 결과를 볼 수 있나요?&quot;&lt;/p&gt;&lt;p&gt;AI 패션 영상이나 AI 광고 영상을 처음 맡길 때 가장 많이 묻는 질문입니다. AI 영상 제작 업체를 고를 때는 결과물만큼 &#39;어떤 과정으로 만들어지는가&#39;도 중요합니다. GRaY D. Lab이 실제 제작 경험을 바탕으로 제작 과정을 소개합니다.&lt;/p&gt;&lt;p&gt;먼저 결론부터 말씀드리면, 완성된 기획안이나 전문적인 제작 자료는 필요하지 않습니다. 무엇을 보여주고 싶은지, 어디에 사용할 영상인지 알려주시면 브랜드 분석과 기획은 제작사가 맡습니다. 실제 판매 제품을 보여주는 영상이라면 제품 사진이 필요하며, 어떤 사진이 필요한지는 보유하신 자료를 검토한 뒤 안내드립니다.&lt;/p&gt;&lt;p&gt;AI 패션 영상 제작은 옷 한 벌이 만들어지는 과정과 닮아 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;치수 재기 → 디자인 스케치 → 패턴·샘플 가봉 → 본 생산 → 마감·출고&lt;/blockquote&gt;
+&lt;p&gt;치수를 재지 않고 옷을 짓지 않듯, 브랜드를 이해하지 않고 기획하지 않습니다. 스케치 없이 패턴을 뜨지 않듯, 장면의 방향을 정하지 않고 영상을 생성하지 않습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;한눈에 보는 AI 패션 영상 제작 과정&lt;/h2&gt;&lt;p&gt;표 1. AI 패션 영상 제작 과정 5단계&lt;/p&gt;
+&lt;table&gt;&lt;tr&gt;&lt;th&gt;단계&lt;/th&gt;&lt;th&gt;GRaY D. Lab의 작업&lt;/th&gt;&lt;th&gt;고객이 준비·확인할 내용&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;① 상담·브랜드 분석&lt;/td&gt;&lt;td&gt;브랜드의 시장 포지셔닝과 타깃 고객을 분석하고, 제작 방향·범위·견적·일정을 제안합니다.&lt;/td&gt;&lt;td&gt;영상 목적, 사용처, 희망 일정·예산, 캠페인의 주요 요구사항을 전달합니다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;② 기획·스토리보드&lt;/td&gt;&lt;td&gt;브랜드에 맞는 이야기와 장면을 구성하고, 카메라 앵글·움직임·전환을 설계합니다.&lt;/td&gt;&lt;td&gt;콘셉트와 장면 흐름이 의도에 맞는지, 꼭 보여줄 요소가 포함됐는지 확인합니다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;③ 모델·착장 기준 설정&lt;/td&gt;&lt;td&gt;제품 자료를 검토하고, 인물과 의상의 기준 이미지를 제작합니다.&lt;/td&gt;&lt;td&gt;보유한 제품 사진을 제공하고, 모델의 인상과 의상 실루엣·주요 디테일을 확인합니다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;④ 키이미지·영상 제작&lt;/td&gt;&lt;td&gt;장면별 기준 이미지를 만든 뒤 움직임을 더하고, 일관성과 자연스러움을 검토합니다.&lt;/td&gt;&lt;td&gt;사전에 협의한 확인 단계에 따라 키이미지와 영상 시안에 대한 의견을 전달합니다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;⑤ 편집·최종 납품&lt;/td&gt;&lt;td&gt;컷 연결·색감·사운드 등을 다듬고, 협의한 송출 규격에 맞춰 파일을 전달합니다.&lt;/td&gt;&lt;td&gt;필요한 로고와 송출 사양을 제공하고, 최종 편집본을 확인합니다.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;※ 기획부터 의뢰하는 경우의 기본 흐름입니다. 기획안이나 스토리보드가 준비돼 있다면 필요한 단계부터 협의할 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt; Q1. 의뢰하면 가장 먼저 무엇을 하나요?&lt;/h2&gt;&lt;p&gt;&quot;브랜드가 시장에서 어떤 위치에 있고, 누구에게 어떤 가치를 전달하려는지부터 살펴봅니다.&lt;/p&gt;&lt;p&gt;옷을 지을 때 치수를 재는 것처럼, 영상도 먼저 그 브랜드에 맞는 기준을 잡아야 합니다.&lt;/p&gt;&lt;p&gt;첫 상담은 두 가지 질문으로 시작합니다. 무엇을 보여주고 싶은지, 어디에 쓸 영상인지. 이후 희망 일정과 예산 범위, 필요한 제품 자료를 확인합니다.&lt;/p&gt;&lt;p&gt;그리고 브랜드의 홈페이지와 SNS, 상품 구성과 가격대, 기존 캠페인 등을 살펴봅니다. 이때 저는 패션 디자인 디렉터로 일해 온 경험을 바탕으로, MD와 상품 기획의 관점에서도 브랜드를 분석합니다.&lt;/p&gt;&lt;p&gt;시장에서 어떤 포지션을 차지하고 있는지, 어떤 고객층을 지향하는지, 브랜드의 콘셉트와 차별점은 무엇인지를 함께 보는 것입니다.&lt;/p&gt;&lt;p&gt;그 분석은 실제 제작 선택으로 이어집니다. 어떤 인상의 모델이 브랜드에 어울리는지, 의상을 어떤 태도와 움직임으로 보여줄지, 어떤 공간과 색감이 적합할지 판단하는 기준이 됩니다. 영상의 무드뿐 아니라 장면을 어떤 이야기와 흐름으로 연결할지, 즉 내러티브도 여기서 방향을 잡습니다.&lt;/p&gt;&lt;p&gt;같은 코트라도 브랜드가 강조하려는 것이 소재와 품질인지, 실용적인 라이프스타일인지, 개성 있는 스타일링인지에 따라 모델과 연출은 달라질 수 있습니다.&lt;/p&gt;&lt;p&gt;고객께서 별도의 브랜드 분석 자료를 새로 만드실 필요는 없습니다. 제가 먼저 리서치하고, 공개된 자료만으로 알기 어려운 이번 캠페인의 목표나 꼭 지켜야 할 사항을 여쭤봅니다. 기존 브랜드 소개서나 시즌 콘셉트 자료가 있다면 함께 참고합니다.&lt;/p&gt;&lt;p&gt;이렇게 파악한 브랜드의 방향을 모델 선정과 영상의 분위기, 이야기 구성에 반영합니다.&quot;&lt;/p&gt;&lt;p&gt;· 고객이 하실 일: 영상의 목적·사용처·희망 일정 공유, 이번 캠페인의 주요 요구사항 전달&lt;/p&gt;&lt;p&gt;· GRaY D. Lab이 하는 일: 시장 포지셔닝·타깃 고객·콘셉트·차별점 리서치, 모델과 영상 연출 방향 설정, 제작 범위·견적·일정 제안&lt;/p&gt;&lt;h2&gt;Q2. 스토리보드는 누가, 어떻게 만드나요?&lt;/h2&gt;&lt;p&gt;&quot;기획부터 맡겨주시는 경우 저희가 만듭니다. 옷으로 치면 디자인 스케치 단계입니다.&lt;/p&gt;&lt;p&gt;앞서 분석한 브랜드의 포지셔닝과 고객층, 콘셉트를 바탕으로 영상의 내러티브와 장면을 구성합니다. 착장을 순서대로 나열하는 데 그치지 않고, 인물과 공간, 움직임이 어떤 흐름으로 브랜드의 분위기를 전달할지 설계합니다.&lt;/p&gt;&lt;p&gt;이때 카메라의 앵글과 움직임도 함께 정합니다. 예를 들어 아래에서 올려다보는 로우 앵글은 당당한 인상을 줄 수 있고, 인물 주위를 도는 카메라 움직임은 실루엣을 입체적으로 보여줄 수 있습니다.&lt;/p&gt;&lt;p&gt;다만 움직임이 화려하다고 항상 좋은 연출은 아닙니다. 실제 제품의 형태와 디테일을 유지할 수 있는지, 브랜드가 보여주려는 분위기에 적합한지도 함께 고려합니다.&lt;/p&gt;&lt;p&gt;고객께서는 스토리보드를 보시고 브랜드의 의도와 맞는지, 꼭 보여줘야 할 요소가 빠지지 않았는지 확인해 주시면 됩니다. 이미 준비하신 기획안이 있다면 그 방향을 바탕으로 제작 가능성과 보완할 부분을 함께 검토합니다.&quot;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-process-image-2.png&quot; alt=&quot;장면 구성과 연출을 정리한 스토리보드&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;장면 구성과 연출을 정리한 스토리보드&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;· 고객이 하실 일: 콘셉트와 스토리보드 확인, 의견 전달&lt;/p&gt;&lt;p&gt;· GRaY D. Lab이 하는 일: 내러티브와 장면 구성, 앵글·움직임·전환 설계&lt;/p&gt;&lt;h2&gt;Q3. AI 모델과 옷이 장면마다 달라지지 않나요?&lt;/h2&gt;&lt;p&gt;&quot;AI 영상은 장면마다 얼굴이나 의상 디테일에 차이가 생길 수 있습니다. 그래서 기준 이미지를 먼저 만들고, 생성된 장면을 그 기준과 비교합니다. 옷으로 치면 패턴을 뜨고 샘플을 가봉하는 단계입니다.&lt;/p&gt;&lt;p&gt;브랜드에 어울리는 모델의 방향을 정한 뒤, 인물 마스터 시트에는 얼굴과 헤어스타일, 전체 인상을 정리합니다. 착장 마스터 시트에는 실루엣과 주요 디테일을 정리하고요.&lt;/p&gt;&lt;p&gt;그런데 실제 제품을 표현하는 작업에서는 이보다 먼저 확인할 것이 있습니다. 제공받은 사진에서 의상의 디자인을 정확히 읽을 수 있는지입니다.&lt;/p&gt;&lt;h3&gt;제품 사진에서 먼저 확인하는 3가지&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;전체 형태와 방향&lt;/strong&gt;&lt;p&gt;디테일을 확대한 사진은 있지만 전체 실루엣을 확인할 사진이 없거나, 좌우 디자인이 다른 의상인데 한쪽만 보이는 경우가 있습니다. 영상에는 뒷모습이 필요하지만 제품의 뒷면 사진이 없는 경우도 있고요.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;전체 사진과 디테일 사진의 역할&lt;/strong&gt;&lt;p&gt;단추나 포켓의 확대 사진은 세부 표현에 도움이 되지만, 그것만으로는 옷 전체에서 어느 위치에 어떻게 배치되어 있는지 판단하기 어렵습니다. 전체 형태를 보여주는 사진과 디테일 사진은 서로 다른 역할을 합니다.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;화질과 색상 보정&lt;/strong&gt;&lt;p&gt;휴대폰 캡처처럼 해상도가 낮거나 여러 차례 압축된 이미지는 원단의 조직과 표면감을 구분하기 어렵습니다. 색상 보정이 강하게 적용된 사진만 있다면 실제 제품의 색을 판단하는 데에도 한계가 있습니다.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;자료가 부족할 때는 이렇게 진행합니다&lt;/h3&gt;&lt;p&gt;먼저 보유하신 자료를 확인하고, 영상 연출에 필요한 부분 중 부족한 사진만 구체적으로 요청드립니다. 처음부터 모든 각도를 새로 촬영하실 필요는 없습니다. 다만 뒷모습을 보여주려면 뒷면을, 좌우가 다른 디자인을 보여주려면 양쪽 형태를 확인할 수 있어야 합니다.&lt;/p&gt;&lt;p&gt;자료가 부족한 부분을 AI가 추정해 만들면 실제 제품과 다른 디자인이 표현될 수 있습니다. 추가 사진 확보가 어렵다면 확인 가능한 각도를 중심으로 연출하거나, 표현 범위를 함께 조정합니다.&lt;/p&gt;&lt;p&gt;실제 판매 제품이 아닌 콘셉트 의상은 실물 제품 사진 없이도 방향을 정해 제작할 수 있습니다.&quot;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-process-image-3.png&quot; alt=&quot;인물과 착장 표현의 기준 이미지&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;인물과 착장 표현의 기준 이미지&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;표 2. 실제 제품 영상 제작에 도움이 되는 사진&lt;/p&gt;
+&lt;table&gt;&lt;tr&gt;&lt;th&gt;사진 종류&lt;/th&gt;&lt;th&gt;확인하는 내용&lt;/th&gt;&lt;th&gt;준비할 때 참고할 점&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;의상 전체 사진&lt;/td&gt;&lt;td&gt;전체 실루엣, 길이, 비례, 디테일의 배치&lt;/td&gt;&lt;td&gt;의상 전체가 잘리지 않고 형태가 보이는 사진을 전달해 주세요.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;뒷면 사진&lt;/td&gt;&lt;td&gt;뒤판 디자인과 실루엣, 여밈 등&lt;/td&gt;&lt;td&gt;뒷모습이 등장하는 장면을 제작할 때 필요합니다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;측면·좌우 사진&lt;/td&gt;&lt;td&gt;옆선과 볼륨, 좌우 디자인의 차이&lt;/td&gt;&lt;td&gt;측면을 보여주거나 비대칭 디자인을 표현할 때 해당 방향의 사진이 필요합니다.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;주요 디테일 사진&lt;/td&gt;&lt;td&gt;단추, 포켓, 지퍼, 로고 등의 형태&lt;/td&gt;&lt;td&gt;확대 사진과 함께 해당 디테일의 위치를 알 수 있는 전체 사진을 전달해 주세요.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;소재 근접 사진&lt;/td&gt;&lt;td&gt;원단의 조직, 표면감, 광택&lt;/td&gt;&lt;td&gt;질감이 식별되는 선명한 원본이 도움이 됩니다. 강한 필터나 과도한 보정은 피해주세요.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;색상 확인용 사진&lt;/td&gt;&lt;td&gt;제품의 색상과 배색&lt;/td&gt;&lt;td&gt;색상 보정이 적은 사진을 전달해 주세요. 사진만으로 판단하기 어렵다면 추가 확인을 요청드립니다.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;※ 모든 사진을 새로 촬영하실 필요는 없습니다. 보유 자료를 먼저 검토한 뒤, 연출에 필요한 사진만 추가로 안내드립니다. 가능하면 화면 캡처보다 원본 파일을 전달해 주세요.&lt;/p&gt;&lt;p&gt;· 고객이 하실 일: 보유한 제품 사진 전달, 필요한 추가 자료와 주요 디테일 확인&lt;/p&gt;&lt;p&gt;· GRaY D. Lab이 하는 일: 자료의 적합성 검토, 부족한 정보 안내, 모델·착장 기준 이미지 제작 및 표현 범위 협의&lt;/p&gt;&lt;h2&gt;Q4. 완성 전에 중간 결과를 볼 수 있나요?&lt;/h2&gt;&lt;p&gt;&quot;네. 제작 전에 정한 확인 단계에 따라 중간 결과를 보실 수 있습니다. 옷으로 치면 본 생산에 해당하는 단계입니다.&lt;/p&gt;&lt;p&gt;먼저 스토리보드에 따라 키이미지, 즉 각 장면의 기준이 되는 이미지를 만듭니다. 구도, 인물의 위치, 배경, 조명과 색감을 이 단계에서 확인합니다.&lt;/p&gt;&lt;p&gt;키이미지가 확정되면 인물의 동작과 카메라 움직임을 더해 영상으로 만듭니다. 얼굴과 의상의 일관성, 동작의 자연스러움, 앞뒤 장면의 연결을 검토하며 결과물을 선별하고 보완합니다.&lt;/p&gt;&lt;p&gt;고객께는 내부 검토를 거친 시안을 공유합니다. 중간 결과를 언제, 어떤 단위로 확인하실지는 제작 범위와 일정에 맞춰 미리 안내드립니다.&quot;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-process-image-4.png&quot; alt=&quot;영상 제작을 위한 키이미지 예시&quot; loading=&quot;lazy&quot;&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-process-image-5.png&quot; alt=&quot;영상 장면 구성 예시&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;영상 장면 구성 예시&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;· 고객이 하실 일: 협의된 단계에 따라 키이미지·영상 시안 확인&lt;/p&gt;&lt;p&gt;· GRaY D. Lab이 하는 일: 키이미지 제작, 영상 생성, 품질 검토와 보완&lt;/p&gt;&lt;h2&gt;Q5. 납품 파일은 어떻게 받나요?&lt;/h2&gt;&lt;p&gt;&quot;협의한 사용처와 규격에 맞춘 최종 파일을 클라우드 링크로 전달합니다. 마감과 출고 단계입니다.&lt;/p&gt;&lt;p&gt;영상 컷을 연결하고 장면 길이, 전환, 색감을 다듬은 뒤 음악과 효과음, 로고와 자막을 협의한 범위에 맞춰 반영합니다.&lt;/p&gt;&lt;p&gt;처음부터 화면 비율이나 해상도, 파일 형식을 모두 알고 계실 필요는 없습니다. 사용처를 알려주시면 적합한 규격을 제안합니다. 행사장 LED나 매장 사이니지처럼 전용 규격이 있는 경우에는 운영 담당자의 송출 사양을 확인해 반영합니다.&lt;/p&gt;&lt;p&gt;가로형·세로형·정방형뿐 아니라 특수 비율의 화면도 작업 범위를 협의할 수 있습니다. 여러 버전을 제작하는 경우에는 각 화면에서 인물과 제품이 적절하게 보이도록 구성을 조정합니다.&lt;/p&gt;&lt;p&gt;최종 해상도와 파일 형식, 추가 버전, 수정 횟수, 작업 원본 제공 여부는 제작 전에 정합니다.&quot;&lt;/p&gt;&lt;p&gt;· 고객이 하실 일: 최종 편집본 확인, 필요한 로고 파일과 송출 사양 전달&lt;/p&gt;&lt;p&gt;· GRaY D. Lab이 하는 일: 편집, 색보정, 사운드 작업, 협의한 매체별 파일 출력&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;수정이 커지는 순간은 언제일까?&lt;/h2&gt;&lt;p&gt;옷을 만들 때 본 생산 후 패턴을 크게 바꾸면 재단부터 다시 진행해야 할 수 있습니다. AI 영상도 비슷합니다.&lt;/p&gt;&lt;p&gt;· 영상 생성 후 모델을 바꾸는 경우&lt;/p&gt;&lt;p&gt;· 확정된 착장이나 구도를 크게 변경하는 경우&lt;/p&gt;&lt;p&gt;· 제작 중 영상의 콘셉트나 주요 장면을 바꾸는 경우&lt;/p&gt;&lt;p&gt;이런 변경은 앞 단계부터 다시 작업해야 할 수 있어 일정과 비용에 영향을 줍니다.&lt;/p&gt;&lt;p&gt;그래서 GRaY D. Lab은 단계별로 방향을 확인한 뒤 다음 작업으로 넘어갑니다. 초기에 주요 요소를 확인하면 큰 수정과 일정 지연을 줄일 수 있습니다. 수정 범위와 추가 작업 여부는 진행 전에 안내드립니다.&lt;/p&gt;
+&lt;blockquote&gt;Tip. 여러 분이 함께 검토하신다면 의견을 한 번에 모아 전달해 주세요. 서로 다른 요청을 정리하고 수정 방향을 맞추는 데 도움이 됩니다.&lt;/blockquote&gt;
+&lt;h2&gt;AI 영상 제작 업체를 고를 때 확인할 4가지&lt;/h2&gt;&lt;p&gt;포트폴리오의 분위기만큼 중요한 것은 우리 브랜드의 의도를 어떤 과정으로 결과물에 옮기는지입니다.&lt;/p&gt;&lt;p&gt;✔ 브랜드의 시장 포지셔닝과 고객층을 이해하고, 이를 모델 선정과 영상 연출에 반영하는가&lt;/p&gt;&lt;p&gt;✔ 모델과 제품의 기준 이미지를 영상 생성 전에 확인할 수 있는가&lt;/p&gt;&lt;p&gt;✔ 제공한 제품 자료를 검토하고, 필요한 추가 자료와 구현 한계를 설명하는가&lt;/p&gt;&lt;p&gt;✔ 수정 범위와 최종 납품 조건을 제작 전에 명확히 안내하는가&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;AI 패션 영상 제작은 브랜드와 제품을 이해하고, 그에 맞는 모델과 장면의 흐름을 설계하는 작업입니다. 좋은 옷이 정확한 치수에서 시작하듯, 좋은 영상도 브랜드가 누구에게 무엇을 전달하려는지 이해하는 데서 시작합니다.&lt;/p&gt;&lt;p&gt;제작 기간은 계약 후 약 3주이며, 기획 범위와 자료·피드백 일정에 따라 구체적인 납품일을 협의합니다.&lt;/p&gt;&lt;p&gt;AI 영상 제작 업체를 검토하고 계시다면, 상담은 두 가지 질문으로 시작합니다. 무엇을 보여주고 싶은지, 어디에 쓸 영상인지. 그 답을 바탕으로 필요한 자료와 제작 방향을 GRaY D. Lab이 함께 정리해 드립니다.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-process-image-6.png&quot; alt=&quot;GRaY D. Lab AI 비주얼 작업 예시&quot; loading=&quot;lazy&quot;&gt;&lt;figcaption&gt;GRaY D. Lab AI 비주얼 작업 예시&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;글 · Kris W (감우식)&lt;/p&gt;&lt;p&gt;GRaY D. Lab 대표 | 한국AI크리에이터협회 패션분과장&lt;/p&gt;&lt;p&gt;▶ 홈페이지: https://graydlab.ai.kr/&lt;/p&gt;&lt;p&gt;▶ 유튜브: https://www.youtube.com/@gray_d_lab&lt;/p&gt;&lt;p&gt;▶ 인스타그램: https://www.instagram.com/gray_d_lab/&lt;/p&gt;&lt;p&gt;▶ 제작 문의: &lt;a href=&quot;mailto:bakhafactory@gmail.com&quot;&gt;bakhafactory@gmail.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI 영상 제작 비용, 패션 영상 견적을 결정하는 3가지</title>
+      <link>https://graydlab.ai.kr/2026-11-12-ai-fashion-video-cost.html</link>
+      <guid>https://graydlab.ai.kr/2026-11-12-ai-fashion-video-cost.html</guid>
+      <pubDate>Wed, 11 Nov 2026 15:00:00 GMT</pubDate>
+      <description>&lt;p class=&quot;tag&quot;&gt;글 &lt;a href=&quot;https://graydlab.ai.kr/kris-w.html&quot;&gt;Kris W (감우식)&lt;/a&gt; · &lt;time datetime=&quot;2026-11-12&quot;&gt;2026년 11월 12일&lt;/time&gt;&lt;/p&gt;
+        &lt;p class=&quot;lead&quot;&gt;같은 30초짜리 AI 패션 영상도 착장과 장면 구성, 표현 수준, 기획 범위에 따라 견적이 달라집니다.&lt;/p&gt;
+
+
+&lt;figure class=&quot;cost-figure cost-cover&quot;&gt;
+&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-cost-image-1.png&quot; alt=&quot;AI 패션 비주얼 대표 이미지&quot; fetchpriority=&quot;high&quot; decoding=&quot;async&quot;&gt;
+&lt;figcaption&gt;AI 활용&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;blockquote&gt;30초짜리 영상인데, 왜 견적이 이렇게 다른가요?&lt;/blockquote&gt;
+
+&lt;p&gt;AI 영상 제작 견적을 여러 곳에서 받아보면 같은 길이인데도 금액 차이가 나는 경우가 많습니다. 영상 길이는 견적의 일부일 뿐이기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;옷으로 비유하면 이해가 쉽습니다. 같은 재킷이라도 원단, 패턴, 봉제 공정에 따라 가격이 달라집니다. 기성복과 맞춤복의 가격이 다른 것도 &#39;길이&#39;가 아니라 &#39;공정&#39;의 차이입니다.&lt;/p&gt;
+
+&lt;p&gt;AI 패션 영상도 같습니다. 몇 초인지보다 어떤 장면을, 어떤 수준으로, 누가 기획하느냐가 견적을 결정합니다.&lt;/p&gt;
+
+&lt;p&gt;GRaY D. Lab이 실제 상담에서 견적 전에 반드시 확인하는 기준 3가지를 정리했습니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;1. 30초에 몇 착장을 담을 것인가&lt;/h2&gt;
+
+&lt;p&gt;견적의 출발점은 레퍼런스의 씬 구성과 송출처입니다. SNS, 매장 사이니지, 웹사이트 중 어디에 쓰이느냐에 따라 필요한 화질과 화면 비율이 먼저 정해집니다.&lt;/p&gt;
+
+&lt;figure class=&quot;cost-figure&quot;&gt;
+&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-cost-image-2.png&quot; alt=&quot;송출 매체에 따른 영상 화면 비율 예시&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+&lt;figcaption&gt;AI 활용&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;그다음 길이와 착장 수의 균형을 봅니다. 간단히 계산해 보겠습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;30초 영상에 10착장 → 착장당 약 3초&lt;/li&gt;
+  &lt;li&gt;30초 영상에 5착장 → 착장당 약 6초&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3초는 모델이 걸음을 한두 번 옮기면 지나가는 시간입니다. 실루엣은 보여도 소재감이나 디테일까지 전달하기는 어렵습니다.&lt;/p&gt;
+
+&lt;p&gt;그래서 요청 길이에 비해 착장 수가 많으면, 각 착장이 제대로 보일 수 있도록 영상 길이를 늘리거나 장면 구성을 다시 제안합니다. 같은 30초라도 어떤 장면으로 채우느냐에 따라 견적이 달라지는 이유입니다.&lt;/p&gt;
+
+&lt;h2&gt;2. 실사형인가, 일러스트형인가&lt;/h2&gt;
+
+&lt;p&gt;패션 브랜드는 대부분 실사에 가까운 표현을 요청합니다. 원단의 질감, 옷의 핏, 모델의 자연스러운 움직임이 살아 있어야 상품이 보이기 때문입니다.&lt;/p&gt;
+
+&lt;figure class=&quot;cost-figure cost-pair&quot;&gt;
+&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-cost-image-3.jpg&quot; alt=&quot;실사형 패션 비주얼 예시&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-cost-image-4.png&quot; alt=&quot;일러스트형 패션 비주얼 예시&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+&lt;figcaption&gt;AI 활용&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;구분&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;실사형&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;일러스트형&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;주요 용도&lt;/th&gt;&lt;td&gt;브랜드 캠페인, 룩북, 매장 영상&lt;/td&gt;&lt;td&gt;콘셉트 영상, 아트워크, SNS 콘텐츠&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;중요한 요소&lt;/th&gt;&lt;td&gt;소재감, 핏, 움직임의 자연스러움&lt;/td&gt;&lt;td&gt;스타일의 일관성, 분위기&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;작업 특성&lt;/th&gt;&lt;td&gt;장면당 생성·보정 작업이 많음&lt;/td&gt;&lt;td&gt;표현 방식에 따라 작업량 차이가 큼&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;실사 수준이 높아질수록 장면 하나를 완성하는 데 들어가는 생성과 보정 작업이 늘어납니다. 그래서 원하는 완성도에 맞춰 씬 수와 장면 구성을 함께 설계합니다.&lt;/p&gt;
+
+&lt;p&gt;일러스트 형식은 실사 수준의 정교함이 필요하지 않아 단가가 낮아질 수 있습니다. 하지만 일러스트라는 이유만으로 비용이 낮아지지는 않습니다. 장면 수와 움직임의 복잡도에 따라 실사형보다 작업량이 많아지는 경우도 있습니다.&lt;/p&gt;
+
+&lt;h2&gt;3. 기획은 누가 하는가&lt;/h2&gt;
+
+&lt;blockquote&gt;레퍼런스 링크 보내드릴게요. 이런 느낌으로 부탁드려요.&lt;/blockquote&gt;
+
+&lt;p&gt;가장 많이 받는 요청이지만, 레퍼런스는 분위기를 알려줄 뿐 새 영상의 설계도는 아닙니다. 어떤 착장이 몇 번째 장면에 나오는지, 카메라는 어디서 시작하는지, 마지막 장면은 무엇인지는 따로 정해야 합니다.&lt;/p&gt;
+
+&lt;figure class=&quot;cost-figure&quot;&gt;
+&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-cost-image-5.png&quot; alt=&quot;패션 영상 장면을 구성한 스토리보드 예시&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+&lt;figcaption&gt;AI 활용&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;고객이 기획을 제공하는 경우 → 기본 스토리보드를 요청드립니다.&lt;/li&gt;
+  &lt;li&gt;새로운 캐릭터 디자인이나 스토리라인이 필요한 경우 → 기획료가 추가될 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;송출 목적에 맞춰 새로운 이야기를 처음부터 구성해야 한다면, 그만큼 기획 단계의 작업이 늘어나기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;그렇다고 레퍼런스가 반드시 있어야 하는 것은 아닙니다.&lt;/p&gt;
+
+&lt;p&gt;원하는 무드를 말로 설명해 주셔도 충분히 제작할 수 있습니다. 예를 들면 이런 식입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&amp;quot;30대 오피스 여성 타깃, 늦가을 오후 햇살, 베이지와 브라운 톤, 잔잔한 피아노 음악&amp;quot;&lt;/li&gt;
+  &lt;li&gt;&amp;quot;젠더리스 스트릿 무드, 밤의 도심, 빠른 컷 전환, 비트감 있는 일렉트로닉&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;타깃, 계절감, 색감, 장소, 음악 분위기 중 몇 가지만 알려주셔도 GRaY D. Lab이 방향을 제안드립니다.&lt;/p&gt;
+
+&lt;p&gt;기획부터 스토리보드, 영상 제작까지 전적으로 맡기셔도 됩니다. 패션 디자이너 출신 디렉터가 상품과 브랜드를 먼저 이해한 뒤, 착장이 가장 잘 보이는 장면으로 설계합니다. 이 경우 기획 범위는 견적에 함께 포함해 안내드립니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;문의 전 1분 체크리스트&lt;/h2&gt;
+
+&lt;p&gt;아래 네 가지를 미리 정리해 주시면 제작 범위와 견적을 훨씬 빠르게 안내드릴 수 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;레퍼런스 링크 – 원하는 분위기와 톤 (없으면 원하는 무드를 말씀해 주세요)&lt;/li&gt;
+  &lt;li&gt;희망 영상 길이 – 15초 / 30초 / 1분 등&lt;/li&gt;
+  &lt;li&gt;착장 수 – 영상에 등장할 룩의 개수&lt;/li&gt;
+  &lt;li&gt;송출처 – SNS / 매장 사이니지 / 웹사이트 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;아직 정하지 못한 항목이 있어도 괜찮습니다. 원하시는 무드와 송출처만 알려주셔도 적정 길이와 착장 수, 장면 구성까지 함께 제안드립니다.&lt;/p&gt;
+
+&lt;h2&gt;자주 묻는 질문&lt;/h2&gt;
+
+&lt;h3&gt;제작 기간은 얼마나 걸리나요?&lt;/h3&gt;
+
+&lt;p&gt;제작 기간은 계약 후 약 3주이며, 기획 범위와 자료·피드백 일정에 따라 구체적인 납품일을 협의합니다.&lt;/p&gt;
+
+&lt;h3&gt;일러스트 형식이 항상 더 저렴한가요?&lt;/h3&gt;
+
+&lt;p&gt;그렇지 않습니다. 실사 수준의 정교함이 필요 없어 단가가 낮아질 수는 있지만, 장면 수와 움직임의 복잡도에 따라 달라집니다.&lt;/p&gt;
+
+&lt;h3&gt;레퍼런스 링크만 있어도 견적을 받을 수 있나요?&lt;/h3&gt;
+
+&lt;p&gt;가능합니다. 다만 희망 길이, 착장 수, 송출처를 함께 알려주시면 더 정확한 견적을 안내드릴 수 있습니다.&lt;/p&gt;
+
+&lt;h3&gt;영상 길이를 아직 못 정했어요.&lt;/h3&gt;
+
+&lt;p&gt;착장 수와 송출처를 기준으로 적정 길이를 제안드립니다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;견적은 금액보다 범위를 먼저 맞추는 과정입니다. 범위가 명확해야 완성도도, 일정도 지킬 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;GRaY D. Lab은 패션 콘텐츠의 완성도를 유지할 수 있는 범위를 기준으로 견적을 제안합니다.&lt;/p&gt;
+
+&lt;figure class=&quot;cost-figure&quot;&gt;
+&lt;img src=&quot;https://graydlab.ai.kr/2026-11-13-cost-image-6.png&quot; alt=&quot;GRaY D. Lab AI 비주얼 작업 예시&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+&lt;figcaption&gt;GRaY D. Lab AI 비주얼 작업 예시 · AI 활용&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p class=&quot;note&quot;&gt;글 · &lt;a href=&quot;https://graydlab.ai.kr/kris-w.html&quot;&gt;Kris W (감우식)&lt;/a&gt; | GRaY D. Lab 대표, 패션 디자이너 출신 크리에이티브 디렉터&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://graydlab.ai.kr/#portfolio&quot;&gt;포트폴리오&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -107,6 +107,53 @@ function sitemapEntry(path, date) {
     escape(date) + "</lastmod></url>";
 }
 
+function rssBody(html, url) {
+  const start = "<!-- blog:title:end -->";
+  const end = "<!-- blog:footer:start -->";
+  const first = html.indexOf(start);
+  const last = html.indexOf(end);
+  if (first < 0 || last < first) throw new Error("Missing RSS article body: " + url);
+
+  return html.slice(first + start.length, last)
+    // The title and footer markers can sit outside different layout wrappers.
+    .replace(/<\/?div\b[^>]*>/gi, "")
+    .replace(/<(?:a|img)\b[^>]*>/gi, tag =>
+      tag.replace(/(\s(?:href|src)\s*=\s*)(["'])(.*?)\2/gi, (_, attribute, quote, value) =>
+        attribute + quote + escape(new URL(value.replace(/&amp;/g, "&"), url).href) + quote))
+    .replace(/^[\t ]+$/gm, "")
+    .trim();
+}
+
+function rssFeed(posts, articles, guidePath) {
+  const items = posts.slice(0, 20).map(post => {
+    const url = origin + "/" + post.path;
+    const published = new Date(post.published + "T00:00:00+09:00").toUTCString();
+    return [
+      "    <item>",
+      "      <title>" + escape(post.title) + "</title>",
+      "      <link>" + escape(url) + "</link>",
+      "      <guid>" + escape(url) + "</guid>",
+      "      <pubDate>" + published + "</pubDate>",
+      "      <description>" + escape(rssBody(articles[post.path], url)) + "</description>",
+      "    </item>"
+    ].join("\n");
+  });
+
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<rss version="2.0">',
+    "  <channel>",
+    "    <title>그레이디랩 (GRaY D. Lab) 제작 가이드</title>",
+    "    <link>" + escape(origin + "/" + guidePath) + "</link>",
+    "    <description>패션 브랜드와 대행사 실무자를 위한 AI 영상 제작 가이드</description>",
+    "    <language>ko</language>",
+    ...items,
+    "  </channel>",
+    "</rss>",
+    ""
+  ].join("\n");
+}
+
 export function generateBlog(files, { guidePath, guideModified, posts }) {
   const orderedPosts = [...posts].sort((a, b) => b.published.localeCompare(a.published));
   // Keep the configured order when two posts have the same publication date.
@@ -139,6 +186,7 @@ export function generateBlog(files, { guidePath, guideModified, posts }) {
     sitemapEntry(guidePath, guideModified),
     ...orderedPosts.map(post => sitemapEntry(post.path, post.modified || post.published))
   ].join("\n"));
+  output["rss.xml"] = rssFeed(orderedPosts, output, guidePath);
   return output;
 }
 
@@ -148,6 +196,11 @@ const paths = ["index.html", "sitemap.xml", data.guidePath, ...data.posts.map(po
 const files = Object.fromEntries(await Promise.all(paths.map(async path =>
   [path, (await readFile(new URL(path, root), "utf8")).replace(/\r\n/g, "\n")]
 )));
+try {
+  files["rss.xml"] = (await readFile(new URL("rss.xml", root), "utf8")).replace(/\r\n/g, "\n");
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
 const generated = generateBlog(files, data);
 for (const [path, content] of Object.entries(generated)) {
   if (content === files[path]) continue;

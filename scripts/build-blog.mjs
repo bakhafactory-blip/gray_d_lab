@@ -35,7 +35,7 @@ function link(path, text) {
 
 function publishPost(html, post, related, guidePath) {
   const url = origin + "/" + post.path;
-  const title = post.title + " | " + suffix;
+  const title = post.metaTitle || post.title + " | " + suffix;
   const meta = (key, value) =>
     '<meta ' + (key.startsWith("og:") ? "property" : "name") + '="' + key + '" content="' + escape(value) + '">';
   const schema = {
@@ -48,9 +48,14 @@ function publishPost(html, post, related, guidePath) {
     mainEntityOfPage: url,
     image: post.image,
     author,
-    publisher: { "@type": "Organization", name: "GRaY D. Lab", url: origin + "/" }
+    publisher: { "@type": "Organization", "@id": origin + "/#organization", name: "그레이디랩 (GRaY D. Lab)", url: origin + "/" }
   };
-  const graph = { "@context": "https://schema.org", "@graph": [schema] };
+  const breadcrumb = { "@type": "BreadcrumbList", itemListElement: [
+    { "@type": "ListItem", position: 1, name: "홈", item: origin + "/" },
+    { "@type": "ListItem", position: 2, name: "제작 가이드", item: origin + "/" + guidePath },
+    { "@type": "ListItem", position: 3, name: post.title, item: url }
+  ] };
+  const graph = { "@context": "https://schema.org", "@graph": [schema, breadcrumb] };
   if (post.faq) graph["@graph"].push(post.faq);
   if (post.faq) {
     for (const { name, acceptedAnswer } of post.faq.mainEntity) {
@@ -75,6 +80,7 @@ function publishPost(html, post, related, guidePath) {
     JSON.stringify(graph, null, 2).replace(/</g, "\\u003c") + "\n</script>");
   html = updateRegion(html, "title", "<h1>" + escape(post.title) + "</h1>");
   return updateRegion(html, "footer", [
+    "<div class=\"post-outro\">\n  <p><strong>그레이디랩(GRaY D. Lab)</strong>은 경기도 고양시 일산동구를 기반으로 AI 패션·광고 영상을 제작하는 스튜디오입니다. 기획·스토리보드·AI 비주얼 생성·편집·마스터링까지 직접 수행합니다.</p>\n  <p>글: 감우식(Kris W) · <a href=\"/kris-w.html\">프로필</a> · <a href=\"/2026-10-18-inquiry.html\">제작 문의</a> · <a href=\"/2026-10-18-projects.html\">제작 사례</a></p>\n  <p>채널: <a href=\"https://www.youtube.com/@gray_d_lab\" target=\"_blank\" rel=\"noopener\">YouTube</a> · <a href=\"https://www.instagram.com/gray_d_lab/\" target=\"_blank\" rel=\"noopener\">Instagram</a> · <a href=\"https://blog.naver.com/gray_d_lab\" target=\"_blank\" rel=\"noopener\">네이버 블로그</a></p>\n</div>",
     '<nav aria-labelledby="related-guides-title">',
     '  <h2 id="related-guides-title">함께 보면 좋은 제작 가이드</h2>',
     ...(related.length ? [
@@ -82,7 +88,7 @@ function publishPost(html, post, related, guidePath) {
       ...related.map(item => "    <li>" + link(item.path, item.title) + "</li>"),
       "  </ul>"
     ] : []),
-    "  <p>" + link(guidePath, "제작 가이드 전체 보기") + "</p>",
+    "  <p>" + link(guidePath, "제작 가이드 전체 보기") + ' · <a href="https://blog.naver.com/gray_d_lab" target="_blank" rel="noopener">네이버 블로그에서 더 보기 ↗</a></p>',
     "</nav>",
     '<section class="inquiry" aria-labelledby="guide-inquiry-title">',
     '  <h2 id="guide-inquiry-title">프로젝트 제작 상담</h2>',
@@ -179,7 +185,7 @@ export function generateBlog(files, { guidePath, guideModified, posts }) {
     '  <div class="grid">',
     ...orderedPosts.slice(0, 2).map(post => "    " + card(post, "h3")),
     "  </div>",
-    "  <p>" + link(guidePath, "제작 가이드 전체 보기") + "</p>",
+    "  <p>" + link(guidePath, "제작 가이드 전체 보기") + ' · <a href="https://blog.naver.com/gray_d_lab" target="_blank" rel="noopener">네이버 블로그에서 더 보기 ↗</a></p>',
     "</section>"
   ].join("\n"));
   output["sitemap.xml"] = updateRegion(files["sitemap.xml"], "sitemap", [

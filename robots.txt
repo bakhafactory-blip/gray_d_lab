@@ -1,8 +1,18 @@
 User-agent: *
 Allow: /
 
-# Search access; training policy remains unchanged (allowed by wildcard).
+# Search and user-requested retrieval. Existing wildcard policy retained.
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 Sitemap: https://graydlab.ai.kr/sitemap.xml
+# LLM summary: https://graydlab.ai.kr/llms.txt

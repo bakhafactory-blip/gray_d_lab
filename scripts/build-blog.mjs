@@ -80,7 +80,7 @@ function publishPost(html, post, related, guidePath) {
     JSON.stringify(graph, null, 2).replace(/</g, "\\u003c") + "\n</script>");
   html = updateRegion(html, "title", "<h1>" + escape(post.title) + "</h1>");
   return updateRegion(html, "footer", [
-    "<div class=\"post-outro\">\n  <p><strong>그레이디랩(GRaY D. Lab)</strong>은 경기도 고양시 일산동구를 기반으로 AI 패션·광고 영상을 제작하는 스튜디오입니다. 기획·스토리보드·AI 비주얼 생성·편집·마스터링까지 직접 수행합니다.</p>\n  <p>글: 감우식(Kris W) · <a href=\"/kris-w.html\">프로필</a> · <a href=\"/2026-10-18-inquiry.html\">제작 문의</a> · <a href=\"/2026-10-18-projects.html\">제작 사례</a></p>\n  <p>채널: <a href=\"https://www.youtube.com/@gray_d_lab\" target=\"_blank\" rel=\"noopener\">YouTube</a> · <a href=\"https://www.instagram.com/gray_d_lab/\" target=\"_blank\" rel=\"noopener\">Instagram</a> · <a href=\"https://blog.naver.com/gray_d_lab\" target=\"_blank\" rel=\"noopener\">네이버 블로그</a></p>\n</div>",
+    "<div class=\"post-outro\">\n  <p><strong>그레이디랩(GRaY D. Lab)</strong>은 AI 패션·광고 영상을 제작하는 스튜디오입니다. 기획·스토리보드·AI 비주얼 생성·편집·마스터링까지 직접 수행합니다.</p>\n  <p>글: 감우식(Kris W) · <a href=\"/kris-w.html\">프로필</a> · <a href=\"/2026-10-18-inquiry.html\">제작 문의</a> · <a href=\"/2026-10-18-projects.html\">제작 사례</a></p>\n  <p>채널: <a href=\"https://www.youtube.com/@gray_d_lab\" target=\"_blank\" rel=\"noopener\">YouTube</a> · <a href=\"https://www.instagram.com/gray_d_lab/\" target=\"_blank\" rel=\"noopener\">Instagram</a> · <a href=\"https://blog.naver.com/gray_d_lab\" target=\"_blank\" rel=\"noopener\">네이버 블로그</a></p>\n</div>",
     '<nav aria-labelledby="related-guides-title">',
     '  <h2 id="related-guides-title">함께 보면 좋은 제작 가이드</h2>',
     ...(related.length ? [
